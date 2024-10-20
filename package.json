@@ -1,0 +1,11 @@
+{
+  "name": "pwa-quizz-game",
+  "scripts": {
+    "scss": "sass",
+    "prettier": "prettier . --write"
+  },
+  "dependencies": {
+    "prettier": "^3.3.3",
+    "sass": "^1.80.3"
+  }
+}
