@@ -12,7 +12,7 @@ The primary color will be used as a highlighter background on the cards to achie
 
 ## CTA: #f7b946
 Gives the user a warmer feeling and pop enough to grab atteintion, but at the same time not beeing aggressiv 
-Used on important buttons that have a big funktion.
+Used on important buttons that have a big function.
 
 ## White:  #fafff9
 A soft white used as the background of the site and as a scondary alternative color for text.
