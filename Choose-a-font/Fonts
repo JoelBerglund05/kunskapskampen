@@ -1,0 +1,15 @@
+## Fonts
+
+# System fonts
+
+(Body{font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";})
+
+These are the fonts and the implementation methode that Github uses. I believe they sould be good to use since they are fonts that is used by most of the popular devices, Apple, Samsund and so on.
+
+# Regular fonts
+
+If we decide to use other fonts then i recomend using a combination oc Lato (for body) and Roboto (for headers). These two are stylish and commonly used for more "formal" and i believe they would fit in with our game.
+
+# Accessibility
+
+Dyslexi font is made to make it easier for those with a hard time reading, espesially those with dyslexia. 
