@@ -20,3 +20,9 @@ A soft white used as the background of the site and as a scondary alternative co
 
 ## Black: oklch(10% 0.0483 138.55)
 A greener black used as base color for tect related to the CTA because of its contrast and warm nature.
+
+## Wrong awnser color: oklch( 60% 0.1825 21.18)
+Used for indicate to the user that the wrong answer was selected
+
+## Right awnser color: oklch (70% 0.1776 141.88)
+Used for indicate to the user that the right answer was selected
