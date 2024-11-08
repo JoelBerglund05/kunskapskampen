@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAWA,MAAO;EACH,gBAAgB,EARJ,wBAAwB",
+"sources": ["scss/main.scss"],
+"names": [],
+"file": "main.css"
+}
