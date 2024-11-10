@@ -11,4 +11,24 @@ $right-answer-color: oklch( 70% 0.1776 141.88);
 
 footer {
     background-color: $primary-color;
+    display: grid;
+    border: 0.25rem solid;
+    border-color: black;
+
+}
+
+footer div {
+    margin: auto;
+}
+
+.frends {
+    grid-column: 1;
+}
+
+.profile {
+    grid-column: 2;
+}
+
+.settings {
+    grid-column: 3;
 }

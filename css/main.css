@@ -1,4 +1,24 @@
 footer {
-  background-color: oklch(95% 0.0483 138.55); }
+  background-color: oklch(95% 0.0483 138.55deg);
+  display: grid;
+  border: 0.25rem solid;
+  border-color: black;
+}
+
+footer div {
+  margin: auto;
+}
+
+.frends {
+  grid-column: 1;
+}
+
+.profile {
+  grid-column: 2;
+}
+
+.settings {
+  grid-column: 3;
+}
 
 /*# sourceMappingURL=main.css.map */
