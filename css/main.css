@@ -1,11 +1,17 @@
-
-
+/*
+.test{
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    margin-right: 0;
+    width: ;
+}*/
 
 
 body {
-    height: 100%;
     margin: 0;
-    width: fit-content;
 }
 
 
@@ -13,14 +19,17 @@ body {
 .big-container{
     display: flex;
     flex-flow: column;
-    height: 100%;
-    width: auto;
+    height: 100vh;
+    width: fit-content;
     align-items: center;
+    justify-content: center;
+
     margin: 0 auto;
+    background-color: red;
 }
 
 .big-container .row{
-    border: 1px dotted red;
+    border: 1px dotted blue;
 }
 
 .big-container .row.container{
@@ -29,15 +38,14 @@ body {
     flex-basis: auto;
 }
 
-/*.big-container .row.btn-container{
+.big-container .row.btn-container{
     flex: 1 1 auto;
-}*/
+}
 
 
 
 .container{
     width: fit-content;
-/*    position:absolute;*/
     padding: 50px;    
 }
 
