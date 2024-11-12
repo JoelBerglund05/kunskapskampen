@@ -1,0 +1,65 @@
+body {
+    height: 100dvh;
+}
+
+.main-container {
+    width: 75%;
+    height: 100dvh;
+    margin: 0 auto;
+}
+
+.question h1 {
+    font-size: 2em;
+    text-align: center;
+    max-width: 30ch;
+}
+
+.timer h2 {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.question, .answer, .timer {
+    display: flex;
+    justify-content: center;
+    margin-top: 4em;
+}
+
+.answer {
+    gap: 0.5rem;
+}
+
+.answer input {
+    /*height: 2em;*/
+    width: 50dvw;
+    aspect-ratio: 4/1;
+    font-size: 2em;
+    text-align: center;
+    border: 3px solid;
+    border-radius: 0.2em;
+    background: transparent;
+}
+
+.answer input[type="number"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+.answer input[type=number] {
+    -moz-appearance: textfield;
+}
+
+input[type="number"]:not(:in-range) {
+    outline: 3px solid red;
+}
+
+.decrease, .increase {
+    font-size: 2em;
+    text-align: center;
+    align-self: center;
+    height: 1.8em;
+    aspect-ratio: 1;
+    border: 3px solid;
+    border-radius: 0.2em;
+    background: transparent;
+    line-height: fit-content;
+}
