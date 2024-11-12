@@ -1,8 +1,73 @@
 $height: 100%;
-$picture-width: 50rem;
+$picture-width: 30%rem;
+$btn-height: 10vh;
+$img-width: 100%;
+$container-gap: 10%;
+$btn-container-gap: 20%;
 
 
 
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+html, body {
+    height: $height;
+    margin: 0;
+}
+
+
+img {
+    width: $img-width;
+    margin: 0;
+}
+
+.picture {
+    width: $img-width;
+    @include flex-center();
+}
+
+
+.big-container {
+    display: flex;
+    flex-flow: column;
+    width: 90vw;
+    height: $height;
+    margin: 0 auto;
+    @include flex-center();
+
+    .row {
+        .container {
+            display : flex;
+            flex-direction: column;
+            gap: $container-gap;
+            width: 100%;
+            @include flex-center();
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: $container-gap;
+        }
+    }
+}
+
+
+.btns {
+    width: 90%;
+}
+
+
+.btn1, .btn2, .btn3 {
+    margin: 0;
+    width: 100%;
+    height: $btn-container-gap;
+}
 
 /*
 
