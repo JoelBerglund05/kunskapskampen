@@ -12,6 +12,7 @@ export default class DataBase {
     const { data, error } = await this.supabase
       .from(table)
       .select()
+      .eq("id", idToRow);
 
     if (error) {
       console.log("Kunde inte hämta data: ", error);
@@ -21,7 +22,6 @@ export default class DataBase {
   }
 
   async SignUpUser(email, password) {
-
     if (password[0] !== password[1]) {
       alert("Lösenorden är inte samma");
       return;
@@ -43,10 +43,8 @@ export default class DataBase {
       password: password.value,
     });
     if (error) {
-      console.log("swqeawd ", error);
+      console.log("Kunde inte logga in: ", error);
     }
-    console.log(this.supabase.auth.getUser());
-    console.log(error);
   }
 
   async LogOutUser() {
@@ -59,7 +57,13 @@ export default class DataBase {
   async GetUser() {
     const {
       data: { user },
+      error,
     } = await this.supabase.auth.getUser();
+
+    if (error) {
+      console.log("Kunde inte hitta användaren: ", error);
+      return;
+    }
     return user;
   }
 
@@ -79,9 +83,9 @@ export default class DataBase {
       ])
       .select();
 
-      if (error) {
-        console.log("Kunde inte spara data: ", error);
-      }
+    if (error) {
+      console.log("Kunde inte spara data: ", error);
+    }
   }
 
   async GetAllActiveGames() {
@@ -101,8 +105,8 @@ export default class DataBase {
       .eq("id", activeGameId)
       .select();
 
-      if (error) {
-        console.log("Kunde inte updatera data: ", error);
-      }
+    if (error) {
+      console.log("Kunde inte updatera data: ", error);
+    }
   }
 }
