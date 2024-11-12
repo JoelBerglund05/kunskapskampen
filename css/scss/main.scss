@@ -1,4 +1,3 @@
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
 
 $primary-color: oklch(44% 0.0483 138.55);
@@ -15,7 +14,7 @@ $wrong-answer-color: oklch( 60% 0.1825 21.18);
 $right-answer-color: oklch( 70% 0.1776 141.88);
 
 footer {
-    background-color: $primary-color;
+    background-color: hotpink;
     display: grid;
     border: 0.25rem solid;
     border-color: black;
@@ -24,13 +23,10 @@ footer {
 
 .nav-btn {
     margin: auto;
-}
-
-.btn {
     background-color: $cta;
 }
 
-.btn:hover {
+.nav-btn:hover {
     background-color: $cta-hover;
 }
 
