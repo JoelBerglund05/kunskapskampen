@@ -1,0 +1,17 @@
+$height: 100%;
+$picture-width: 50rem;
+
+
+html{
+    height: $height;
+}
+
+body{
+    height: $height;
+}
+
+.picture{
+    width: $picture-width;
+    display: flex;
+    align-self: ;
+}
