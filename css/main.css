@@ -26,16 +26,35 @@ footer {
   grid-column: 3;
 }
 
-.offcanvas-profile {
+.profile .offcanvas-profile {
   right: 20rem;
   left: 20rem;
   bottom: 10rem;
   top: 10rem;
+  display: grid;
+  grid-template-rows: 5rem;
+}
+
+.settings .offcanvas-settings {
+  right: 20rem;
+  left: 20rem;
+  bottom: 10rem;
+  top: 10rem;
+  display: grid;
+  grid-template-rows: 5rem;
+}
+
+.profile .offcanvas-profile div {
+  grid-column: 2;
 }
 
 .profile-icon {
+  display: grid;
+}
+
+.profile-icon svg {
   height: 5rem;
-  margin-left: auto;
+  grid-row: 2;
 }
 
 /*# sourceMappingURL=main.css.map */
