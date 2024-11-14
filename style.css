@@ -63,3 +63,40 @@ input[type="number"]:not(:in-range) {
     background: transparent;
     line-height: fit-content;
 }
+
+/*.answer .increase:active {
+    animation: .5s ease answer-button-in;
+}
+*/
+
+.animate-in {
+  animation: answer-button-in .3s ease;
+}
+
+.animate-de {
+    animation: answer-button-de .3s ease;
+}
+
+@keyframes answer-button-in {
+    0% {
+        background: transparent;
+    }
+    50% {
+        background: lime;
+    }
+    100% {
+        background: transparent;
+    }
+}
+
+@keyframes answer-button-de {
+    0% {
+        background: transparent;
+    }
+    50% {
+        background: red;
+    }
+    100% {
+        background: transparent;
+    }
+}
