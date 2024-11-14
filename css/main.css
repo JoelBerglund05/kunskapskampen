@@ -57,4 +57,32 @@ footer {
   grid-row: 2;
 }
 
+.volume {
+  display: flex;
+  align-content: center;
+}
+
+.volume label {
+  margin-right: 1rem;
+  font-size: 3rem;
+}
+
+.volume input {
+  width: 10rem;
+  height: 5rem;
+}
+
+.offcanvas-settings {
+  display: grid;
+}
+
+.offcanvas-settings .animations-switch {
+  padding-left: 1rem;
+}
+
+.offcanvas-settings .animations-switch input {
+  float: none;
+  margin-left: 0.5rem;
+}
+
 /*# sourceMappingURL=main.css.map */

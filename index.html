@@ -15,7 +15,7 @@
     <footer>
       <div class="friends nav-btn">
         <button class="friends-btn btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-          Button with data-bs-target
+          Friends
         </button>   
         <div class="offcanvas offcanvas-start offcanvas-frends" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
           <div class="offcanvas-header">
@@ -34,7 +34,7 @@
 
 
       <div class="profile nav-btn">
-        <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Toggle top offcanvas</button>
+        <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Profile</button>
 
         <div class="offcanvas offcanvas-profile" tabindex="-1" id="offcanvasTop" aria-labelledby="profile">
           <div class="offcanvas-header">
@@ -55,16 +55,21 @@
 
 
     <div class="settings nav-btn" >
-      <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Toggle bottom offcanvas</button>
+      <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Settings</button>
 
       <div class="offcanvas offcanvas-settings" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
         <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="offcanvasBottomLabel">Offcanvas bottom</h5>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div class="offcanvas-body small">
-          ...
+        <div class="offcanvas-body small volume">
+          <label for="customRange1" class="form-label">Volume:</label>
+          <input type="range" class="form-range" id="customRange1">
         </div>
+        <div class="form-check form-switch animations-switch">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Animations</label>
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+        </div>        
       </div>
     </div>
 
