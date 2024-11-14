@@ -17,9 +17,9 @@
                 <h2>15 Seconds Left</h2>
             </div>
             <div class="answer">
-                <button id="decrease" class="decrease" aria-pressed="false">-</button>
-                <input type="number" inputmode="numeric" min="0">
-                <button id="increase" class="increase" aria-pressed="false">+</button>
+                <button id="decrease" class="decrease">-</button>
+                <input type="number" inputmode="numeric" min="0" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                <button id="increase" class="increase" >+</button>
             </div>
         </div>
         <script type="text/javascript" src="animations.js"></script>
