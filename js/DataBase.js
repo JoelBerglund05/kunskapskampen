@@ -24,9 +24,9 @@ export default class DataBase {
       return;
     }
 
-    const { data, error } = await this.supabase.auth.signInWithOtp({
+    const { data, error } = await this.supabase.auth.signUp({
       email: email,
-      password: password,
+      password: password[0],
     });
 
     if (error) {
@@ -35,14 +35,14 @@ export default class DataBase {
   }
 
   async SignInUser(email, password) {
-    const { data, error } = await this.supabase.auth.signInWithOtp({
-      email: email.value,
-      password: password.value,
+    const { data, error } = await this.supabase.auth.signInWithPassword({
+      email: email,
+      password: password,
     });
     if (error) {
       console.log("swqeawd ", error);
     }
-    console.log(this.supabase.auth.getUser());
+    console.log(this.GetUser());
     console.log(error);
   }
 
@@ -56,7 +56,11 @@ export default class DataBase {
   async GetUser() {
     const {
       data: { user },
+      error,
     } = await this.supabase.auth.getUser();
+    if (error) {
+      console.log("Kunde inte få användare: ", error);
+    }
     return user;
   }
 

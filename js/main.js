@@ -40,7 +40,6 @@ class Main {
     const activeGames = await this.gameHandeler.GetMyActiveGames(this.dataBase);
     const user = await this.dataBase.GetUser();
     let li = document.createElement("li");
-    let ul = document.createElement("ul");
 
     function GetOpponentName(game) {
       if (game.userId1 !== user.id) {
@@ -50,22 +49,28 @@ class Main {
       }
     }
 
-    activeGames.foreach((game) => {
+    console.log(typeof activeGames, " ", activeGames, user);
+
+    activeGames.forEach((game) => {
       const opponentName = GetOpponentName(game);
+      let ul = document.createElement("ul");
       if (opponentName === null) {
         return;
       }
       const ulContent = document.createTextNode(
-        "Din motstånadre: ",
-        opponentName,
-        " Poängen är: ",
-        game.player1Points,
-        " ",
-        game.player2Points,
+        "Din motstånadre: " +
+          opponentName +
+          " Poängen är: " +
+          game.player1Points +
+          " " +
+          game.player2Points,
       );
       ul.appendChild(ulContent);
       li.appendChild(ul);
+      console.log(li, ulContent);
     });
+
+    document.body.insertBefore(li, this.btnCreateGame);
   }
 
   GetCurrentPage() {
@@ -84,11 +89,14 @@ class Main {
     );
 
     this.eventManager.EventListener(this.btnCreateAccount, clickEvent, () =>
-      this.dataBase.SignUpUser(this.email, this.password),
+      this.dataBase.SignUpUser(this.email.value, [
+        this.password[0].value,
+        this.password[1].value,
+      ]),
     );
 
     this.eventManager.EventListener(this.btnSignIn, clickEvent, () =>
-      this.dataBase.SignInUser(this.email, this.password),
+      this.dataBase.SignInUser(this.email.value, this.password[0].value),
     );
 
     this.eventManager.EventListener(this.btnCreateGame, clickEvent, () =>
