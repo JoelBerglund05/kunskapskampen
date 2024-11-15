@@ -1,70 +1,63 @@
-
-
-html{
-    height: 100%;
+html, body {
+  height: 100%;
 }
 
-body{
-    height: 100%;
-    margin: 0;
+body {
+  margin: 0;
+  background-color: oklch(65% 0.0483 138.55deg);
 }
 
-img{
-    width: 100%;
-    margin: 30px;
+img {
+  width: 100%;
+  margin: 30px;
 }
 
-.picture{
-    width:30%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.picture {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-
-.big-container{
-    display: flex;
-    flex-flow: column;
-   /* height: 100vh;
-    width: 100vh;*/
-    width: 90vw;
-    height: 100%;
-
-
-    align-items: center;
-    justify-content: center;
-
-    margin: 0 auto;
+.account-image {
+  fill: oklch(10% 0.0483 138.55deg);
 }
 
-
-.big-container .row.container{
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10%;
-    width: 100%;
+.big-container {
+  display: flex;
+  flex-flow: column;
+  width: 90vw;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 }
 
-.big-container .row.btn-container{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px
+.row.container {
+  flex-direction: column;
+  align-items: center;
+  gap: 10%;
+}
+.row.btn-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
-.btns{
-    width: 90%;
+.btns {
+  width: 100%;
 }
 
-.btn1, .btn2, .btn3{
-    margin: 0px;
-    width: 100%;
-    height: 10vh;
+.btn1, .btn2, .btn3 {
+  padding: 1%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  width: 100%;
+  height: 10vh;
+  background-color: oklch(82% 0.1455 79.31deg);
 }
 
 
 
-
+/*# sourceMappingURL=main.css.map */
