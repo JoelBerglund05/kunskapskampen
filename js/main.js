@@ -16,9 +16,8 @@ class Main {
       document.getElementById("password2"),
     ];
     this.btnSignIn = document.getElementById("signIn");
-    this.btnCreateGame = document.getElementById("createGame");
 
-    this.tmp = document.getElementById("tmp");
+    this.btnCreateGame = document.getElementById("createGame");
   }
   RegisterServiceWorker() {
     if ("serviceWorker" in navigator) {
@@ -38,7 +37,35 @@ class Main {
   }
 
   async DispalyActiveGames() {
-    const activeGames = await this.dataBase.GetAllActiveGames();
+    const activeGames = await this.gameHandeler.GetMyActiveGames(this.dataBase);
+    const user = await this.dataBase.GetUser();
+    let li = document.createElement("li");
+    let ul = document.createElement("ul");
+
+    function GetOpponentName(game) {
+      if (game.userId1 !== user.id) {
+        return game.userId1;
+      } else {
+        return game.userId2;
+      }
+    }
+
+    activeGames.foreach((game) => {
+      const opponentName = GetOpponentName(game);
+      if (opponentName === null) {
+        return;
+      }
+      const ulContent = document.createTextNode(
+        "Din motstånadre: ",
+        opponentName,
+        " Poängen är: ",
+        game.player1Points,
+        " ",
+        game.player2Points,
+      );
+      ul.appendChild(ulContent);
+      li.appendChild(ul);
+    });
   }
 
   GetCurrentPage() {
