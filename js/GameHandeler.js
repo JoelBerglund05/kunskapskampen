@@ -11,12 +11,6 @@ export default class GameHandeler {
         !foundEmptyGame &&
         emptyId.userId1 !== user.id
       ) {
-        console.log(
-          "Stämmer detta? ",
-          emptyId.userId1 !== user.id,
-          user.id,
-          emptyId.userId1,
-        );
         foundEmptyGame = true;
         emptyId.userId2 = user.id;
         await dataBase.UpdateSpesificActiveGame(emptyId.id);
@@ -25,7 +19,19 @@ export default class GameHandeler {
 
     if (!foundEmptyGame) {
       dataBase.CreateGame();
-      console.log("yeppi!");
     }
+  }
+  async GetMyActiveGames() {
+    const activeGames = await dataBase.GetAllActiveGames();
+    const user = await dataBase.GetUser();
+
+    //TODO: Fix stuff
+    activeGames.forEach(async (emptyId) => {
+      if (emptyId.userId2 === user.id || emptyId.userId1 !== user.id) {
+        foundEmptyGame = true;
+        emptyId.userId2 = user.id;
+        await dataBase.UpdateSpesificActiveGame(emptyId.id);
+      }
+    });
   }
 }

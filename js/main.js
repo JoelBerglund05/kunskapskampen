@@ -28,7 +28,7 @@ class Main {
     }
   }
   async DisplayQuestion(id) {
-    const DBData = await this.dataBase.GetARowFrow("quizz", id);
+    const DBData = await this.dataBase.GetARowFrom("quizz", id);
 
     if (DBData !== null) {
       DBData.map((data) => {
@@ -36,23 +36,15 @@ class Main {
       });
     }
   }
-  async CreateAccount() {
-    const {
-      data: { user },
-    } = await this.dataBase.supabase.auth.getUser();
 
-    console.log(user);
+  async DispalyActiveGames() {
+    const activeGames = await this.dataBase.GetAllActiveGames();
   }
 
-  async SignInUser() {
-    const {
-      data: { user },
-    } = await this.dataBase.supabase.auth.getUser();
-
-    console.log("HEJJJJJ");
-
-    console.log(user);
+  GetCurrentPage() {
+    return window.location.pathname.split("/").pop();
   }
+
   Main() {
     const clickEvent = "click";
     this.eventManager.EventListener(this.tmp, clickEvent, () => {
@@ -75,6 +67,10 @@ class Main {
     this.eventManager.EventListener(this.btnCreateGame, clickEvent, () =>
       this.gameHandeler.CreateGame(this.dataBase),
     );
+
+    if (this.GetCurrentPage() === "active-games") {
+      this.DispalyActiveGames();
+    }
   }
 }
 
