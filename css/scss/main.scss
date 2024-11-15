@@ -101,3 +101,99 @@ footer {
     float: none;
     margin-left: 0.5rem;
 }
+
+
+
+
+
+
+
+
+:root[data-theme="dark"] {
+    $test-primary-color: #1a1a29;
+    $test-secondary-color: #0f0f19;
+    $test-reccomend-color: #baa45a;
+    $test-warning-color: #710a27;
+    $test-text-color: #f9f6ee;
+    $test-btn-hover-color: #b97816;
+    $test-a-hover-color: #9265eb;
+    $test-card-color: #2a2a3c;
+    $test-a-color: #9696f9;
+}
+
+
+
+:root[data-theme="light"] {
+    $test-primary-color: #f0f0ff;
+    $test-secondary-color: #d1d1ed;
+    $test-reccomend-color: #baa45a;
+    $test-warning-color: #990d35;
+    $test-text-color: #131019;
+    $test-btn-hover-color: #ea971b;
+    $test-a-hover-color: #0000ff;
+    $test-card-color: #b9b9d7;
+    $test-a-color: #00008b;
+}
+
+/*
+:root {
+    $mooncolor: #d9fbff;
+    $bgColor--day: #9ee3fb;
+    $bgColor--night: #423966;
+    $toggleBtn-bgColor--night: $bgColor--night;
+    $toggleHeight: 16em;
+    $toggleWidth: 30em;
+    $toggleBtnRadius: 10em;
+    $toggleBtn-bgColor--day: $bgColor--day;
+}
+*/
+
+#tdnn {
+  margin: 0 auto;
+  font-size: 17.5%;
+  position: relative;
+  height: 2rem;
+  width: 4rem;
+  border-radius: 16rem;
+  transition: all 500ms ease-in-out;
+  background: #423966;
+  display: block;
+}
+#tdnn.day {
+  background: #ffa31a;
+}
+#moon {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  transition: all 400ms ease-in-out;
+
+  top: 3em;
+  left: 3em;
+  transform: rotate(-75deg);
+  width: 1rem;
+  height: 1rem;
+  background: #423966;
+  box-shadow: 3em 2.5em 0 0em #d9fbff inset,
+    rgba(255, 255, 255, 0.1) 0em -7em 0 -4.5em,
+    rgba(255, 255, 255, 0.1) 3em 7em 0 -4.5em,
+    rgba(255, 255, 255, 0.1) 2em 13em 0 -4em,
+    rgba(255, 255, 255, 0.1) 6em 2em 0 -4.1em,
+    rgba(255, 255, 255, 0.1) 8em 8em 0 -4.5em,
+    rgba(255, 255, 255, 0.1) 6em 13em 0 -4.5em,
+    rgba(255, 255, 255, 0.1) -4em 7em 0 -4.5em,
+    rgba(255, 255, 255, 0.1) -1em 10em 0 -4.5em;
+}
+#moon.sun {
+  top: 4.5em;
+  left: 18em;
+  transform: rotate(0deg);
+  width: 7em;
+  height: 7em;
+  background: #fff;
+  box-shadow: 3em 3em 0 5em #fff inset, 0 -5em 0 -2.7em #fff,
+    3.5em -3.5em 0 -3em #fff, 5em 0 0 -2.7em #fff, 3.5em 3.5em 0 -3em #fff,
+    0 5em 0 -2.7em #fff, -3.5em 3.5em 0 -3em #fff, -5em 0 0 -2.7em #fff,
+    -3.5em -3.5em 0 -3em #fff;
+}
+
