@@ -21,17 +21,15 @@ export default class GameHandeler {
       dataBase.CreateGame();
     }
   }
-  async GetMyActiveGames() {
+  async GetMyActiveGames(dataBase) {
     const activeGames = await dataBase.GetAllActiveGames();
     const user = await dataBase.GetUser();
-
-    //TODO: Fix stuff
-    activeGames.forEach(async (emptyId) => {
-      if (emptyId.userId2 === user.id || emptyId.userId1 !== user.id) {
-        foundEmptyGame = true;
-        emptyId.userId2 = user.id;
-        await dataBase.UpdateSpesificActiveGame(emptyId.id);
+    const myActiveGames = [];
+    activeGames.forEach((userGame) => {
+      if (userGame.userId2 === user.id || userGame.userId1 === user.id) {
+        myActiveGames.push(userGame);
       }
     });
+    return myActiveGames;
   }
 }
