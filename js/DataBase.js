@@ -18,7 +18,7 @@ export default class DataBase {
     return data;
   }
 
-  async SignUpUser(email, password) {
+  async SignUpUser(username, email, password) {
     if (password[0] !== password[1]) {
       alert("Lösenorden är inte samma");
       return;
@@ -27,6 +27,11 @@ export default class DataBase {
     const { data, error } = await this.supabase.auth.signUp({
       email: email,
       password: password[0],
+      options: {
+        data: {
+          display_name: username,
+        },
+      },
     });
 
     if (error) {

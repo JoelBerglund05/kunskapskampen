@@ -9,7 +9,9 @@ class Main {
     this.gameHandeler = new GameHandeler();
     this.btnDBRequest = document.getElementById("btnDBRequest");
     this.displayData = document.getElementById("dBData");
+
     this.btnCreateAccount = document.getElementById("createAccount");
+    this.username = document.getElementById("username");
     this.email = document.getElementById("email");
     this.password = [
       document.getElementById("password1"),
@@ -95,7 +97,7 @@ class Main {
     );
 
     this.eventManager.EventListener(this.btnCreateAccount, clickEvent, () =>
-      this.dataBase.SignUpUser(this.email.value, [
+      this.dataBase.SignUpUser(this.username.value, this.email.value, [
         this.password[0].value,
         this.password[1].value,
       ]),
