@@ -23,7 +23,7 @@ body {
 .question, .answer, .timer {
   display: flex;
   justify-content: center;
-  margin-top: 4em;
+  margin-top: 3em;
 }
 
 .answer {
