@@ -1,94 +1,3 @@
-// Define the rootVars variable and function
-$rootVars: ();
-
-// Mixins and Functions
-@mixin setVar($varName, $value){
-  $rootVars: map-merge($rootVars, (
-    #{$varName}: $value
-  )) !global;
-}
-
-@function getVar($varName) {
-  @return map-get($rootVars, #{$varName});
-}
-
-@mixin var($property, $varName, $fallback:false) {
-  $var: getVar($varName);
-  @if $var { // If we got a variable from the map, use it
-    #{$property}: #{$var}; // Output legacy CSS
-    @if $fallback { // If we have a fallback, include it
-      #{$property}: var(--#{$varName}, $var, $fallback);
-    } @else { // else, dont
-      #{$property}: var(--#{$varName}, $var);
-    }
-  } @else { // No variable set, use the fallback
-    #{$property}: #{$fallback}; // Output legacy CSS
-    #{$property}: var(--#{$varName}, $fallback); // Still provide the link to a CSS variable, should it become available
-  }
-}
-
-// Set variables
-@include setVar("main", green);
-@include setVar("contrast", red);
-
-// And make sure this is after you set your variables
-:root[data-theme="dark"] {
-  @each $key, $value in $rootVars {
-    --#{$key}: #{$value};
-  }
-}
-
-// Usage
-
-
-
-
-
-// Define the rootVars variable and function
-$rootVars2: ();
-
-// Mixins and Functions
-@mixin setVar($varName2, $value2){
-  $rootVars2: map-merge($rootVars2, (
-    #{$varName2}: $value2
-  )) !global;
-}
-
-@function getVar($varName2) {
-  @return map-get($rootVars2, #{$varName2});
-}
-
-@mixin var($property2, $varName2, $fallback2:false) {
-  $var2: getVar($varName2);
-  @if $var2 { // If we got a variable from the map, use it
-    #{$property2}: #{$var2}; // Output legacy CSS
-    @if $fallback2 { // If we have a fallback, include it
-      #{$property2}: var(--#{$varName2}, $var2, $fallback2);
-    } @else { // else, dont
-      #{$property2}: var(--#{$varName2}, $var2);
-    }
-  } @else { // No variable set, use the fallback
-    #{$property2}: #{$fallback2}; // Output legacy CSS
-    #{$property2}: var(--#{$varName2}, $fallback2); // Still provide the link to a CSS variable, should it become available
-  }
-}
-
-// Set variables
-@include setVar("main", rgb(255, 2, 251));
-@include setVar("contrast", rgb(5, 200, 244));
-
-// And make sure this is after you set your variables
-:root[data-theme="dark"] {
-  @each $key, $value in $rootVars {
-    --#{$key}: #{$value};
-  }
-}
- 
-:root[data-theme="light"] {
-    @each $key2, $value2 in $rootVars2 {
-      --#{$key2}: #{$value2};
-    }
-  }
 
 
 //allt ovan är test för att fixa dark-mode knapp
@@ -99,7 +8,7 @@ $rootVars2: ();
 
 //Gå igenom med Joel och resten av gruppen
 
-
+/*
 
 $primary-color: oklch(44% 0.0483 138.55);
 $primary-color1: oklch(60% 0.0483 138.55);
@@ -114,7 +23,7 @@ $black: oklch(10% 0.0483 138.55);
 $wrong-answer-color: oklch( 60% 0.1825 21.18);
 $right-answer-color: oklch( 70% 0.1776 141.88);
 
-
+*/
 
 footer {
     //background-color: $primary-color;
@@ -122,7 +31,6 @@ footer {
     border: 0.25rem solid;
     border-color: black;
     color: getVar("contrast");
-    @include var("background-color", "main", tomato); // The fallback 'tomato' is optional
   
 
 }
@@ -131,11 +39,11 @@ footer {
 
 .nav-btn {
     margin: auto;
-    background-color: $cta;
+    //background-color: $cta;
 }
 
 .nav-btn:hover {
-    background-color: $cta-hover;
+   // background-color: $cta-hover;
 }
 
 .frends {
@@ -215,7 +123,7 @@ footer {
 
 
 
-
+/*
 
 :root[data-theme="dark"] {
     $data-color-primary: hotpink;
@@ -254,7 +162,7 @@ footer {
     $toggleBtnRadius: 10em;
     $toggleBtn-bgColor--day: $bgColor--day;
 }
-*/
+
 
 #tdnn {
   margin: 0 auto;
@@ -308,3 +216,77 @@ footer {
 #moon, .sun {
     scale: 0.7;
 }
+
+*/
+
+
+.dm-test {
+  appearance: none;
+  margin: 0 auto;
+  font-size: 17.5%;
+  position: relative;
+  height: 2rem;
+  width: 4rem;
+  border-radius: 16rem;
+  transition: all 500ms ease-in-out;
+  background: #423966;
+  display: inline-block;
+}
+
+.dm-test::before {
+  content: "";
+  transition: 0.25s linear transform;
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  transition: all 400ms ease-in-out;
+
+  top: 0.5em;
+  left: 2em;
+  transform: rotate(-75deg);
+  width: 10em;
+  height: 10em;
+  background: #423966;
+  box-shadow: 3em 2.5em 0 0em #d9fbff inset,
+    rgba(255, 255, 255, 0.1) 0em -7em 0 -4.5em,
+    rgba(255, 255, 255, 0.1) 3em 7em 0 -4.5em,
+    rgba(255, 255, 255, 0.1) 2em 13em 0 -4em,
+    rgba(255, 255, 255, 0.1) 6em 2em 0 -4.1em,
+    rgba(255, 255, 255, 0.1) 8em 8em 0 -4.5em,
+    rgba(255, 255, 255, 0.1) 6em 13em 0 -4.5em,
+    rgba(255, 255, 255, 0.1) -4em 7em 0 -4.5em,
+    rgba(255, 255, 255, 0.1) -1em 10em 0 -4.5em;
+
+  scale: 0.7;
+
+  $primary-color: navy;
+
+}
+
+.dm-test:checked {
+  background-color: #ffa31a;
+}
+
+.dm-test:checked::before {
+  transform: translateX(2rem);
+  top: 2em;
+  left: 12em;
+  transform: rotate(0deg);
+  width: 7em;
+  height: 7em;
+  background: #fff;
+  box-shadow: 3em 3em 0 5em #fff inset, 0 -5em 0 -2.7em #fff,
+    3.5em -3.5em 0 -3em #fff, 5em 0 0 -2.7em #fff, 3.5em 3.5em 0 -3em #fff,
+    0 5em 0 -2.7em #fff, -3.5em 3.5em 0 -3em #fff, -5em 0 0 -2.7em #fff,
+    -3.5em -3.5em 0 -3em #fff;
+
+  $primary-color: hotpink;
+
+}
+
+#offcanvasBottom {
+  background-color: $primary-color;
+}
+
+
+//får det inte riktigt att fungera med hur man sätter :root då jsg behöver fixa variabler för alla färgerna
