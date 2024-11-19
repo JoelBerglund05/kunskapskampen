@@ -1,8 +1,8 @@
 $primary-color: oklch(44% 0.0483 138.55);
 $primary-color1: oklch(60% 0.0483 138.55);
 $primary-color2: oklch(65% 0.0483 138.55);
-$primary-color: oklch(80% 0.0483 138.55);
-$primary-color: oklch(95% 0.0483 138.55);
+$primary-color3: oklch(80% 0.0483 138.55);
+$primary-color4: oklch(95% 0.0483 138.55);
 $cta: oklch(82% 0.1455 79.31);
 $cta-hover: oklch(77% 0.1455 79.31);
 
@@ -18,6 +18,11 @@ $right-answer-color: oklch( 70% 0.1776 141.88);
 
 body {
     height: 100dvh;
+    background: $white;
+}
+
+h1, h2, h3, p, button {
+    color: $primary-color;
 }
 
 .main-container {
@@ -66,7 +71,7 @@ body {
     width: 8em;
     height: 4.3em;
     border-radius: 0.5em;
-    border: 2px solid $black;
+    border: 2px solid $primary-color;
     background: transparent;
 }
 
@@ -121,10 +126,10 @@ input[type="number"]:not(:in-range) {
 .timer-bar {
     width: 50dvw;
     max-width: 10em;
-    height: 1em;
+    height: .8em;
     font-size: 2em;
     text-align: center;
-    border: 3px solid;
+    border: 2px solid $primary-color;
     border-radius: 1.5em;
     background: transparent;
     margin: 0 auto;
@@ -138,7 +143,7 @@ input[type="number"]:not(:in-range) {
         background: transparent;
     }
     50% {
-        background: lime;
+        background: $right-answer-color;
     }
     100% {
         background: transparent;
@@ -150,7 +155,7 @@ input[type="number"]:not(:in-range) {
         background: transparent;
     }
     50% {
-        background: red;
+        background: $wrong-answer-color;
     }
     100% {
         background: transparent;

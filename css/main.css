@@ -1,6 +1,11 @@
 /*sass*/
 body {
   height: 100dvh;
+  background: oklch(99% 0.0483 138.55deg);
+}
+
+h1, h2, h3, p, button {
+  color: oklch(44% 0.0483 138.55deg);
 }
 
 .main-container {
@@ -49,7 +54,7 @@ body {
   width: 8em;
   height: 4.3em;
   border-radius: 0.5em;
-  border: 2px solid oklch(10% 0.0483 138.55deg);
+  border: 2px solid oklch(44% 0.0483 138.55deg);
   background: transparent;
 }
 
@@ -103,10 +108,10 @@ input[type=number]:not(:in-range) {
 .timer-bar {
   width: 50dvw;
   max-width: 10em;
-  height: 1em;
+  height: 0.8em;
   font-size: 2em;
   text-align: center;
-  border: 3px solid;
+  border: 2px solid oklch(44% 0.0483 138.55deg);
   border-radius: 1.5em;
   background: transparent;
   margin: 0 auto;
@@ -120,7 +125,7 @@ input[type=number]:not(:in-range) {
     background: transparent;
   }
   50% {
-    background: lime;
+    background: oklch(70% 0.1776 141.88deg);
   }
   100% {
     background: transparent;
@@ -131,7 +136,7 @@ input[type=number]:not(:in-range) {
     background: transparent;
   }
   50% {
-    background: red;
+    background: oklch(60% 0.1825 21.18deg);
   }
   100% {
     background: transparent;
