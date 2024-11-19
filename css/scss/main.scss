@@ -1,10 +1,111 @@
+// Define the rootVars variable and function
+$rootVars: ();
+
+// Mixins and Functions
+@mixin setVar($varName, $value){
+  $rootVars: map-merge($rootVars, (
+    #{$varName}: $value
+  )) !global;
+}
+
+@function getVar($varName) {
+  @return map-get($rootVars, #{$varName});
+}
+
+@mixin var($property, $varName, $fallback:false) {
+  $var: getVar($varName);
+  @if $var { // If we got a variable from the map, use it
+    #{$property}: #{$var}; // Output legacy CSS
+    @if $fallback { // If we have a fallback, include it
+      #{$property}: var(--#{$varName}, $var, $fallback);
+    } @else { // else, dont
+      #{$property}: var(--#{$varName}, $var);
+    }
+  } @else { // No variable set, use the fallback
+    #{$property}: #{$fallback}; // Output legacy CSS
+    #{$property}: var(--#{$varName}, $fallback); // Still provide the link to a CSS variable, should it become available
+  }
+}
+
+// Set variables
+@include setVar("main", green);
+@include setVar("contrast", red);
+
+// And make sure this is after you set your variables
+:root[data-theme="dark"] {
+  @each $key, $value in $rootVars {
+    --#{$key}: #{$value};
+  }
+}
+
+// Usage
+
+
+
+
+
+// Define the rootVars variable and function
+$rootVars2: ();
+
+// Mixins and Functions
+@mixin setVar($varName2, $value2){
+  $rootVars2: map-merge($rootVars2, (
+    #{$varName2}: $value2
+  )) !global;
+}
+
+@function getVar($varName2) {
+  @return map-get($rootVars2, #{$varName2});
+}
+
+@mixin var($property2, $varName2, $fallback2:false) {
+  $var2: getVar($varName2);
+  @if $var2 { // If we got a variable from the map, use it
+    #{$property2}: #{$var2}; // Output legacy CSS
+    @if $fallback2 { // If we have a fallback, include it
+      #{$property2}: var(--#{$varName2}, $var2, $fallback2);
+    } @else { // else, dont
+      #{$property2}: var(--#{$varName2}, $var2);
+    }
+  } @else { // No variable set, use the fallback
+    #{$property2}: #{$fallback2}; // Output legacy CSS
+    #{$property2}: var(--#{$varName2}, $fallback2); // Still provide the link to a CSS variable, should it become available
+  }
+}
+
+// Set variables
+@include setVar("main", rgb(255, 2, 251));
+@include setVar("contrast", rgb(5, 200, 244));
+
+// And make sure this is after you set your variables
+:root[data-theme="dark"] {
+  @each $key, $value in $rootVars {
+    --#{$key}: #{$value};
+  }
+}
+ 
+:root[data-theme="light"] {
+    @each $key2, $value2 in $rootVars2 {
+      --#{$key2}: #{$value2};
+    }
+  }
+
+
+//allt ovan är test för att fixa dark-mode knapp
+
+//Läs in på hur man gör detta via länken: https://stefvandijk.nl/blog/css-vars-in-sass/
+
+//kolla också med kenneth om detta skulle vara unorthodox
+
+//Gå igenom med Joel och resten av gruppen
+
 
 
 $primary-color: oklch(44% 0.0483 138.55);
 $primary-color1: oklch(60% 0.0483 138.55);
 $primary-color2: oklch(65% 0.0483 138.55);
-$primary-color: oklch(80% 0.0483 138.55);
-$primary-color: oklch(95% 0.0483 138.55);
+$primary-color3: oklch(80% 0.0483 138.55);
+$primary-color4: oklch(95% 0.0483 138.55);
 $cta: oklch(82% 0.1455 79.31);
 $cta-hover: oklch(77% 0.1455 79.31);
 
@@ -13,13 +114,20 @@ $black: oklch(10% 0.0483 138.55);
 $wrong-answer-color: oklch( 60% 0.1825 21.18);
 $right-answer-color: oklch( 70% 0.1776 141.88);
 
+
+
 footer {
-    background-color: hotpink;
+    //background-color: $primary-color;
     display: grid;
     border: 0.25rem solid;
     border-color: black;
+    color: getVar("contrast");
+    @include var("background-color", "main", tomato); // The fallback 'tomato' is optional
+  
 
 }
+
+
 
 .nav-btn {
     margin: auto;
@@ -110,7 +218,7 @@ footer {
 
 
 :root[data-theme="dark"] {
-    $test-primary-color: #1a1a29;
+    $data-color-primary: hotpink;
     $test-secondary-color: #0f0f19;
     $test-reccomend-color: #baa45a;
     $test-warning-color: #710a27;
@@ -168,11 +276,11 @@ footer {
   border-radius: 50%;
   transition: all 400ms ease-in-out;
 
-  top: 3em;
-  left: 3em;
+  top: 0em;
+  left: 2em;
   transform: rotate(-75deg);
-  width: 1rem;
-  height: 1rem;
+  width: 10em;
+  height: 10em;
   background: #423966;
   box-shadow: 3em 2.5em 0 0em #d9fbff inset,
     rgba(255, 255, 255, 0.1) 0em -7em 0 -4.5em,
@@ -185,8 +293,8 @@ footer {
     rgba(255, 255, 255, 0.1) -1em 10em 0 -4.5em;
 }
 #moon.sun {
-  top: 4.5em;
-  left: 18em;
+  top: 1.5em;
+  left: 11em;
   transform: rotate(0deg);
   width: 7em;
   height: 7em;
@@ -197,3 +305,6 @@ footer {
     -3.5em -3.5em 0 -3em #fff;
 }
 
+#moon, .sun {
+    scale: 0.7;
+}
