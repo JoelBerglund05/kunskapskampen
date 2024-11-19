@@ -87,9 +87,6 @@ class Main {
 
   Main() {
     const clickEvent = "click";
-    this.eventManager.EventListener(this.tmp, clickEvent, () => {
-      console.log(this.dataBase);
-    });
     this.RegisterServiceWorker();
 
     this.eventManager.EventListener(this.btnDBRequest, clickEvent, () =>
