@@ -15,10 +15,10 @@ $right-answer-color: oklch( 70% 0.1776 141.88);
 
 
 /*sass*/
-
 body {
     height: 100dvh;
     background: $white;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 h1, h2, h3, p, button {
