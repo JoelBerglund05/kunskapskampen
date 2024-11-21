@@ -8,9 +8,9 @@
 
 //Gå igenom med Joel och resten av gruppen
 
-/*
 
-$primary-color: oklch(44% 0.0483 138.55);
+
+$primary-color: light-dark(oklch(44% 0.0483 138.55) oklch(10% 0.0483 138.55));
 $primary-color1: oklch(60% 0.0483 138.55);
 $primary-color2: oklch(65% 0.0483 138.55);
 $primary-color3: oklch(80% 0.0483 138.55);
@@ -23,7 +23,7 @@ $black: oklch(10% 0.0483 138.55);
 $wrong-answer-color: oklch( 60% 0.1825 21.18);
 $right-answer-color: oklch( 70% 0.1776 141.88);
 
-*/
+
 
 footer {
     //background-color: $primary-color;
@@ -123,10 +123,10 @@ footer {
 
 
 
-/*
+
 
 :root[data-theme="dark"] {
-    $data-color-primary: hotpink;
+  --test-primary-color: hotpink;
     $test-secondary-color: #0f0f19;
     $test-reccomend-color: #baa45a;
     $test-warning-color: #710a27;
@@ -140,7 +140,7 @@ footer {
 
 
 :root[data-theme="light"] {
-    $test-primary-color: #f0f0ff;
+  --test-primary-color: #f0f0ff;
     $test-secondary-color: #d1d1ed;
     $test-reccomend-color: #baa45a;
     $test-warning-color: #990d35;
@@ -151,7 +151,7 @@ footer {
     $test-a-color: #00008b;
 }
 
-/*
+
 :root {
     $mooncolor: #d9fbff;
     $bgColor--day: #9ee3fb;
@@ -217,7 +217,19 @@ footer {
     scale: 0.7;
 }
 
-*/
+
+
+
+:root {
+  &:has(input[name="test"][value="light dark"]:checked){
+    color-scheme: light dark;
+  }
+}
+
+
+
+
+
 
 
 .dm-test {
@@ -259,12 +271,15 @@ footer {
 
   scale: 0.7;
 
-  $primary-color: navy;
 
 }
 
 .dm-test:checked {
   background-color: #ffa31a;
+}
+
+.otto[bs-dark-mode="true"]{
+  background-color: black;
 }
 
 .dm-test:checked::before {
@@ -280,7 +295,6 @@ footer {
     0 5em 0 -2.7em #fff, -3.5em 3.5em 0 -3em #fff, -5em 0 0 -2.7em #fff,
     -3.5em -3.5em 0 -3em #fff;
 
-  $primary-color: hotpink;
 
 }
 
