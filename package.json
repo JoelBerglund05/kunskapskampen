@@ -3,7 +3,8 @@
   "scripts": {
     "scss": "sass",
     "sass": "sass --watch css/scss/main.scss:css/main.css",
-    "prettier": "prettier . --write"
+    "prettier": "prettier . --write",
+    "axe": "axe-core"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.6",
@@ -12,6 +13,7 @@
     "sass": "^1.80.3"
   },
   "devDependencies": {
+    "axe-core": "^4.10.2",
     "express": "^4.21.1"
   }
 }
