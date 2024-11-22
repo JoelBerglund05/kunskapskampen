@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="manifest" href="manifest.json" />
         <link rel="stylesheet" href="reset.css">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/main.css">
         <title>Sudden Death</title>
     </head>
     <body>
@@ -19,11 +19,15 @@
             <div id="timer-bar" class="timer-bar"></div>
             <div class="answer">
                 <button id="decrease" class="decrease">-</button>
-                <input type="number" inputmode="numeric" min="0" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                <input id="input" type="number" inputmode="numeric" min="0" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                 <button id="increase" class="increase" >+</button>
+            </div>
+            <div class="answer">
+                <button id="sub-ans" class="submit-button">Submit Answer</button>
             </div>
         </div>
         <script type="text/javascript" src="animations.js"></script>
         <script type="text/javascript" src="timer.js"></script>
+        <script type="text/javascript" src="input.js"></script>
     </body>
 </html>
