@@ -9,6 +9,49 @@
 //Gå igenom med Joel och resten av gruppen
 
 
+:root[data-teme="dark"] {
+  --test-primary-color: hotpink;
+    $test-secondary-color: #0f0f19;
+    $test-reccomend-color: #baa45a;
+    $test-warning-color: #710a27;
+    $test-text-color: #f9f6ee;
+    $test-btn-hover-color: #b97816;
+    $test-a-hover-color: #9265eb;
+    $test-card-color: #2a2a3c;
+    $test-a-color: #9696f9;
+}
+
+
+
+:root[data-theme="light"] {
+  --test-primary-color: #f0f0ff;
+    $test-secondary-color: #d1d1ed;
+    $test-reccomend-color: #baa45a;
+    $test-warning-color: #990d35;
+    $test-text-color: #131019;
+    $test-btn-hover-color: #ea971b;
+    $test-a-hover-color: #0000ff;
+    $test-card-color: #b9b9d7;
+    $test-a-color: #00008b;
+}
+
+
+:root {
+  --test-primary-color: red;
+    $mooncolor: #d9fbff;
+    $bgColor--day: #9ee3fb;
+    $bgColor--night: #423966;
+    $toggleBtn-bgColor--night: $bgColor--night;
+    $toggleHeight: 16em;
+    $toggleWidth: 30em;
+    $toggleBtnRadius: 10em;
+    $toggleBtn-bgColor--day: $bgColor--day;
+
+}
+
+/*
+//behövs inte om vi använder orginalknappen för darkmode
+
 
 $primary-color: light-dark(oklch(44% 0.0483 138.55) oklch(10% 0.0483 138.55));
 $primary-color1: oklch(60% 0.0483 138.55);
@@ -22,7 +65,7 @@ $white: oklch(99% 0.0483 138.55);
 $black: oklch(10% 0.0483 138.55);
 $wrong-answer-color: oklch( 60% 0.1825 21.18);
 $right-answer-color: oklch( 70% 0.1776 141.88);
-
+*/
 
 
 footer {
@@ -32,8 +75,8 @@ footer {
     border-color: black;
     color: getVar("contrast");
   
-
-}
+    background-color: (hotpink, #A63534);
+  }
 
 
 
@@ -125,43 +168,10 @@ footer {
 
 
 
-:root[data-theme="dark"] {
-  --test-primary-color: hotpink;
-    $test-secondary-color: #0f0f19;
-    $test-reccomend-color: #baa45a;
-    $test-warning-color: #710a27;
-    $test-text-color: #f9f6ee;
-    $test-btn-hover-color: #b97816;
-    $test-a-hover-color: #9265eb;
-    $test-card-color: #2a2a3c;
-    $test-a-color: #9696f9;
-}
 
 
 
-:root[data-theme="light"] {
-  --test-primary-color: #f0f0ff;
-    $test-secondary-color: #d1d1ed;
-    $test-reccomend-color: #baa45a;
-    $test-warning-color: #990d35;
-    $test-text-color: #131019;
-    $test-btn-hover-color: #ea971b;
-    $test-a-hover-color: #0000ff;
-    $test-card-color: #b9b9d7;
-    $test-a-color: #00008b;
-}
 
-
-:root {
-    $mooncolor: #d9fbff;
-    $bgColor--day: #9ee3fb;
-    $bgColor--night: #423966;
-    $toggleBtn-bgColor--night: $bgColor--night;
-    $toggleHeight: 16em;
-    $toggleWidth: 30em;
-    $toggleBtnRadius: 10em;
-    $toggleBtn-bgColor--day: $bgColor--day;
-}
 
 
 #tdnn {
@@ -218,13 +228,8 @@ footer {
 }
 
 
+//test av dm
 
-
-:root {
-  &:has(input[name="test"][value="light dark"]:checked){
-    color-scheme: light dark;
-  }
-}
 
 
 
@@ -299,8 +304,10 @@ footer {
 }
 
 #offcanvasBottom {
-  background-color: $primary-color;
+  background-color: (#0000ff, #A63534);
 }
+
+
 
 
 //får det inte riktigt att fungera med hur man sätter :root då jsg behöver fixa variabler för alla färgerna

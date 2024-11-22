@@ -1,8 +1,39 @@
+@charset "UTF-8";
+:root[data-teme=dark] {
+  --test-primary-color: hotpink;
+}
+
+:root[data-theme=light] {
+  --test-primary-color: #f0f0ff;
+}
+
+:root {
+  --test-primary-color: red;
+}
+
+/*
+//behövs inte om vi använder orginalknappen för darkmode
+
+
+$primary-color: light-dark(oklch(44% 0.0483 138.55) oklch(10% 0.0483 138.55));
+$primary-color1: oklch(60% 0.0483 138.55);
+$primary-color2: oklch(65% 0.0483 138.55);
+$primary-color3: oklch(80% 0.0483 138.55);
+$primary-color4: oklch(95% 0.0483 138.55);
+$cta: oklch(82% 0.1455 79.31);
+$cta-hover: oklch(77% 0.1455 79.31);
+
+$white: oklch(99% 0.0483 138.55);
+$black: oklch(10% 0.0483 138.55);
+$wrong-answer-color: oklch( 60% 0.1825 21.18);
+$right-answer-color: oklch( 70% 0.1776 141.88);
+*/
 footer {
   display: grid;
   border: 0.25rem solid;
   border-color: black;
   color: getVar("contrast");
+  background-color: hotpink, #A63534;
 }
 
 .nav-btn {
@@ -80,14 +111,6 @@ footer {
   margin-left: 0.5rem;
 }
 
-:root[data-theme=dark] {
-  --test-primary-color: hotpink;
-}
-
-:root[data-theme=light] {
-  --test-primary-color: #f0f0ff;
-}
-
 #tdnn {
   margin: 0 auto;
   font-size: 17.5%;
@@ -130,10 +153,6 @@ footer {
 
 #moon, .sun {
   scale: 0.7;
-}
-
-:root:has(input[name=test][value="light dark"]:checked) {
-  color-scheme: light dark;
 }
 
 .dm-test {
@@ -186,7 +205,7 @@ footer {
 }
 
 #offcanvasBottom {
-  background-color: light-dark(oklch(44% 0.0483 138.55deg) oklch(10% 0.0483 138.55deg));
+  background-color: #0000ff, #A63534;
 }
 
 /*# sourceMappingURL=main.css.map */
