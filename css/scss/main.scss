@@ -54,6 +54,8 @@ h1, h2, h3, p, button, .answer input {
 .answer {
     gap: 0.5rem;
     height: 3.6em;
+    //flex-wrap: wrap;
+    //flex-grow: 3
 }
 
 .answer, .choice-answer {
