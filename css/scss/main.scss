@@ -45,17 +45,33 @@ h1, h2, h3, p, button, .answer input {
     text-align: center;
 }
 
-.question, .answer, .timer {
+.question, .timer {
     display: flex;
     justify-content: center;
     margin-top: 3em;
 }
 
 .answer {
+    display: flex;
     gap: 0.5rem;
     height: 3.6em;
-    //flex-wrap: wrap;
-    //flex-grow: 3
+    flex-wrap: wrap;
+    flex: 1 1 33.333%;
+    justify-content: space-around;
+    margin-top: 3em;
+}
+
+.answer button {
+    margin: 0;
+}
+
+.answer * {
+    flex: 1 1 33.333%;
+    max-width: 33.333%;
+}
+
+.answer .submit-button {
+    max-width: 33.333%;
 }
 
 .answer, .choice-answer {
@@ -65,7 +81,7 @@ h1, h2, h3, p, button, .answer input {
 .choice-answer {
     margin: 0 auto;
     margin-top: 4em;
-    justify-content: space-between;
+    justify-content: start;
     flex-wrap: wrap;
     width: 25vw;
     height: 40dvh;
@@ -120,6 +136,7 @@ input[type="number"]:not(:in-range) {
     text-align: center;
     align-self: center;
     height: 1.8em;
+    max-width: max-content;
     aspect-ratio: 1;
     border: 3px solid;
     border-radius: 0.2em;
@@ -188,5 +205,16 @@ input[type="number"]:not(:in-range) {
     }
     100% {
         background: red;
+    }
+}
+
+
+/*Media Quieries*/
+
+@media screen and (max-width: 40em) {
+    //* { background: red; }
+    .answer input, .answer .submit-answer {
+        min-width: 2em;
+        max-width: 2em;
     }
 }
