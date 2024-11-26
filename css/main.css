@@ -87,6 +87,7 @@ h1, h2, h3, p, button, .answer input {
 
 .submit-button {
   width: 100%;
+  height: 100%;
   font-size: 2em;
   text-align: center;
   border: 3px solid;
@@ -98,6 +99,8 @@ h1, h2, h3, p, button, .answer input {
   display: grid;
   grid-template-columns: repeat(1, 100%);
   gap: 1rem;
+  width: 55%;
+  margin: 0 auto;
 }
 
 .answer-size {
@@ -193,6 +196,21 @@ input[type=number]:not(:in-range) {
 @media screen and (max-width: 40em) {
   .answer input {
     min-width: 2em;
+  }
+}
+@media screen and (max-width: 547px) {
+  .submit-button {
+    height: fit-content;
+  }
+}
+@media screen and (min-width: 905px) {
+  .answer-grid {
+    width: 40%;
+  }
+}
+@media screen and (min-width: 1334px) {
+  .answer-grid {
+    width: 25%;
   }
 }
 
