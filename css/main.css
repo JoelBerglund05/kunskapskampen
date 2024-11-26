@@ -155,8 +155,7 @@ input[type=number]:not(:in-range) {
   background: transparent;
   margin: 0 auto;
   margin-top: 1em;
-  background: red;
-  animation: time-bar 20s ease;
+  background: linear-gradient(to right, oklch(38% 0.15 29deg), oklch(63% 0.26 29deg), oklch(61% 0.17 46deg), oklch(82% 0.15 81deg), oklch(87% 0.26 143deg));
 }
 
 @keyframes answer-button-in {
