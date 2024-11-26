@@ -1,11 +1,13 @@
 {
   "name": "pwa-quizz-game",
   "scripts": {
-    "scss": "sass",
-    "prettier": "prettier . --write"
+    "scss": "sass css/scss/main.scss css/main.css",
+    "prettier": "prettier . --write",
+    "livereload": "livereload"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.6",
+    "live-reload": "^1.1.1",
     "prettier": "^3.3.3",
     "sass": "^1.80.3"
   }
