@@ -57,7 +57,7 @@ h1, h2, h3, p, button, .answer input {
     height: 3.6em;
     flex-wrap: wrap;
     flex: 1 1 33.333%;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 3em;
 }
 
@@ -67,11 +67,6 @@ h1, h2, h3, p, button, .answer input {
 
 .answer * {
     flex: 1 1 33.333%;
-    max-width: 33.333%;
-}
-
-.answer .submit-button {
-    max-width: 33.333%;
 }
 
 .answer, .choice-answer {
@@ -98,9 +93,7 @@ h1, h2, h3, p, button, .answer input {
 }
 
 .answer input {
-    width: 50dvw;
-    max-width: 10em;
-    max-height: 3em;
+    width: 100%;
     font-size: 2em;
     text-align: center;
     border: 3px solid;
@@ -108,16 +101,27 @@ h1, h2, h3, p, button, .answer input {
     background: transparent;
 }
 
-.answer .submit-button {
-    width: 50dvw;
-    max-width: 10em;
-    max-height: 3em;
+.submit-button {
+    width: 100%;
     font-size: 2em;
     text-align: center;
     border: 3px solid;
     border-radius: 0.2em;
     background: transparent;
 }
+
+
+.answer-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    gap: 1rem;
+}
+
+.answer-size {
+    height: 3.6em;
+}
+
+
 
 .answer input[type="number"]::-webkit-inner-spin-button {
     display: none;
@@ -213,8 +217,7 @@ input[type="number"]:not(:in-range) {
 
 @media screen and (max-width: 40em) {
     //* { background: red; }
-    .answer input, .answer .submit-answer {
+    .answer input {
         min-width: 2em;
-        max-width: 2em;
     }
 }
