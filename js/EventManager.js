@@ -1,7 +1,11 @@
 export default class EventManager {
-  EventListener(element, eventType, method) {
+  ElementEventListener(element, eventType, method) {
     if (element) {
       element.addEventListener(eventType, method);
     }
+  }
+
+  NoneElementEventListener(eventType, method){
+    document.addEventListener(eventType, (event) => method(event));
   }
 }

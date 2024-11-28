@@ -57,22 +57,22 @@ class Main {
     const clickEvent = "click";
     this.RegisterServiceWorker();
 
-    this.eventManager.EventListener(this.btnDBRequest, clickEvent, () =>
+    this.eventManager.ElementEventlistener(this.btnDBRequest, clickEvent, () =>
       this.DisplayQuestion(1),
     );
 
-    this.eventManager.EventListener(this.btnCreateAccount, clickEvent, () =>
+    this.eventManager.ElementEventlistener(this.btnCreateAccount, clickEvent, () =>
       this.dataBase.SignUpUser(this.email.value, [
         this.password[0].value,
         this.password[1].value,
       ]),
     );
 
-    this.eventManager.EventListener(this.btnSignIn, clickEvent, () =>
+    this.eventManager.ElementEventlistener(this.btnSignIn, clickEvent, () =>
       this.dataBase.SignInUser(this.email.value, this.password.value),
     );
 
-    this.eventManager.EventListener(this.btnCreateGame, clickEvent, () =>
+    this.eventManager.ElementEventlistener(this.btnCreateGame, clickEvent, () =>
       this.gameHandeler.CreateGame(this.dataBase),
     );
   }
@@ -80,22 +80,3 @@ class Main {
 
 const main = new Main();
 main.Main();
-
-
-
-const addResourcesToCache = async (resources) => {
-  const cache = await cache.open("v1");
-  await cache.addAll(resources);
-}
-
-self.addEventListener("install", (event) => {
-  event.waitUntil(
-    addResourcesToCache([
-      "/",
-      "/index.html",
-      "/css/main.css",
-      "/css/scss/main.scss",
-    ]),
-  );
-});
-
