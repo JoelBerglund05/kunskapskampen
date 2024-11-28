@@ -1,12 +1,15 @@
 import DataBase from "./DataBase.js";
 import EventManager from "./EventManager.js";
 import GameHandeler from "./GameHandeler.js";
+import Answer from "./Answer.js";
+import Timer from "js/Timer.js";
 
 class Main {
   constructor() {
     this.dataBase = new DataBase();
     this.eventManager = new EventManager();
     this.gameHandeler = new GameHandeler();
+    this.answer = new Answer();
     this.btnDBRequest = document.getElementById("btnDBRequest");
     this.displayData = document.getElementById("dBData");
     this.btnCreateAccount = document.getElementById("createAccount");
@@ -19,6 +22,12 @@ class Main {
     this.btnCreateGame = document.getElementById("createGame");
 
     this.tmp = document.getElementById("tmp");
+
+    this.answerNumberInput = document.getElementById("answerNumberInput");
+    this.btnSubmitAnswerSuddenDeath = document.getElementById("submitAnswerSuddenDeath");
+
+    this.countdownEl = document.getElementById("timer");
+    this.countdownBar = document.getElementById("timer-bar");
   }
   RegisterServiceWorker() {
     if ("serviceWorker" in navigator) {
@@ -55,6 +64,8 @@ class Main {
   }
   Main() {
     const clickEvent = "click";
+    const keyboardEvent = "keydown";
+
     this.RegisterServiceWorker();
 
     this.eventManager.EventListener(this.btnDBRequest, clickEvent, () =>
@@ -75,6 +86,9 @@ class Main {
     this.eventManager.EventListener(this.btnCreateGame, clickEvent, () =>
       this.gameHandeler.CreateGame(this.dataBase),
     );
+
+    this.eventManager.EventListener(this.answerNumberInput, keyboardEvent, this.answer.InputAllowNumbersOnly);
+
   }
 }
 

@@ -1,4 +1,4 @@
-class Answer {
+export default class Answer {
     constructor(){}
 
     InputAllowNumbersOnly(event){

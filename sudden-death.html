@@ -17,17 +17,15 @@
                 <h2 id="timer">20</h2><h2>Seconds Left</h2>
             </div>
             <div id="timer-bar" class="timer-bar"></div>
-            <div class="answer-grid">
+            <form class="answer-grid">
                 <div class="answer">
-                    <input id="input" type="text" inputmode="numeric" min="0" pattern="[0-9]+">
+                    <input id="answerNumberInput" type="text" inputmode="numeric" pattern="[0-9]" min="0" pattern="[0-9]+">
                 </div>
                 <div class="answer-size">
-                    <button id="sub-ans" class="submit-button">Submit Answer</button>
+                    <button type="submit" id="submitAnswerSuddenDeath" class="submit-button">Submit Answer</button>
                 </div>
-            </div>
+            </form>
         </div>
-        <script type="text/javascript" src="animations.js"></script>
-        <script type="text/javascript" src="timer.js"></script>
-        <script type="text/javascript" src="input.js"></script>
+        <script type="module" src="js/main.js"></script>
     </body>
 </html>
