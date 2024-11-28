@@ -4,7 +4,7 @@
     "scss": "sass",
     "sass": "sass --watch css/scss/main.scss:css/main.css",
     "prettier": "prettier . --write",
-    "xcore": "axe-core"
+    "axe-core": "axe-core"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.6",
