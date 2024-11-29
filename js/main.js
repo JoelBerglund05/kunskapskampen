@@ -26,7 +26,7 @@ class Main {
     this.answerNumberInput = document.getElementById("answerNumberInput");
     this.btnSubmitAnswerSuddenDeath = document.getElementById("submitAnswerSuddenDeath");
 
-    this.countdownEl = document.getElementById("timer");
+    this.countdownElement = document.getElementById("timer");
     this.countdownBar = document.getElementById("timer-bar");
   }
   RegisterServiceWorker() {
