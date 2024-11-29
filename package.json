@@ -1,14 +1,16 @@
 {
   "name": "pwa-quizz-game",
   "scripts": {
-    "scss": "sass",
-    "sass": "sass --watch css/scss/main.scss:css/main.css",
+    "scss": "sass css/scss/main.scss css/main.css",
+    "sass": "sass --watch css/scss/main.scss css/main.css",
     "prettier": "prettier . --write",
-    "axe-core": "axe-core"
+    "axe-core": "axe-core",
+    "pally": "pa11y"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.6",
     "bootstrap": "^5.3.3",
+    "pa11y": "^8.0.0",
     "prettier": "^3.3.3",
     "sass": "^1.80.3"
   },
