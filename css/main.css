@@ -4,7 +4,7 @@ html, body {
 
 body {
   margin: 0;
-  background-color: oklch(65% 0.0483 138.55deg);
+  background-color: oklch(99% 0.0482 138.55deg);
 }
 
 img {
@@ -40,24 +40,38 @@ img {
 }
 .row.btn-container {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
   width: 100%;
 }
 
 .btns {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn1, .btn2, .btn3 {
   padding: 1%;
   margin-top: 1%;
   margin-bottom: 1%;
-  width: 100%;
+  width: 50%;
   height: 10vh;
+}
+
+.btn2, .btn3 {
+  background-color: oklch(80% 0.0483 138.55deg);
+}
+
+.btn1 {
   background-color: oklch(82% 0.1455 79.31deg);
 }
 
+.btn1:active {
+  background-color: oklch(77% 0.1455 79.31deg);
+}
 
+.btn2:active, .btn3:active {
+  background-color: oklch(75% 0.0483 138.55deg);
+}
 
 /*# sourceMappingURL=main.css.map */

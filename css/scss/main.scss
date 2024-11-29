@@ -23,7 +23,7 @@ html, body {
 //hjälp med scss compilering
 body {
   margin: 0;
-  background-color: $primary65;
+  background-color: $white;
 }
 
 img {
@@ -42,8 +42,6 @@ img {
 .account-image {
   fill: $black;
 }
-
-
 
 .big-container {
   display: flex;
@@ -64,8 +62,6 @@ img {
   }
   &.btn-container {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
     width: 100%;
   }
 }
@@ -73,15 +69,32 @@ img {
 
 .btns {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn1, .btn2, .btn3 {
   padding: 1%;
   margin-top: 1%;
   margin-bottom: 1%;
-  width: 100%;
+  width: 50%;
   height: 10vh;
+}
+
+.btn2, .btn3 {
+  background-color: $primary80;
+}
+
+.btn1 {
   background-color: $cta;
 }
 
-/*# sourceMappingURL=main.scss.map */
+.btn1:active {
+  background-color: oklch(77% 0.1455 79.31);
+}
+
+.btn2:active, .btn3:active {
+  background-color: oklch(75% 0.0483 138.55);
+}
+
