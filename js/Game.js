@@ -7,6 +7,15 @@ export default class Game {
         this.player2Answer;
         player1Points = Number(player1Points);
         player2Points = Number(player2Points);
+        this.player1InputNumberAnswer = //Variable of the answer for number inputs
+        this.player2InputNumberAnswer = //Variable of the answer for number inputs
+        this.correctInputAnswer = //Variable of the answer for number inputs
+        player1InputNumberAnswer = Number(inputNumberAnswer);
+        player2InputNumberAnswer = Number(inputNumberAnswer);
+        correctInputAnswer = Number(correctInputAnswer);
+
+        this.player1ScoreElement = document.getElementById("player1Score");
+        this.player2ScoreElement = document.getElementById("player2Score");
     }
 
     checkAnswerRight() {
@@ -16,10 +25,15 @@ export default class Game {
     }
 
     //NOT DONE YET BUDDY!
-    checkClosestOnSuddenDeath(target, numbers) {
-        return numbers.reduce((prev, curr) => {
-            // Compare the absolute difference between current and target
-            return (Math.abs(curr - target) < Math.abs(prev - target) ? curr : prev);
-        });
+    checkClosestOnSuddenDeath() {
+        var array = [player1InputNumberAnswer, player2InputNumberAnswer];
+        for (correctInputAnswer in array) {
+            //WRITE CODE!
+        }
+    }
+
+    updateScore() {
+        player1ScoreElement.innerHTML = player1Points;
+        player2ScoreElement.innerHTML = player2Points;
     }
 }
