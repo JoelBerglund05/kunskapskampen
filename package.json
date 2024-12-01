@@ -1,6 +1,9 @@
 {
   "name": "pwa-quizz-game",
   "scripts": {
+    "scss1": "sass --watch css/scss/sign-up.scss css/sign-up.css",
+    "scss2": "sass --watch css/scss/sign-in.scss css/sign-in.css",
+    "scss3": "sass --watch css/scss/forgotten-password.scss css/forgotten-password.css",
     "scss": "sass",
     "sass": "sass --watch css/scss/main.scss:css/main.css",
     "prettier": "prettier . --write"
@@ -9,7 +12,7 @@
     "@supabase/supabase-js": "^2.45.6",
     "bootstrap": "^5.3.3",
     "prettier": "^3.3.3",
-    "sass": "^1.80.3"
+    "sass": "^1.81.0"
   },
   "devDependencies": {
     "express": "^4.21.1"

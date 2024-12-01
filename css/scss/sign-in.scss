@@ -1,0 +1,172 @@
+@use 'main.scss';
+
+$color: main.$white;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: $color;
+}
+
+.big-container {
+    width: 420px;
+    background-color: main.$primary-color;
+    color: $color;
+    border-radius: 10px;
+    padding: 30px 40px;
+    box-shadow: 7px 0 7px main.$black;
+
+}
+
+.big-container h1 {
+    font-size: 36px;
+    text-align: center;
+}
+
+.big-container .input-box  {
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid red;
+    border-radius: 40px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder {
+    color: #fff;
+}
+
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px
+}
+
+.big-container .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    margin: -15px 0 15px;
+}
+
+.check {
+    cursor: pointer;
+}
+
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.big-container .btn {
+    width: 100%;
+    height: 45px;
+    background-color: main.$cta;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px main.$black;
+    cursor: pointer;
+    font-size: 16px;
+    color: main.$black;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background-color: main.$cta-hover;
+}
+
+
+.big-container .register-link {
+
+    text-align: center;
+    margin-top: 20px 0 15px;
+}
+
+.register-link p a {
+    color: #fff;
+    text-decoration: one;
+    font-weight: 600;
+}
+
+.register-link p a:hover {
+    text-decoration: underline;
+}
+
+.box {
+    margin: 4px;
+}
+
+.register-link {
+    margin-top: 5%;
+
+}
+
+.forgot {
+    color: rgb(0, 255, 149); /*förslag på färg*/
+}
+
+/*
+html {
+    height: 100%;
+}
+
+body {
+    background-color: main.$white;
+    margin: 0;
+    height: 100%;
+}
+
+
+
+
+
+
+.big-container {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.container {
+    border: 2px solid red;
+    border-radius: 0.3em;
+    height: 600px;
+    width: 600px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+*/
