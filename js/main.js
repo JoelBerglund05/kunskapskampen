@@ -80,3 +80,8 @@ class Main {
 
 const main = new Main();
 main.Main();
+
+
+//forka pwa quizz game repo
+//sätt upp github pages
+//skapa en pull request när jag är klar, eller tror att jag är klar
