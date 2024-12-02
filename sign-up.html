@@ -9,25 +9,33 @@
   </head>
   <body>
     <div class="big-container">
-        <form action="">
-            <h1>Sign up</h1>
-            <div class="input-box">
-                <input type="text" placeholder="E-mail" required>
-            </div>
-            <div class="input-box">
-              <input type="text" placeholder="Username" required>
-            </div>
-            <div class="input-box">
-                <input type="password" placeholder="Password" required>
-                <i class="bx bxs-lock-alt"></i>
-            </div>
-            <div class="input-box">
-              <input type="password" placeholder="Confirm password" required>
-              <i class="bx bxs-lock-alt"></i>
-            </div>
-            <button type="submit" class="btn">Create account</button>
-        </form>
+      <form onSubmit="return ch6eckPassword(this)" method="POST">
+        <h1>Sign up</h1>
+
+        <div class="input-box">
+          <label for="E-mail" class="paragraph">New password:</label>
+          <input id="E-mail" type="text" placeholder="E-mail" required>
+        </div>
+
+        <div class="input-box">
+          <label for="username" class="paragraph">Username</label>
+          <input id="username" type="text" placeholder="Username" required>
+        </div>
+
+        <div class="input-box">
+          <label for="password1" class="paragraph">New password:</label>
+          <input id="password1" type="password" name="password1" size="25" placeholder="Melon123" required>
+        </div>
+
+        <div class="input-box">
+          <label for="password2" class="paragraph">New password:</label>
+          <input id="password2" type="password" name="password1" size="25" placeholder="Melon123" required>
+        </div>
+        
+        <button type="submit" value="submit" class="btn">Create Account</button>
+      </form>
     </div>
     <script type="module" src="js/main.js"></script>
+    <script src="reset-password.js"></script>
   </body>
 </html>
