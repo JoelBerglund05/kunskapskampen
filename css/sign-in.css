@@ -40,14 +40,14 @@ body {
   background-color: transparent;
   border: none;
   outline: none;
-  border: 2px solid red;
+  border: 2px solid oklch(99% 0.0483 138.55deg);
   border-radius: 40px;
-  color: #fff;
+  color: oklch(99% 0.0483 138.55deg);
   padding: 20px 45px 20px 20px;
 }
 
 .input-box input::placeholder {
-  color: #fff;
+  color: oklch(99% 0.0483 138.55deg);
 }
 
 .input-box i {
@@ -96,9 +96,10 @@ body {
 }
 
 .register-link p a {
-  color: #fff;
+  color: red;
   text-decoration: one;
   font-weight: 600;
+  background-color: red;
 }
 
 .register-link p a:hover {
@@ -113,7 +114,7 @@ body {
   margin-top: 5%;
 }
 
-.forgot {
+.link {
   color: rgb(0, 255, 149); /*förslag på färg*/
 }
 

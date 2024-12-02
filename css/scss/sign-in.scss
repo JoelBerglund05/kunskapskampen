@@ -44,14 +44,14 @@ body {
     background-color: transparent;
     border: none;
     outline: none;
-    border: 2px solid red;
+    border: 2px solid $color;
     border-radius: 40px;
-    color: #fff;
+    color: $color;
     padding: 20px 45px 20px 20px;
 }
 
 .input-box input::placeholder {
-    color: #fff;
+    color: $color;
 }
 
 .input-box i {
@@ -103,9 +103,10 @@ body {
 }
 
 .register-link p a {
-    color: #fff;
+    color: red;
     text-decoration: one;
     font-weight: 600;
+    background-color: red;
 }
 
 .register-link p a:hover {
@@ -121,7 +122,7 @@ body {
 
 }
 
-.forgot {
+.link {
     color: rgb(0, 255, 149); /*förslag på färg*/
 }
 

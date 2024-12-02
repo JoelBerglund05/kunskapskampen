@@ -4,6 +4,7 @@
     "scss1": "sass --watch css/scss/sign-up.scss css/sign-up.css",
     "scss2": "sass --watch css/scss/sign-in.scss css/sign-in.css",
     "scss3": "sass --watch css/scss/forgotten-password.scss css/forgotten-password.css",
+    "scss4": "sass --watch css/scss/reset-password.scss css/reset-password.css",
     "scss": "sass",
     "sass": "sass --watch css/scss/main.scss:css/main.css",
     "prettier": "prettier . --write"
