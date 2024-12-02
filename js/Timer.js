@@ -1,8 +1,8 @@
 export default class Timer {
     constructor(){
         this.startingTime = 20;
-        this.countdownEl = document.getElementById('timer');
-        this.countdownBar = document.getElementById('timer-bar');
+        this.timerElement = document.getElementById('timer');
+        this.timerBar = document.getElementById('timer-bar');
     }
 
     countdownUpdater(event) {
@@ -14,7 +14,7 @@ export default class Timer {
     updateCountdown() {
         if (startingTime > 0) {
             startingTime = startingTime - 1;
-            countdownEl.innerHTML = startingTime;
+            timerEl.innerHTML = startingTime;
         }
     }
 }
