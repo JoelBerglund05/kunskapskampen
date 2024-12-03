@@ -1,15 +1,21 @@
-const validationEmail = (email) => {
-    return email.match(
-        /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    );
-};
+
+const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
 const validate = () => {
-    const $result = $('result');
-    const email = $('#email').val();
-    $result.text('');
+    const result = document.getElementById('result');
+    const email = document.getElementById('email').value;
+    result.textContent = '';
 
-    if(validationEmail(email)){
-        $resulttext(email + ' is valid');
+    if(validateEmail(email)){
+        result.textContent = `${email} is valid`;
+        result.style.color = 'green';
     }
+    else {
+        result.textContent = `${email} is invalid`;
+        result.style.color = 'red';
+    }
+    return false;
 }
+
+document.getElementById('email').addEventListener('input', validate)
+
