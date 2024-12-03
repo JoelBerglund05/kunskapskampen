@@ -18,7 +18,6 @@ function checkPassword(form) {
 
     // If same return True.
     else {
-
         window.location.href = "sign-in.html";
         return false;
     }
