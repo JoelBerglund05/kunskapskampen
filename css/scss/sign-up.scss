@@ -10,9 +10,19 @@ $color: main.$white;
 }
 
 .link {
-    color: main.$link-test
+    color: main.$link-test;
 }
 
+.result {
+    margin-left: 1rem;
+}
+.input-box .email {
+    color: main.$wrong-answer-color;
+}
+
+.paragraph {
+    margin-left: 1.3rem;
+}
 body {
     display: flex;
     justify-content: center;
@@ -50,16 +60,14 @@ body {
     outline: none;
     border: 2px solid main.$primary-color2;
     border-radius: 2.5rem;
-    color: #fff;
+    color: $color;
     padding: 1.25rem 2.813rem 1.25rem 1.25rem;
 }
 
-.paragraph {
-    margin-left: 1.3rem;
-}
+
 
 .input-box input::placeholder {
-    color: #fff;
+    color: $color;
 }
 
 .input-box i {
