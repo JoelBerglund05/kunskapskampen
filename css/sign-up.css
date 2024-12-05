@@ -14,7 +14,7 @@
 }
 
 .input-box .email {
-  /*color: main.$wrong-answer-color;*/
+  color: oklch(100% 0.0483 138.55deg);
 }
 
 .paragraph {
