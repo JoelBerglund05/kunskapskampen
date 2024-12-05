@@ -10,11 +10,11 @@
 }
 
 .result {
-  margin-left: 1rem;
+  /*margin-left: 1rem;*/
 }
 
 .input-box .email {
-  color: oklch(60% 0.1825 21.18deg);
+  /*color: main.$wrong-answer-color;*/
 }
 
 .paragraph {
@@ -57,7 +57,7 @@ body {
   outline: none;
   border: 2px solid oklch(65% 0.0483 138.55deg);
   border-radius: 2.5rem;
-  color: oklch(100% 0.0483 138.55deg);
+  /*color: $color;*/
   padding: 1.25rem 2.813rem 1.25rem 1.25rem;
 }
 

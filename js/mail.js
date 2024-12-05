@@ -13,7 +13,6 @@ const validate = () => {
     else {
         result.textContent = `${email} is invalid`;
         result.style.color = 'oklch( 60% 0.1825 21.18)';
-        email.style.color = 'oklch( 70% 0.1776 141.88)';
     }
     return false;
 }
