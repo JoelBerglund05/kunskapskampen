@@ -6,6 +6,7 @@ const validate = () => {
     const email = document.getElementById('email').value;
     result.textContent = '';
 
+
     if(validateEmail(email)){
         result.textContent = `${email} is valid`;
         result.style.color = 'oklch( 70% 0.1776 141.88)';
@@ -13,6 +14,7 @@ const validate = () => {
     else {
         result.textContent = `${email} is invalid`;
         result.style.color = 'oklch( 60% 0.1825 21.18)';
+        
     }
     return false;
 }
