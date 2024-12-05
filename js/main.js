@@ -3,6 +3,7 @@ import EventManager from "./EventManager.js";
 import GameHandeler from "./GameHandeler.js";
 import Answer from "./Answer.js";
 import Timer from "js/Timer.js";
+import Template from "./Template.js";
 
 class Main {
   constructor() {
