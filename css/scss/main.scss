@@ -9,51 +9,48 @@
 //Gå igenom med Joel och resten av gruppen
 
 
-:root[data-teme="dark"] {
-  --test-primary-color: hotpink;
-    $test-secondary-color: #0f0f19;
-    $test-reccomend-color: #baa45a;
-    $test-warning-color: #710a27;
-    $test-text-color: #f9f6ee;
-    $test-btn-hover-color: #b97816;
-    $test-a-hover-color: #9265eb;
-    $test-card-color: #2a2a3c;
-    $test-a-color: #9696f9;
-}
-
-
-
-:root[data-theme="light"] {
-  --test-primary-color: #f0f0ff;
-    $test-secondary-color: #d1d1ed;
-    $test-reccomend-color: #baa45a;
-    $test-warning-color: #990d35;
-    $test-text-color: #131019;
-    $test-btn-hover-color: #ea971b;
-    $test-a-hover-color: #0000ff;
-    $test-card-color: #b9b9d7;
-    $test-a-color: #00008b;
-}
+//Fixa så att footern stannar längst ned på sidan 
 
 
 :root {
-  --test-primary-color: red;
-    $mooncolor: #d9fbff;
-    $bgColor--day: #9ee3fb;
-    $bgColor--night: #423966;
-    $toggleBtn-bgColor--night: $bgColor--night;
-    $toggleHeight: 16em;
-    $toggleWidth: 30em;
-    $toggleBtnRadius: 10em;
-    $toggleBtn-bgColor--day: $bgColor--day;
-
+  --primary-color: red;
+  --btn-background-color: oklch(82% 0.1455 79.31);
+  --darkmode-btn-background-color: oklch(37.56% 0.0758 291.51);
+  --btn-background-color: oklch(82% 0.1455 79.31);
+    --bt-background-color-hover: oklch(77% 0.1455 79.31);
 }
 
+
+:root[data-theme="dark"] {
+  --primary-color: oklch(22.35% 0.037 138.55);
+  --darkmode-btn-background-color: oklch(37.56% 0.0758 291.51);
+  --btn-background-color: oklch(82% 0.1455 79.31);
+    --bt-background-color-hover: oklch(77% 0.1455 79.31);
+}
+
+
+:root[data-theme="light"] {
+  --primary-color: oklch(44% 0.0483 138.55);
+  --darkmode-btn-background-color: oklch(78.97% 0.1676 68.47);
+  --btn-background-color: oklch(82% 0.1455 79.31);
+  --bt-background-color-hover: oklch(77% 0.1455 79.31);
+}
+
+
+
+nav .btn {
+  background-color: var(--btn-background-color);
+}
+
+nav .btn:hover {
+  background-color: var(--bt-background-color-hover);
+}
+
+
 /*
-//behövs inte om vi använder orginalknappen för darkmode
+våra färger
 
-
-$primary-color: light-dark(oklch(44% 0.0483 138.55) oklch(10% 0.0483 138.55));
+$primary-color: light-dark(oklch(44% 0.0483 138.55) oklch(10% 0.0483 138.55));    eventuell ersättning för dark är oklch(22.35% 0.037 138.55), måste kolla vad de andra tycker bara
 $primary-color1: oklch(60% 0.0483 138.55);
 $primary-color2: oklch(65% 0.0483 138.55);
 $primary-color3: oklch(80% 0.0483 138.55);
@@ -68,14 +65,15 @@ $right-answer-color: oklch( 70% 0.1776 141.88);
 */
 
 
-footer {
-    //background-color: $primary-color;
+nav {
     display: grid;
     border: 0.25rem solid;
     border-color: black;
-    color: getVar("contrast");
-  
-    background-color: (hotpink, #A63534);
+    height: 3rem;
+    background-color: Var(--primary-color);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
   }
 
 
@@ -102,20 +100,20 @@ footer {
 }
 
 .profile .offcanvas-profile {
-    right: 20rem;
-    left: 20rem;
-    bottom: 10rem;
-    top: 10rem;
+    right: 0rem;
+    left: 0rem;
+    bottom: 3rem;
+    top: 0rem;
     display: grid;
     grid-template-rows: 5rem;
 }
 
 
 .settings .offcanvas-settings {
-    right: 20rem;
-    left: 20rem;
-    bottom: 10rem;
-    top: 10rem;
+    right: 0rem;
+    left: 0rem;
+    bottom: 3rem;
+    top: 0rem;
     display: grid;
     grid-template-rows: 5rem;
 }
@@ -161,19 +159,6 @@ footer {
     margin-left: 0.5rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 #tdnn {
   margin: 0 auto;
   font-size: 17.5%;
@@ -182,11 +167,11 @@ footer {
   width: 4rem;
   border-radius: 16rem;
   transition: all 500ms ease-in-out;
-  background: #423966;
+  background: var(--darkmode-btn-background-color);
   display: block;
 }
 #tdnn.day {
-  background: #ffa31a;
+  background: var(--darkmode-btn-background-color);
 }
 #moon {
   position: absolute;
@@ -199,7 +184,7 @@ footer {
   transform: rotate(-75deg);
   width: 10em;
   height: 10em;
-  background: #423966;
+  background: var(--darkmode-btn-background-color);
   box-shadow: 3em 2.5em 0 0em #d9fbff inset,
     rgba(255, 255, 255, 0.1) 0em -7em 0 -4.5em,
     rgba(255, 255, 255, 0.1) 3em 7em 0 -4.5em,
@@ -226,88 +211,3 @@ footer {
 #moon, .sun {
     scale: 0.7;
 }
-
-
-//test av dm
-
-
-
-
-
-
-
-
-.dm-test {
-  appearance: none;
-  margin: 0 auto;
-  font-size: 17.5%;
-  position: relative;
-  height: 2rem;
-  width: 4rem;
-  border-radius: 16rem;
-  transition: all 500ms ease-in-out;
-  background: #423966;
-  display: inline-block;
-}
-
-.dm-test::before {
-  content: "";
-  transition: 0.25s linear transform;
-  position: absolute;
-  display: block;
-  border-radius: 50%;
-  transition: all 400ms ease-in-out;
-
-  top: 0.5em;
-  left: 2em;
-  transform: rotate(-75deg);
-  width: 10em;
-  height: 10em;
-  background: #423966;
-  box-shadow: 3em 2.5em 0 0em #d9fbff inset,
-    rgba(255, 255, 255, 0.1) 0em -7em 0 -4.5em,
-    rgba(255, 255, 255, 0.1) 3em 7em 0 -4.5em,
-    rgba(255, 255, 255, 0.1) 2em 13em 0 -4em,
-    rgba(255, 255, 255, 0.1) 6em 2em 0 -4.1em,
-    rgba(255, 255, 255, 0.1) 8em 8em 0 -4.5em,
-    rgba(255, 255, 255, 0.1) 6em 13em 0 -4.5em,
-    rgba(255, 255, 255, 0.1) -4em 7em 0 -4.5em,
-    rgba(255, 255, 255, 0.1) -1em 10em 0 -4.5em;
-
-  scale: 0.7;
-
-
-}
-
-.dm-test:checked {
-  background-color: #ffa31a;
-}
-
-.otto[bs-dark-mode="true"]{
-  background-color: black;
-}
-
-.dm-test:checked::before {
-  transform: translateX(2rem);
-  top: 2em;
-  left: 12em;
-  transform: rotate(0deg);
-  width: 7em;
-  height: 7em;
-  background: #fff;
-  box-shadow: 3em 3em 0 5em #fff inset, 0 -5em 0 -2.7em #fff,
-    3.5em -3.5em 0 -3em #fff, 5em 0 0 -2.7em #fff, 3.5em 3.5em 0 -3em #fff,
-    0 5em 0 -2.7em #fff, -3.5em 3.5em 0 -3em #fff, -5em 0 0 -2.7em #fff,
-    -3.5em -3.5em 0 -3em #fff;
-
-
-}
-
-#offcanvasBottom {
-  background-color: (#0000ff, #A63534);
-}
-
-
-
-
-//får det inte riktigt att fungera med hur man sätter :root då jsg behöver fixa variabler för alla färgerna
