@@ -95,28 +95,33 @@ nav {
     grid-column: 2;
 }
 
+.profile .btn svg, .settings .btn svg, .friends .btn svg {
+  height: 1.5rem;
+  margin-right: 0.5rem;
+}
+
 .settings {
     grid-column: 3;
 }
 
-.profile .offcanvas-profile {
+.settings .offcanvas-title, .settings .offcanvas-body, .settings .animations-switch {
+  margin: 0 auto;
+}
+
+.offcanvas .offcanvas-header .btn-close {
+  margin: 0;
+}
+
+.profile .offcanvas-profile, .settings .offcanvas-settings, .friends .offcanvas-friends  {
     right: 0rem;
     left: 0rem;
-    bottom: 3rem;
     top: 0rem;
+    bottom: 3rem;
     display: grid;
     grid-template-rows: 5rem;
 }
 
 
-.settings .offcanvas-settings {
-    right: 0rem;
-    left: 0rem;
-    bottom: 3rem;
-    top: 0rem;
-    display: grid;
-    grid-template-rows: 5rem;
-}
 
 .profile .offcanvas-profile div {
     grid-column: 2;
