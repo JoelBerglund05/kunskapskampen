@@ -2,7 +2,7 @@ import DataBase from "./DataBase.js";
 import EventManager from "./EventManager.js";
 import GameHandeler from "./GameHandeler.js";
 import Answer from "./Answer.js";
-import Timer from "js/Timer.js";
+import Timer from "./Timer.js";
 import Template from "./Template.js";
 
 class Main {
@@ -10,6 +10,8 @@ class Main {
     this.dataBase = new DataBase();
     this.eventManager = new EventManager();
     this.gameHandeler = new GameHandeler();
+    this.timer = new Timer();
+    this.template = new Template();
     this.answer = new Answer();
     this.btnDBRequest = document.getElementById("btnDBRequest");
     this.displayData = document.getElementById("dBData");
@@ -29,6 +31,9 @@ class Main {
 
     this.countdownElement = document.getElementById("timer");
     this.countdownBar = document.getElementById("timer-bar");
+
+    this.tpl = getElementById('score-template');
+    this.clonedTr = tpl.content.cloneNode(true);
   }
   RegisterServiceWorker() {
     if ("serviceWorker" in navigator) {
@@ -91,6 +96,8 @@ class Main {
     this.eventManager.EventListener(this.answerNumberInput, keyboardEvent, this.answer.InputAllowNumbersOnly);
 
   }
+
+  scoreTemplate(){}
 }
 
 const main = new Main();
