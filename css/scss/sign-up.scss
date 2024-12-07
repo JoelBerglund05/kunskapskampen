@@ -14,11 +14,47 @@ $color: main.$white;
 }
 
 .result {
-    /*margin-left: 1rem;*/
+    margin-left: 1rem;
 }
 .input-box .email {
     color: $color;
 }
+
+
+
+
+.input-wraper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wraper .email {
+    padding-right: 30px;
+}
+
+.input-wraper .icon {
+    position: absolute;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 .paragraph {
     margin-left: 1.3rem;
@@ -58,9 +94,9 @@ body {
     background-color: transparent;
     border: none;
     outline: none;
-    border: 2px solid main.$primary-color2;
+    border: 2px solid main.$primary-color3;
     border-radius: 2.5rem;
-    /*color: $color;*/
+    color: $color;
     padding: 1.25rem 2.813rem 1.25rem 1.25rem;
 }
 
