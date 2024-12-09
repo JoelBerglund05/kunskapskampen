@@ -9,10 +9,6 @@
   color: oklch(87.84% 0.2167 155.09deg);
 }
 
-.result {
-  margin-left: 1rem;
-}
-
 .check {
   fill: oklch(70% 0.1776 141.88deg);
 }
@@ -28,14 +24,14 @@
 }
 
 .input-wrapper .email {
-  padding-right: 30px;
+  padding-right: 1.875rem;
 }
 
 .input-wrapper .icon {
   position: absolute;
-  right: 10px;
-  width: 24px;
-  height: 24px;
+  right: 0.625rem;
+  width: 1.5rem;
+  height: 1.5rem;
   pointer-events: none;
 }
 
@@ -108,7 +104,7 @@ body {
   background-color: oklch(82% 0.1455 79.31deg);
   border: none;
   outline: none;
-  border-radius: 40px;
+  border-radius: 2.5rem;
   box-shadow: 0 0 2px oklch(10% 0.0483 138.55deg);
   cursor: pointer;
   font-size: 1rem;
@@ -119,51 +115,5 @@ body {
 .btn:hover {
   background-color: oklch(77% 0.1455 79.31deg);
 }
-
-/*
-html {
-    height: 100%;
-}
-
-body {
-    background-color: main.$white;
-    margin: 0;
-    height: 100%;
-}
-
-
-
-
-
-
-.big-container {
-    height: 100%;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-}
-
-
-
-
-.container {
-    border: 2px solid red;
-    border-radius: 0.3em;
-    height: 600px;
-    width: 600px;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-}
-
-
-
-
-
-
-
-*/
 
 /*# sourceMappingURL=sign-up.css.map */

@@ -27,12 +27,12 @@ const validate = () => {
         // Show valid icon
         validIcon.classList.remove('hidden');
         emailInput.style.textDecoration = 'oklch(70% 0.1776 141.88)';
-        emailInput.style.border = '3px solid oklch(70% 0.1776 141.88)';
+        emailInput.style.border = '2px solid oklch(70% 0.1776 141.88)';
     } else {
         // Show invalid icon
         invalidIcon.classList.remove('hidden');
         emailInput.style.textDecoration = 'oklch(70% 0.1776 141.88)';
-        emailInput.style.border = '3px solid oklch(60% 0.1825 21.18)';
+        emailInput.style.border = '2px solid oklch(60% 0.1825 21.18)';
 
     }
 };
