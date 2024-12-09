@@ -17,14 +17,13 @@ $color: main.$white;
     margin-left: 1rem;
 }
 
-
-
-
-.icon {
-    color: red;
-
+.check {
+    fill: main.$right-answer-color;
 }
 
+.kross {
+    color: main.$wrong-answer-color;
+}
 
 .input-wrapper {
     position: relative;
@@ -39,8 +38,8 @@ $color: main.$white;
 .input-wrapper .icon {
     position: absolute;
     right: 10px;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     pointer-events: none;
 }
 

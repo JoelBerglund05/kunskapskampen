@@ -13,8 +13,12 @@
   margin-left: 1rem;
 }
 
-.icon {
-  color: red;
+.check {
+  fill: oklch(70% 0.1776 141.88deg);
+}
+
+.kross {
+  color: oklch(60% 0.1825 21.18deg);
 }
 
 .input-wrapper {
@@ -30,8 +34,8 @@
 .input-wrapper .icon {
   position: absolute;
   right: 10px;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   pointer-events: none;
 }
 

@@ -2,28 +2,22 @@
 const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
 const validate = () => {
-    const result = document.getElementById('result');
     const emailInput = document.getElementById('email');
     const email = emailInput.value;
-    emailInput.textContent = '';
 
     emailInput.style.textDecoration = 'underline';
-    emailInput.style.borderColor = 'border'
+    emailInput.style.borderColor = 'border';
 
 
 
     if (validateEmail(email)){
-        result.textContent = `${email} is valid`;
-        result.style.color = 'oklch( 70% 0.1776 141.88)';
         emailInput.style.textDecorationColor = `oklch( 70% 0.1776 141.88)`;
         emailInput.style.border = `3px solid green`
     }
 
     else {
-        result.textContent = `${email} is invalid`;
-        result.style.color = 'oklch( 60% 0.1825 21.18)';
         emailInput.style.textDecorationColor = `oklch( 60% 0.1825 21.18)`;
-        emailInput.style.border = `4px solid red`
+        emailInput.style.border = `3px solid red`
     }
     return false;
 }
