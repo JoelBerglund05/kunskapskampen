@@ -61,18 +61,18 @@
               <h5 class="offcanvas-title" id="offcanvasBottomLabel">Settings</h5>
               <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-            <div class="offcanvas-body small volume">
-              <label for="customRange1" class="form-label">Volume:</label>
-              <input type="range" class="form-range" id="customRange1">
-            </div>
+              <div>
+                <button id="tdnn" onclick="darkmode()" aria-label="Dark-mode knapp"> <!--Kolla på att göra om knappen till en <input> tag och använda get ID i javascript-->
+                  <div id="moon"></div>
+                </button>
+              </div>
             <div class="form-check form-switch animations-switch">
               <label class="form-check-label" for="flexSwitchCheckChecked">Animations</label>
               <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
             </div>
-            <div>
-              <button id="tdnn" onclick="darkmode()" aria-label="Dark-mode knapp"> <!--Kolla på att göra om knappen till en <input> tag och använda get ID i javascript-->
-                <div id="moon"></div>
-              </button>
+            <div class="offcanvas-body small volume">
+              <label for="customRange1" class="form-label">Volume:</label>
+              <input type="range" class="form-range" id="customRange1">
             </div>
           </div>
         </div>

@@ -14,36 +14,43 @@
 
 :root {
   --primary-color: red;
-  --btn-background-color: oklch(82% 0.1455 79.31);
   --darkmode-btn-background-color: oklch(37.56% 0.0758 291.51);
-  --btn-background-color: oklch(82% 0.1455 79.31);
-    --bt-background-color-hover: oklch(77% 0.1455 79.31);
+  --CTA-color: oklch(82% 0.1455 79.31);
+  --bt-background-color-hover: oklch(77% 0.1455 79.31);
+  --white: oklch(99% 0.0483 138.55);
 }
 
 
 :root[data-theme="dark"] {
   --primary-color: oklch(22.35% 0.037 138.55);
   --darkmode-btn-background-color: oklch(37.56% 0.0758 291.51);
-  --btn-background-color: oklch(82% 0.1455 79.31);
-    --bt-background-color-hover: oklch(77% 0.1455 79.31);
+  --CTA-color: oklch(82% 0.1455 79.31);
+  --bt-background-color-hover: oklch(77% 0.1455 79.31);
 }
 
 
 :root[data-theme="light"] {
   --primary-color: oklch(44% 0.0483 138.55);
   --darkmode-btn-background-color: oklch(78.97% 0.1676 68.47);
-  --btn-background-color: oklch(82% 0.1455 79.31);
+  --CTA-color: oklch(82% 0.1455 79.31);
   --bt-background-color-hover: oklch(77% 0.1455 79.31);
 }
 
 
 
 nav .btn {
-  background-color: var(--btn-background-color);
+  width: 5rem;
+  color: var(--white);
+  border: none;
 }
 
 nav .btn:hover {
-  background-color: var(--bt-background-color-hover);
+  color: var(--white);
+}
+
+footer nav .friends .btn:active, footer nav .profile .btn:active, footer nav .settings .btn:active {
+  border: none;
+  color: var(--white);
 }
 
 
@@ -67,24 +74,15 @@ $right-answer-color: oklch( 70% 0.1776 141.88);
 
 nav {
     display: grid;
-    border: 0.25rem solid;
-    border-color: black;
-    height: 3rem;
+    height: 5rem;
     background-color: Var(--primary-color);
     position: fixed;
     bottom: 0;
     width: 100%;
   }
 
-
-
 .nav-btn {
     margin: auto;
-    //background-color: $cta;
-}
-
-.nav-btn:hover {
-   // background-color: $cta-hover;
 }
 
 .frends {
@@ -97,7 +95,7 @@ nav {
 
 .profile .btn svg, .settings .btn svg, .friends .btn svg {
   height: 1.5rem;
-  margin-right: 0.5rem;
+  fill: var(--CTA-color);
 }
 
 .settings {
@@ -110,13 +108,15 @@ nav {
 
 .offcanvas .offcanvas-header .btn-close {
   margin: 0;
+  position: absolute;
+  right: 2rem;
 }
 
 .profile .offcanvas-profile, .settings .offcanvas-settings, .friends .offcanvas-friends  {
     right: 0rem;
     left: 0rem;
     top: 0rem;
-    bottom: 3rem;
+    bottom: 5rem;
     display: grid;
     grid-template-rows: 5rem;
 }
@@ -139,6 +139,7 @@ nav {
 .volume {
     display: flex;
     align-content: center;
+    scale: 0.7;
 }
 
 .volume label {
@@ -152,16 +153,19 @@ nav {
 }
 
 .offcanvas-settings {
-    display: grid;
+  display: grid;
 }
 
 .offcanvas-settings .animations-switch {
-    padding-left: 1rem;
+  padding-left: 1rem;
 }
 
 .offcanvas-settings .animations-switch input {
-    float: none;
-    margin-left: 0.5rem;
+  float: none;
+  margin-left: 0.5rem;
+}
+
+.offcanvas-settings div {
 }
 
 #tdnn {
