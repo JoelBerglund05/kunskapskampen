@@ -1,3 +1,1 @@
-class AnswerBuron{
-    
-}
+class AnswerBuron {}

@@ -1,5 +1,3 @@
-
-
 //allt ovan är test för att fixa dark-mode knapp
 
 //Läs in på hur man gör detta via länken: https://stefvandijk.nl/blog/css-vars-in-sass/
@@ -8,9 +6,7 @@
 
 //Gå igenom med Joel och resten av gruppen
 
-
-//Fixa så att footern stannar längst ned på sidan 
-
+//Fixa så att footern stannar längst ned på sidan
 
 :root {
   --primary-color: red;
@@ -20,7 +16,6 @@
   --white: oklch(99% 0.0483 138.55);
 }
 
-
 :root[data-theme="dark"] {
   --primary-color: oklch(22.35% 0.037 138.55);
   --darkmode-btn-background-color: oklch(37.56% 0.0758 291.51);
@@ -28,15 +23,12 @@
   --bt-background-color-hover: oklch(77% 0.1455 79.31);
 }
 
-
 :root[data-theme="light"] {
   --primary-color: oklch(44% 0.0483 138.55);
   --darkmode-btn-background-color: oklch(78.97% 0.1676 68.47);
   --CTA-color: oklch(82% 0.1455 79.31);
   --bt-background-color-hover: oklch(77% 0.1455 79.31);
 }
-
-
 
 nav .btn {
   width: 5rem;
@@ -48,11 +40,12 @@ nav .btn:hover {
   color: var(--white);
 }
 
-footer nav .friends .btn:active, footer nav .profile .btn:active, footer nav .settings .btn:active {
+footer nav .friends .btn:active,
+footer nav .profile .btn:active,
+footer nav .settings .btn:active {
   border: none;
   color: var(--white);
 }
-
 
 /*
 våra färger
@@ -71,38 +64,41 @@ $wrong-answer-color: oklch( 60% 0.1825 21.18);
 $right-answer-color: oklch( 70% 0.1776 141.88);
 */
 
-
 nav {
-    display: grid;
-    height: 5rem;
-    background-color: Var(--primary-color);
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
+  display: grid;
+  height: 5rem;
+  background-color: Var(--primary-color);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
 
 .nav-btn {
-    margin: auto;
+  margin: auto;
 }
 
 .frends {
-    grid-column: 1;
+  grid-column: 1;
 }
 
 .profile {
-    grid-column: 2;
+  grid-column: 2;
 }
 
-.profile .btn svg, .settings .btn svg, .friends .btn svg {
+.profile .btn svg,
+.settings .btn svg,
+.friends .btn svg {
   height: 1.5rem;
   fill: var(--CTA-color);
 }
 
 .settings {
-    grid-column: 3;
+  grid-column: 3;
 }
 
-.settings .offcanvas-title, .settings .offcanvas-body, .settings .animations-switch {
+.settings .offcanvas-title,
+.settings .offcanvas-body,
+.settings .animations-switch {
   margin: 0 auto;
 }
 
@@ -112,44 +108,44 @@ nav {
   right: 2rem;
 }
 
-.profile .offcanvas-profile, .settings .offcanvas-settings, .friends .offcanvas-friends  {
-    right: 0rem;
-    left: 0rem;
-    top: 0rem;
-    bottom: 5rem;
-    display: grid;
-    grid-template-rows: 5rem;
+.profile .offcanvas-profile,
+.settings .offcanvas-settings,
+.friends .offcanvas-friends {
+  right: 0rem;
+  left: 0rem;
+  top: 0rem;
+  bottom: 5rem;
+  display: grid;
+  grid-template-rows: 5rem;
 }
 
-
-
 .profile .offcanvas-profile div {
-    grid-column: 2;
+  grid-column: 2;
 }
 
 .profile-icon {
-    display: grid;
+  display: grid;
 }
 
 .profile-icon svg {
-    height: 5rem;
-    grid-row: 2;
+  height: 5rem;
+  grid-row: 2;
 }
 
 .volume {
-    display: flex;
-    align-content: center;
-    scale: 0.7;
+  display: flex;
+  align-content: center;
+  scale: 0.7;
 }
 
 .volume label {
-    margin-right: 1rem;
-    font-size: 3rem;
+  margin-right: 1rem;
+  font-size: 3rem;
 }
 
 .volume input {
-    width: 10rem;
-    height: 5rem;
+  width: 10rem;
+  height: 5rem;
 }
 
 .offcanvas-settings {
@@ -164,15 +160,6 @@ nav {
   float: none;
   margin-left: 0.5rem;
 }
-
-
-
-
-.offcanvas-backdrop.show { opacity: .0; }
-
-
-
-
 
 #tdnn {
   margin: auto;
@@ -202,7 +189,8 @@ nav {
   width: 10em;
   height: 10em;
   background: var(--darkmode-btn-background-color);
-  box-shadow: 3em 2.5em 0 0em #d9fbff inset,
+  box-shadow:
+    3em 2.5em 0 0em #d9fbff inset,
     rgba(255, 255, 255, 0.1) 0em -7em 0 -4.5em,
     rgba(255, 255, 255, 0.1) 3em 7em 0 -4.5em,
     rgba(255, 255, 255, 0.1) 2em 13em 0 -4em,
@@ -219,12 +207,19 @@ nav {
   width: 7em;
   height: 7em;
   background: #fff;
-  box-shadow: 3em 3em 0 5em #fff inset, 0 -5em 0 -2.7em #fff,
-    3.5em -3.5em 0 -3em #fff, 5em 0 0 -2.7em #fff, 3.5em 3.5em 0 -3em #fff,
-    0 5em 0 -2.7em #fff, -3.5em 3.5em 0 -3em #fff, -5em 0 0 -2.7em #fff,
+  box-shadow:
+    3em 3em 0 5em #fff inset,
+    0 -5em 0 -2.7em #fff,
+    3.5em -3.5em 0 -3em #fff,
+    5em 0 0 -2.7em #fff,
+    3.5em 3.5em 0 -3em #fff,
+    0 5em 0 -2.7em #fff,
+    -3.5em 3.5em 0 -3em #fff,
+    -5em 0 0 -2.7em #fff,
     -3.5em -3.5em 0 -3em #fff;
 }
 
-#moon, .sun {
-    scale: 0.7;
+#moon,
+.sun {
+  scale: 0.7;
 }

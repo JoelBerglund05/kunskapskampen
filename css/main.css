@@ -26,7 +26,9 @@ nav .btn {
 nav .btn:hover {
   color: var(--white); }
 
-footer nav .friends .btn:active, footer nav .profile .btn:active, footer nav .settings .btn:active {
+footer nav .friends .btn:active,
+footer nav .profile .btn:active,
+footer nav .settings .btn:active {
   border: none;
   color: var(--white); }
 
@@ -63,14 +65,18 @@ nav {
 .profile {
   grid-column: 2; }
 
-.profile .btn svg, .settings .btn svg, .friends .btn svg {
+.profile .btn svg,
+.settings .btn svg,
+.friends .btn svg {
   height: 1.5rem;
   fill: var(--CTA-color); }
 
 .settings {
   grid-column: 3; }
 
-.settings .offcanvas-title, .settings .offcanvas-body, .settings .animations-switch {
+.settings .offcanvas-title,
+.settings .offcanvas-body,
+.settings .animations-switch {
   margin: 0 auto; }
 
 .offcanvas .offcanvas-header .btn-close {
@@ -78,7 +84,9 @@ nav {
   position: absolute;
   right: 2rem; }
 
-.profile .offcanvas-profile, .settings .offcanvas-settings, .friends .offcanvas-friends {
+.profile .offcanvas-profile,
+.settings .offcanvas-settings,
+.friends .offcanvas-friends {
   right: 0rem;
   left: 0rem;
   top: 0rem;
@@ -119,9 +127,6 @@ nav {
   float: none;
   margin-left: 0.5rem; }
 
-.offcanvas-backdrop.show {
-  opacity: .0; }
-
 #tdnn {
   margin: auto;
   font-size: 17.5%;
@@ -158,7 +163,8 @@ nav {
   background: #fff;
   box-shadow: 3em 3em 0 5em #fff inset, 0 -5em 0 -2.7em #fff, 3.5em -3.5em 0 -3em #fff, 5em 0 0 -2.7em #fff, 3.5em 3.5em 0 -3em #fff, 0 5em 0 -2.7em #fff, -3.5em 3.5em 0 -3em #fff, -5em 0 0 -2.7em #fff, -3.5em -3.5em 0 -3em #fff; }
 
-#moon, .sun {
+#moon,
+.sun {
   scale: 0.7; }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,3 +1,1 @@
-class ProfileSettings{
-    
-}
+class ProfileSettings {}

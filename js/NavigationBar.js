@@ -1,1 +1,1 @@
-class NavigationBar{}
+class NavigationBar {}
