@@ -119,8 +119,11 @@ nav {
   float: none;
   margin-left: 0.5rem; }
 
+.offcanvas-backdrop.show {
+  opacity: .0; }
+
 #tdnn {
-  margin: 0 auto;
+  margin: auto;
   font-size: 17.5%;
   position: relative;
   height: 2rem;

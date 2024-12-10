@@ -165,11 +165,17 @@ nav {
   margin-left: 0.5rem;
 }
 
-.offcanvas-settings div {
-}
+
+
+
+.offcanvas-backdrop.show { opacity: .0; }
+
+
+
+
 
 #tdnn {
-  margin: 0 auto;
+  margin: auto;
   font-size: 17.5%;
   position: relative;
   height: 2rem;
@@ -179,9 +185,11 @@ nav {
   background: var(--darkmode-btn-background-color);
   display: block;
 }
+
 #tdnn.day {
   background: var(--darkmode-btn-background-color);
 }
+
 #moon {
   position: absolute;
   display: block;
