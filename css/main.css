@@ -168,6 +168,10 @@ input[type=number]:not(:in-range) {
   background: transparent;
   margin: 0 auto;
   margin-top: 1em;
+  background: transparent;
+}
+
+progress::-moz-progress-bar {
   background: linear-gradient(to right, oklch(38% 0.15 29deg), oklch(63% 0.26 29deg), oklch(61% 0.17 46deg), oklch(82% 0.15 81deg), oklch(87% 0.26 143deg));
 }
 
@@ -184,13 +188,137 @@ input[type=number]:not(:in-range) {
   text-align: center;
 }
 
+.bg-box-container {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  display: grid;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 .bg-box {
+  position: absolute;
   width: 3em;
   aspect-ratio: 1;
   background: oklch(from oklch(44% 0.0483 138.55deg) l c h/0.09);
   border-radius: 10%;
+  transform-origin: center;
+  transition: ease-in-out;
 }
 
+.bg-box:nth-child(1) {
+  top: 20%;
+  left: 30%;
+  animation: bg-animation 5s linear infinite;
+}
+
+.bg-box:nth-child(2) {
+  top: 26%;
+  left: 28%;
+  animation: bg-animation 7s linear infinite;
+}
+
+.bg-box:nth-child(3) {
+  top: 29%;
+  left: 60%;
+  animation: bg-animation 5s linear infinite;
+}
+
+.bg-box:nth-child(4) {
+  top: 50%;
+  left: 34%;
+  animation: bg-animation 7s linear infinite;
+}
+
+.bg-box:nth-child(5) {
+  top: 78%;
+  left: 73%;
+  animation: bg-animation 7s linear infinite;
+}
+
+.bg-box:nth-child(6) {
+  top: 23%;
+  left: 83%;
+  animation: bg-animation 5s linear infinite;
+}
+
+.bg-box:nth-child(7) {
+  top: 44%;
+  left: 66%;
+  animation: bg-animation 7s linear infinite;
+}
+
+.bg-box:nth-child(8) {
+  top: 73%;
+  left: 54%;
+  animation: bg-animation 5s linear infinite;
+}
+
+.bg-box:nth-child(9) {
+  top: 58%;
+  left: 93%;
+  animation: bg-animation 5s linear infinite;
+}
+
+.bg-box:nth-child(10) {
+  top: 38%;
+  left: 73%;
+  animation: bg-animation 7s linear infinite;
+}
+
+.bg-box:nth-child(11) {
+  top: 78%;
+  left: 23%;
+  animation: bg-animation 5s linear infinite;
+}
+
+.bg-box:nth-child(12) {
+  top: 39%;
+  left: 13%;
+  animation: bg-animation 5s linear infinite;
+}
+
+.bg-box:nth-child(13) {
+  top: 79%;
+  left: 7%;
+  animation: bg-animation 5s linear infinite;
+}
+
+.bg-box:nth-child(14) {
+  top: 81%;
+  left: 43%;
+  animation: bg-animation 7s linear infinite;
+}
+
+.bg-box:nth-child(15) {
+  top: 49%;
+  left: 52%;
+  animation: bg-animation 5s linear infinite;
+}
+
+.bg-box:nth-child(16) {
+  top: 88%;
+  left: 90%;
+  animation: bg-animation 5s linear infinite;
+}
+
+@keyframes bg-animation {
+  0% {
+    opacity: 0%;
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+    transform: translateY(-20dvh) rotate(270deg);
+  }
+}
 @keyframes answer-button-in {
   0% {
     background: transparent;

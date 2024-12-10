@@ -8,6 +8,7 @@ export default class Timer {
     countdownUpdater(event) {
         setInterval(updateCountdown, 1000);
         this.updateCountdown();
+        this.updateTimerBar();
         
     }
 
@@ -15,6 +16,12 @@ export default class Timer {
         if (startingTime > 0) {
             startingTime = startingTime - 1;
             timerEl.innerHTML = startingTime;
+        }
+    }
+
+    updateTimerBar() {
+        if (timerBar.value > 0) {
+            timerBar.value -= 1;
         }
     }
 }

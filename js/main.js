@@ -68,6 +68,11 @@ class Main {
 
     console.log(user);
   }
+
+  countdownUpdater(event) {
+    
+  }
+
   Main() {
     const clickEvent = "click";
     const keyboardEvent = "keydown";
