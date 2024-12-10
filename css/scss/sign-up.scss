@@ -3,114 +3,101 @@
 $color: main.$white;
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 .link {
-    color: main.$link-test;
+  color: main.$link-test;
 }
 
 .check {
-    fill: main.$right-answer-color;
+  fill: main.$right-answer-color;
 }
 
 .kross {
-    color: main.$wrong-answer-color;
+  color: main.$wrong-answer-color;
 }
 
 .input-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
+  position: relative;
+  display: flex;
+  align-items: center;
 
-.input-wrapper .email {
+  .email {
     padding-right: 1.875rem;
-}
+  }
 
-.input-wrapper .icon {
+  .icon {
     position: absolute;
     right: 0.625rem;
     width: 1.5rem;
     height: 1.5rem;
     pointer-events: none;
+  }
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
-
-
 
 .paragraph {
-    margin-left: 1.3rem;
+  margin-left: 1.3rem;
 }
+
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: $color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: $color;
 }
 
 .big-container {
-    width: 26.25rem;
-    background-color: main.$primary-color;
-    color: $color;
-    border-radius: 0.625rem;
-    padding: 1.875rem 2.5rem;
-    box-shadow: 0 0 2px main.$black;
+  width: 26.25rem;
+  background-color: main.$primary-color;
+  color: $color;
+  border-radius: 0.625rem;
+  padding: 1.875rem 2.5rem;
+  box-shadow: 0 0 2px main.$black;
 
-}
-
-.big-container h1 {
+  h1 {
     font-size: 2.25rem;
     text-align: center;
-}
+  }
 
-.big-container .input-box  {
+  .input-box {
     width: 100%;
     height: 3.125rem;
     margin: 1.875rem 0;
-}
 
-.input-box input{
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    outline: none;
-    border: 2px solid main.$primary-color3;
-    border-radius: 2.5rem;
-    color: $color;
-    padding: 1.25rem 2.813rem 1.25rem 1.25rem;
-}
+    input {
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      outline: none;
+      border: 2px solid main.$primary-color3;
+      border-radius: 2.5rem;
+      color: $color;
+      padding: 1.25rem 2.813rem 1.25rem 1.25rem;
 
+      &::placeholder {
+        color: $color;
+      }
+    }
 
+    i {
+      position: absolute;
+      right: 1.25rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.25rem;
+    }
+  }
 
-.input-box input::placeholder {
-    color: $color;
-}
-
-.input-box i {
-    position: absolute;
-    right: 1.25rem;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.25rem;
-}
-
-
-
-.check {
-    cursor: pointer;
-}
-
-
-
-.big-container .btn {
+  .btn {
     width: 100%;
     height: 2.813rem;
     background-color: main.$cta;
@@ -122,8 +109,13 @@ body {
     font-size: 1rem;
     color: main.$black;
     font-weight: 600;
+
+    &:hover {
+      background-color: main.$cta-hover;
+    }
+  }
 }
 
-.btn:hover {
-    background-color: main.$cta-hover;
+.check {
+  cursor: pointer;
 }

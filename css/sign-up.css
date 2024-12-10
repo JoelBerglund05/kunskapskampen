@@ -22,11 +22,9 @@
   display: flex;
   align-items: center;
 }
-
 .input-wrapper .email {
   padding-right: 1.875rem;
 }
-
 .input-wrapper .icon {
   position: absolute;
   right: 0.625rem;
@@ -59,19 +57,16 @@ body {
   padding: 1.875rem 2.5rem;
   box-shadow: 0 0 2px oklch(10% 0.0483 138.55deg);
 }
-
 .big-container h1 {
   font-size: 2.25rem;
   text-align: center;
 }
-
 .big-container .input-box {
   width: 100%;
   height: 3.125rem;
   margin: 1.875rem 0;
 }
-
-.input-box input {
+.big-container .input-box input {
   width: 100%;
   height: 100%;
   background-color: transparent;
@@ -81,23 +76,16 @@ body {
   color: oklch(100% 0.0483 138.55deg);
   padding: 1.25rem 2.813rem 1.25rem 1.25rem;
 }
-
-.input-box input::placeholder {
+.big-container .input-box input::placeholder {
   color: oklch(100% 0.0483 138.55deg);
 }
-
-.input-box i {
+.big-container .input-box i {
   position: absolute;
   right: 1.25rem;
   top: 50%;
   transform: translateY(-50%);
   font-size: 1.25rem;
 }
-
-.check {
-  cursor: pointer;
-}
-
 .big-container .btn {
   width: 100%;
   height: 2.813rem;
@@ -111,9 +99,12 @@ body {
   color: oklch(10% 0.0483 138.55deg);
   font-weight: 600;
 }
-
-.btn:hover {
+.big-container .btn:hover {
   background-color: oklch(77% 0.1455 79.31deg);
+}
+
+.check {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=sign-up.css.map */
