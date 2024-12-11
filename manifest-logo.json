@@ -1,0 +1,21 @@
+{
+    "theme_color": "#26a269",
+    "background_color": "#8ff0a4",
+    "icons": [
+      {
+        "purpose": "kunskapskampen",
+        "sizes": "512x512",
+        "src": "kunskapskampen.png",
+        "type": "image/png"
+      }
+
+    ],
+    "orientation": "any",
+    "display": "standalone",
+    "dir": "auto",
+    "lang": "en-US",
+    "name": "Quizz Game",
+    "short_name": "QG",
+    "start_url": "https://joelberglund05.github.io/pwa-quizz-game/"
+  }
+  
