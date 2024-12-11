@@ -1,9 +1,14 @@
 import DataBase from "./DataBase.js";
 import EventManager from "./EventManager.js";
 import GameHandeler from "./GameHandeler.js";
+import Mail from "./mail-test.js";
 
 class Main {
   constructor() {
+    this.mail = new Mail();
+0
+
+    
     this.dataBase = new DataBase();
     this.eventManager = new EventManager();
     this.gameHandeler = new GameHandeler();
