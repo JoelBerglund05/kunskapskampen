@@ -3,8 +3,11 @@ $primary-color1: oklch(60% 0.0483 138.55);
 $primary-color2: oklch(65% 0.0483 138.55);
 $primary-color3: oklch(80% 0.0483 138.55);
 $primary-color4: oklch(95% 0.0483 138.55);
+$primary-shadow: oklch(10% 0.0483 138.55 / .5);
+
 $cta: oklch(82% 0.1455 79.31);
 $cta-hover: oklch(77% 0.1455 79.31);
+
 
 $white: oklch(100% 0.0483 138.55);
 $black: oklch(10% 0.0483 138.55);
@@ -34,13 +37,17 @@ body {
 
 .header {
   color: $black;
-  display: flex;
-  justify-content: center;
+  justify-self: center;
 }
+
+.grid {
+  display: grid;
+}
+
 .header-h1 {
   color: $white;
   background-color: $primary-color;
-  padding: 1em 0 2em 0;
+  padding: 1em .3em 2em .3em;
   width: 20em;
   text-align: center;
   border-radius: 0 0 1em 1em;
@@ -81,6 +88,11 @@ body {
 .grid-1-col {
   display: grid;
   justify-content: center;
+  grid-template-columns: minmax(10em, 120em);
+}
+
+.center-self {
+  justify-self: center;
 }
 
 .center-text {
@@ -107,6 +119,10 @@ button:hover {
 
 .background-primary {
   background-color: $primary-color;
+}
+
+.box-shadow {
+  box-shadow: $primary-shadow 0em 0em .3em;
 }
 
 @media (width < 720px) {
