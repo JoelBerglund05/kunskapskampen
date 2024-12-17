@@ -165,17 +165,17 @@ input[type="number"]:not(:in-range) {
     line-height: fit-content;
 }
 
-/*.answer .increase:active {
-    animation: .5s ease answer-button-in;
+.answer-1:active {
+    animation: .5s ease answer-button-correct;
 }
-*/
+
 
 .animate-in {
-  animation: answer-button-in .3s ease;
+  animation: answer-button-correct .3s ease;
 }
 
 .animate-de {
-    animation: answer-button-de .3s ease;
+    animation: answer-button-wrong .3s ease;
 }
 
 .timer-bar {
@@ -342,7 +342,7 @@ progress::-moz-progress-bar {
 }
 
 
-@keyframes answer-button-in {
+@keyframes answer-button-correct {
     0% {
         background: transparent;
     }
@@ -354,7 +354,7 @@ progress::-moz-progress-bar {
     }
 }
 
-@keyframes answer-button-de {
+@keyframes answer-button-wrong {
     0% {
         background: transparent;
     }

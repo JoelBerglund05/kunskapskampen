@@ -5,6 +5,7 @@ const button = document.getElementById('increase');
 button.addEventListener('click', () => {
   // Add the animation class to the button
   button.classList.add('animate-in');
+  console.log("hej");
   
   // Optionally remove the animation class after it ends to allow replay
   button.addEventListener('animationend', () => {
