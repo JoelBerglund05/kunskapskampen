@@ -40,7 +40,9 @@ const validate = () => {
 
     }
 };
+
 document.getElementById('email').addEventListener('input', validate)
+
 
 /*
 document.querySelector('.email').addEventListener('input', validate);
