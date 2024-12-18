@@ -29,6 +29,15 @@ export default class GameHandeler {
 
   async CreateGameScreen(dataBase) {
     await dataBase.GetQuestion(this.GetRandomCategory());
+
+    const gameScreenParentNode = document.getElementById("container");
+    const gameScreenNode = gameScreenParentNode.querySelector(".question-vh");
+    const deletedChildNode = gameScreenParentNode.removeChild(gameScreenNode);
+
+    const template = document.getElementById("answer-form");
+    const questionHtml = template.content.cloneNode(true).firstElementChild;
+    this.gameContainer.appendChild(questionHtml);
+    
     this.UpdateGameScreen();
   }
 
@@ -62,11 +71,6 @@ export default class GameHandeler {
     );
 
     let questionHtml = this.gameContainer.querySelector(".question-vh");
-    if (!questionHtml) {
-      const template = document.getElementById("answer-form");
-      questionHtml = template.content.cloneNode(true).firstElementChild;
-      this.gameContainer.appendChild(questionHtml);
-    }
 
     const question = questionHtml.querySelector("#question");
     const answersBtn = [

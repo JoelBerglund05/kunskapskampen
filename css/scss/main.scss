@@ -3,6 +3,9 @@ $primary-color1: oklch(60% 0.0483 138.55);
 $primary-color2: oklch(65% 0.0483 138.55);
 $primary-color3: oklch(80% 0.0483 138.55);
 $primary-color4: oklch(95% 0.0483 138.55);
+$primary-color4: oklch(95% 0.0483 138.55);
+$primary-loading:  oklch(44% 0.0483 138.55 / .7);
+$primary-loading1: oklch(100% 0.0483 138.55 / .2);
 $primary-shadow: oklch(10% 0.0483 138.55 / .5);
 
 $cta: oklch(82% 0.1455 79.31);
@@ -120,6 +123,33 @@ button:hover {
   background-color: $primary-color;
 }
 
+.loading {
+  position: relative;
+  background: $primary-loading;
+}
+.loading:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100px);
+  background: linear-gradient(90deg, transparent, $primary-loading1, transparent);
+  animation: loading 0.7s infinite;
+}
+
+@media (prefers-reduced-motion){
+  .loading::after {
+    transform: none;
+    animation: none;
+  }
+}
+
+@keyframes loading {
+  to {
+    transform: translateX(100%);
+  }
 .box-shadow {
   box-shadow: $primary-shadow 0em 0em .3em;
 }

@@ -14,12 +14,12 @@
         </header>
       </div>
         <section class="marigin-big">
-          <div class="question-grid">
-            <button type="button" id="btn-1" class="answer-btn box-shadow"></button>
-            <button type="button" id="btn-2" class="answer-btn box-shadow"></button>
-            <button type="button" id="btn-3" class="answer-btn box-shadow"></button>
-            <button type="button" id="btn-4" class="answer-btn box-shadow"></button>
-          </div>
+          <form class="question-grid">
+            <button type="button" id="btn-1" class="answer-btn"></button>
+            <button type="button" id="btn-2" class="answer-btn"></button>
+            <button type="button" id="btn-3" class="answer-btn"></button>
+            <button type="button" id="btn-4" class="answer-btn"></button>
+          </form>
         </section>
       </article>
     </template>
@@ -43,7 +43,21 @@
     </template>
   </head>
   <body class="white-bg marign-none">
-    <main id="container"></main>
+    <main id="container">
+      <article class="question-vh">
+        <header class="header">
+          <h1 id="question" class="header-h1 loading marign-none"></h1>
+        </header>
+        <section class="marigin-big">
+          <div class="question-grid">
+            <button type="button" id="btn-1" class="answer-btn loading"></button>
+            <button type="button" id="btn-2" class="answer-btn loading"></button>
+            <button type="button" id="btn-3" class="answer-btn loading"></button>
+            <button type="button" id="btn-4" class="answer-btn loading"></button>
+          </div>
+        </section>
+      </article>
+    </main>
     <script type="module" src="./js/main.js"></script>
   </body>
 </html>
