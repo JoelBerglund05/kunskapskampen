@@ -97,7 +97,7 @@ export default class GameHandeler {
   }
 
   async Sleep(delay) {
-    await new Promise((resolve) => setTimeout(resolve, delay))
+    await new Promise((resolve) => setTimeout(resolve, delay));
   }
 
   async ButtonAnswer(answer) {
@@ -115,8 +115,7 @@ export default class GameHandeler {
       await this.Sleep(1500);
 
       answer.dataset.isAnswerCorrect = "NaN";
-    }
-    else {
+    } else {
       answer.dataset.isAnswerCorrect = "false";
       await this.Sleep(1500);
       answer.dataset.isAnswerCorrect = "NaN";
