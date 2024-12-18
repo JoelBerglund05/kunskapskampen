@@ -150,9 +150,12 @@ button:hover {
   to {
     transform: translateX(100%);
   }
+}
+
 .box-shadow {
   box-shadow: $primary-shadow 0em 0em .3em;
 }
+
 
 @media (width < 720px) {
   .question-grid {
@@ -160,6 +163,10 @@ button:hover {
   }
   .marigin-big {
     margin-top: 35svh;
+  }
+
+  .header-h1 {
+    width: auto;
   }
 }
 
