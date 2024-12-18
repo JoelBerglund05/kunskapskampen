@@ -145,12 +145,12 @@ button:hover {
 
 @media (prefers-reduced-motion) {
 
-.answer-btn[data-is-answer-correct="true"] {
-  animation: correct-answer 1.5s;
-}
-.answer-btn[data-is-answer-correct="false"] {
-  animation: wrong-answer 1.5s;
-}
+  .answer-btn[data-is-answer-correct="true"] {
+    animation: correct-answer 1.5s;
+  }
+  .answer-btn[data-is-answer-correct="false"] {
+    animation: wrong-answer 1.5s;
+  }
 
   .loading::after {
     transform: none;
