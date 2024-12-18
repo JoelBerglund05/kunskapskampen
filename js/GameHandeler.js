@@ -94,16 +94,30 @@ export default class GameHandeler {
     }
   }
 
-  ButtonAnswer(answer) {
+  async Sleep(delay) {
+    await new Promise((resolve) => setTimeout(resolve, delay))
+  }
+
+  async ButtonAnswer(answer) {
     const json = JSON.parse(sessionStorage.getItem("question"));
     this.questionsAnswerd = parseInt(
       sessionStorage.getItem("questionsAnswerd") || 0,
     );
 
-    if (json.questions[this.questionsAnswerd].answer1 == answer) {
+    if (json.questions[this.questionsAnswerd].answer1 == answer.outerText) {
       this.points = sessionStorage.getItem("points");
       this.points++;
       sessionStorage.setItem("points", this.points);
+
+      answer.dataset.isAnswerCorrect = "true";
+      await this.Sleep(1500);
+
+      answer.dataset.isAnswerCorrect = "NaN";
+    }
+    else {
+      answer.dataset.isAnswerCorrect = "false";
+      await this.Sleep(1500);
+      answer.dataset.isAnswerCorrect = "NaN";
     }
 
     this.questionsAnswerd++;

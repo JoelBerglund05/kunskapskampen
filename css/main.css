@@ -102,10 +102,46 @@ button:hover {
   background: linear-gradient(90deg, transparent, oklch(100% 0.0483 138.55/0.2), transparent);
   animation: loading 0.7s infinite; }
 
+.answer-btn[data-is-answer-correct=true] {
+  animation: correct-answer 1.5s;
+}
+
+.answer-btn[data-is-answer-correct=false] {
+  animation: wrong-answer 1.5s;
+}
+
 @media (prefers-reduced-motion) {
   .loading::after {
     transform: none;
-    animation: none; } }
+    animation: none;
+  }
+  .answer-btn[data-is-answer-correct=true], .answer-btn[data-is-answer-correct=false] {
+    animation: none;
+  }
+  .answer-btn[data-is-answer-correct=false] {
+    background-color: oklch(60% 0.1825 21.18deg);
+  }
+  .answer-btn[data-is-answer-correct=true] {
+    background-color: oklch(70% 0.1776 141.88deg);
+  }
+}
+@keyframes wrong-answer {
+  33% {
+    background-color: oklch(60% 0.1825 21.18deg);
+  }
+  to {
+    background-color: oklch(60% 0.1825 21.18deg);
+  }
+}
+@keyframes correct-answer {
+  33% {
+    background-color: oklch(70% 0.1776 141.88deg);
+  }
+  to {
+    background-color: oklch(70% 0.1776 141.88deg);
+  }
+}
+
 @keyframes loading {
   to {
     transform: translateX(100%); } }
