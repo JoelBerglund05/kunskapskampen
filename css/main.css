@@ -121,7 +121,12 @@ button:hover {
   width: 100%;
   height: 100%;
   transform: translateX(-100px);
-  background: linear-gradient(90deg, transparent, oklch(100% 0.0483 138.55deg / 0.2), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    oklch(100% 0.0483 138.55deg / 0.2),
+    transparent
+  );
   animation: loading 0.7s infinite;
 }
 
