@@ -43,7 +43,7 @@ class Main {
     const clickEvent = "click";
     this.RegisterServiceWorker();
 
-    //await this.UrlSpecificLogic();
+    await this.UrlSpecificLogic();
 
     this.answersBtns.forEach((btn) => {
       this.eventManager.EventListener(btn, clickEvent, () =>
