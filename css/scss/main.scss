@@ -3,6 +3,11 @@ $primary-color1: oklch(60% 0.0483 138.55);
 $primary-color2: oklch(65% 0.0483 138.55);
 $primary-color3: oklch(80% 0.0483 138.55);
 $primary-color4: oklch(95% 0.0483 138.55);
+$primary-color4: oklch(95% 0.0483 138.55);
+$primary-loading: oklch(44% 0.0483 138.55 / 0.7);
+$primary-loading1: oklch(100% 0.0483 138.55 / 0.2);
+$primary-shadow: oklch(10% 0.0483 138.55 / 0.5);
+
 $cta: oklch(82% 0.1455 79.31);
 $cta-hover: oklch(77% 0.1455 79.31);
 
@@ -34,13 +39,17 @@ body {
 
 .header {
   color: $black;
-  display: flex;
-  justify-content: center;
+  justify-self: center;
 }
+
+.grid {
+  display: grid;
+}
+
 .header-h1 {
   color: $white;
   background-color: $primary-color;
-  padding: 1em 0 2em 0;
+  padding: 1em 0.3em 2em 0.3em;
   width: 20em;
   text-align: center;
   border-radius: 0 0 1em 1em;
@@ -81,6 +90,11 @@ body {
 .grid-1-col {
   display: grid;
   justify-content: center;
+  grid-template-columns: minmax(10em, 120em);
+}
+
+.center-self {
+  justify-self: center;
 }
 
 .center-text {
@@ -98,7 +112,6 @@ body {
 
 .points {
   font: 2em bold;
-
 }
 
 button:hover {
@@ -109,6 +122,80 @@ button:hover {
   background-color: $primary-color;
 }
 
+.loading {
+  position: relative;
+  background: $primary-loading;
+}
+.loading:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100px);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    $primary-loading1,
+    transparent
+  );
+  animation: loading 0.7s infinite;
+}
+
+.answer-btn[data-is-answer-correct="true"] {
+  animation: correct-answer 1.5s;
+}
+.answer-btn[data-is-answer-correct="false"] {
+  animation: wrong-answer 1.5s;
+}
+
+@media (prefers-reduced-motion) {
+  .loading::after {
+    transform: none;
+    animation: none;
+  }
+  .answer-btn[data-is-answer-correct="true"],
+  .answer-btn[data-is-answer-correct="false"] {
+    animation: none;
+  }
+  .answer-btn[data-is-answer-correct="false"] {
+    background-color: $wrong-answer-color;
+  }
+
+  .answer-btn[data-is-answer-correct="true"] {
+    background-color: $right-answer-color;
+  }
+}
+
+@keyframes wrong-answer {
+  33% {
+    background-color: $wrong-answer-color;
+  }
+  to {
+    background-color: $wrong-answer-color;
+  }
+}
+
+@keyframes correct-answer {
+  33% {
+    background-color: $right-answer-color;
+  }
+  to {
+    background-color: $right-answer-color;
+  }
+}
+
+@keyframes loading {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.box-shadow {
+  box-shadow: $primary-shadow 0em 0em 0.3em;
+}
+
 @media (width < 720px) {
   .question-grid {
     margin: 0 1em;
@@ -116,36 +203,50 @@ button:hover {
   .marigin-big {
     margin-top: 35svh;
   }
+
+  .header-h1 {
+    margin: 0 0.5em;
+    width: auto;
+  }
+
+  .header .loading {
+    width: 30ch;
+  }
 }
 
 @media (width < 560px) {
   .question-grid {
-    margin: 0 .5em;
+    margin: 0 0.5em;
   }
   .header-h1 {
-    margin: 0 .5em;
+    margin: 0 0.5em;
   }
   .answer-btn {
     font-size: 1em;
-    padding: .5em 1.5em .5em 1.5em;
+    padding: 0.5em 1.5em 0.5em 1.5em;
   }
   .marigin-big {
     margin-top: 35svh;
   }
+  .header .loading {
+    width: 20ch;
+  }
 }
 @media (width < 320px) {
   .question-grid {
-    margin: 0 .5em;
-
+    margin: 0 0.5em;
   }
   .header-h1 {
     font-size: 1.25em;
   }
   .question-grid {
     grid-template-columns: repeat(1, 1fr);
-    gap: .75em .5em;
+    gap: 0.75em 0.5em;
   }
   .marigin-big {
     margin-top: 35svh;
+  }
+  .header .loading {
+    width: 10ch;
   }
 }
