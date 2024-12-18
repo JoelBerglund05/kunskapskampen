@@ -14,16 +14,53 @@ export default class GameHandeler {
     }
   }
 
-  async CreateGameScreen() {
-    let answersLeftToPlace = [0, 1, 2, 3];
-    this.ShuffleArray(answersLeftToPlace);
+  GetRandomCategory() {
+    const categori = [
+      "geografi",
+      "Historia",
+      "Filmer",
+      "Musik",
+      "Allmänbildning",
+    ];
+    const randomQuestion = Math.floor(Math.random() * categori.length);
+
+    return categori[randomQuestion];
+  }
+
+  async CreateGameScreen(dataBase) {
+    await dataBase.GetQuestion(this.GetRandomCategory());
+    this.UpdateGameScreen();
+  }
+
+  CreatePointsScreen() {
+    const gameScreenParentNode = document.getElementById("container");
+    const gameScreenNode = gameScreenParentNode.querySelector(".question-vh");
+    const deletedChildNode = gameScreenParentNode.removeChild(gameScreenNode);
+
+    const template = document.getElementById("points");
+
+    const pointsHtml = template.content.cloneNode(true).firstElementChild;
+
+    const heading = pointsHtml.querySelector("#points-header");
+    const pointsSetter = pointsHtml.querySelector("#set-points");
+
+    pointsSetter.textContent = sessionStorage.getItem("points") + "/10";
+
+    sessionStorage.setItem("questionsAnswerd", 0);
+    sessionStorage.setItem("points", 0);
+
+    this.gameContainer.appendChild(pointsHtml);
+  }
+
+  UpdateGameScreen() {
+    const shuffledAnswers = [0, 1, 2, 3];
+    this.ShuffleArray(shuffledAnswers);
 
     const json = JSON.parse(sessionStorage.getItem("question"));
     this.questionsAnswerd = parseInt(
       sessionStorage.getItem("questionsAnswerd") || 0,
     );
 
-   
     let questionHtml = this.gameContainer.querySelector(".question-vh");
     if (!questionHtml) {
       const template = document.getElementById("answer-form");
@@ -31,7 +68,6 @@ export default class GameHandeler {
       this.gameContainer.appendChild(questionHtml);
     }
 
-    
     const question = questionHtml.querySelector("#question");
     const answersBtn = [
       questionHtml.querySelector("#btn-1"),
@@ -47,34 +83,11 @@ export default class GameHandeler {
       json.questions[this.questionsAnswerd].answer4,
     ];
 
-
     question.textContent = json.questions[this.questionsAnswerd].question;
 
     for (let i = 0; i < 4; i++) {
-      answersBtn[i].textContent = answer[answersLeftToPlace[i]];
+      answersBtn[i].textContent = answer[shuffledAnswers[i]];
     }
-  }
-
-  CreatePointsScreen() {
-    const gameScreenParentNode = document.getElementById("container");
-    const gameScreenNode = gameScreenParentNode.querySelector(".question-vh");
-    const deletedChildNode = gameScreenParentNode.removeChild(gameScreenNode);
-
-    const template = document.getElementById("points");
-
-    // Clone it (this is where the magic happens!)
-    const pointsHtml = template.content.cloneNode(true).firstElementChild;
-
-    // Update the content
-    const heading = pointsHtml.querySelector("#points-header");
-    const pointsSetter = pointsHtml.querySelector("#set-points");
-
-    pointsSetter.textContent = sessionStorage.getItem("points") + "/10";
-
-    sessionStorage.setItem("questionsAnswerd", 0);
-    sessionStorage.setItem("points", 0);
-
-    this.gameContainer.appendChild(pointsHtml);
   }
 
   ButtonAnswer(answer) {
@@ -89,13 +102,11 @@ export default class GameHandeler {
       sessionStorage.setItem("points", this.points);
     }
 
-    // Increment questionsAnswerd before checking
     this.questionsAnswerd++;
     sessionStorage.setItem("questionsAnswerd", this.questionsAnswerd);
 
-    // Check if we've reached the total number of questions
     if (this.questionsAnswerd < json.questions.length) {
-      this.CreateGameScreen();
+      this.UpdateGameScreen();
     } else {
       this.CreatePointsScreen();
     }
