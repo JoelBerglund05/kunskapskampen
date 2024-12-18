@@ -68,15 +68,20 @@ body {
 }
 
 .next-question {
-  background-color: $primary-color;
-  color: $white;
+  background-color: $cta;
+  color: $black;
   font-size: 1.5em;
   border: 0;
   border-radius: 5px;
-  padding: 1em 3em 1em 3em;
   text-decoration: none;
+  padding: 1em;
+  width: 90%;
+  max-width: 15rem;
+  text-align: center;
   margin-top: 2%;
 }
+
+
 
 .marigin-big {
   margin-top: 50svh;
@@ -97,6 +102,7 @@ body {
   margin-left: 5em;
   margin-right: 5em;
 }
+
 
 .grid-1-col {
   display: grid;
@@ -136,6 +142,10 @@ button:hover {
   .marigin-big {
     margin-top: 35svh;
   }
+  .next-question {
+    width: 40%;
+    height: auto;
+  }
 }
 
 @media (width < 560px) {
@@ -151,6 +161,9 @@ button:hover {
   }
   .marigin-big {
     margin-top: 35svh;
+  }
+  .next-question {
+    font-size: 1em;
   }
 }
 @media (width < 320px) {
@@ -168,4 +181,12 @@ button:hover {
   .marigin-big {
     margin-top: 35svh;
   }
+  .next-question {
+    font-size: 0.75em;
+    margin: 0.5em;
+  }
+}
+
+.selected {
+  background-color: $primary-color4;
 }
