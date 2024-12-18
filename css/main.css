@@ -1,3 +1,4 @@
+@charset "UTF-8";
 p,
 h1,
 h2,
@@ -69,8 +70,13 @@ body {
   margin-top: 2%;
 }
 
+.next-question:hover {
+  background-color: oklch(77% 0.1455 79.31deg);
+}
+
 .marigin-big {
-  margin-top: 50svh;
+  margin-top: 45svh;
+  /*ändrat från 50svh*/
 }
 
 .marigin-medium {
@@ -170,7 +176,7 @@ button:hover {
   }
 }
 .selected {
-  background-color: oklch(95% 0.0483 138.55deg);
+  background-color: oklch(30% 0.0483 138.55deg);
 }
 
 /*# sourceMappingURL=main.css.map */

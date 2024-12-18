@@ -5,6 +5,7 @@ $primary-color3: oklch(80% 0.0483 138.55);
 $primary-color4: oklch(95% 0.0483 138.55);
 $cta: oklch(82% 0.1455 79.31);
 $cta-hover: oklch(77% 0.1455 79.31);
+$selected: oklch(30% 0.0483 138.55);
 
 $white: oklch(100% 0.0483 138.55);
 $black: oklch(10% 0.0483 138.55);
@@ -81,10 +82,15 @@ body {
   margin-top: 2%;
 }
 
+.next-question:hover {
+  background-color: $cta-hover;
+}
+
 
 
 .marigin-big {
-  margin-top: 50svh;
+  margin-top: 45svh;
+  /*ändrat från 50svh*/
 }
 .marigin-medium {
   margin-top: 25svh;
@@ -188,5 +194,5 @@ button:hover {
 }
 
 .selected {
-  background-color: $primary-color4;
+  background-color: $selected;
 }

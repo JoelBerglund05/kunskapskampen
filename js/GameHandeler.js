@@ -114,19 +114,22 @@ export default class GameHandeler {
 
 
   HandleSubmitLogic(answersBtns, submitBtn) {
-    let selectedAnswer = null; 
+    let selectedAnswer = null;
+  
     answersBtns.forEach((btn) => {
       btn.addEventListener("click", () => {
-        btn.classList.add("selected");
+        answersBtns.forEach((button) => button.classList.remove("selected"));  
+        btn.classList.add("selected");  
         selectedAnswer = btn.innerText;
         console.log(`Answer selected: ${selectedAnswer}`);
       });
     });
+  
     submitBtn.addEventListener("click", () => {
       if (selectedAnswer) {
-        console.log(`Submitting answer: ${selectedAnswer}`);
+        console.log(`Submitting answer: ${selectedAnswer}`);        
         this.ButtonAnswer(selectedAnswer);
-        selectedAnswer = null;
+          selectedAnswer = null;
         answersBtns.forEach((button) => button.classList.remove("selected"));
       } else {
         console.log("No answer selected. Please select an answer before submitting.");
