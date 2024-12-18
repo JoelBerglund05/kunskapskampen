@@ -47,7 +47,7 @@ class Main {
 
     this.answersBtns.forEach((btn) => {
       this.eventManager.EventListener(btn, clickEvent, () =>
-        this.gameHandeler.ButtonAnswer(btn.outerText),
+        this.gameHandeler.ButtonAnswer(btn),
       );
     });
   }

@@ -144,9 +144,45 @@ button:hover {
 }
 
 @media (prefers-reduced-motion) {
+
+.answer-btn[data-is-answer-correct="true"] {
+  animation: correct-answer 1.5s;
+}
+.answer-btn[data-is-answer-correct="false"] {
+  animation: wrong-answer 1.5s;
+}
+
   .loading::after {
     transform: none;
     animation: none;
+  }
+  .answer-btn[data-is-answer-correct="true"], .answer-btn[data-is-answer-correct="false"] {
+    animation: none;
+  }
+  .answer-btn[data-is-answer-correct="false"] {
+    background-color: $wrong-answer-color; 
+  }
+
+  .answer-btn[data-is-answer-correct="true"] {
+    background-color: $right-answer-color
+  }
+}
+
+@keyframes wrong-answer {
+  33% {
+    background-color: $wrong-answer-color; 
+  }
+  to {
+    background-color: $wrong-answer-color; 
+  }
+}
+
+@keyframes correct-answer {
+  33% {
+    background-color: $right-answer-color; 
+  }
+  to {
+    background-color: $right-answer-color; 
   }
 }
 
@@ -155,9 +191,11 @@ button:hover {
     transform: translateX(100%);
   }
 }
+
 .box-shadow {
   box-shadow: $primary-shadow 0em 0em 0.3em;
 }
+
 
 @media (width < 720px) {
   .question-grid {
@@ -165,6 +203,10 @@ button:hover {
   }
   .marigin-big {
     margin-top: 35svh;
+  }
+
+  .header-h1 {
+    width: auto;
   }
 }
 
