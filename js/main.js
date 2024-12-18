@@ -29,6 +29,29 @@ class Main {
     ];
   }
 
+
+  HandleSubmitButton() {
+    let selectedAnswer = null;
+
+    this.answersBtns.forEach((btn) => {
+      this.eventManager.EventListener(btn, "click", () => {
+        selectedAnswer = btn.outerText; // Store the text of the clicked button
+        console.log(`Selected Answer: ${selectedAnswer}`);
+      });
+    });
+
+    const submitBtn = this.container.querySelector("#submit-btn");
+    this.eventManager.EventListener(submitBtn, "click", () => {
+      if (selectedAnswer) {
+        this.gameHandeler.ButtonAnswer(selectedAnswer);
+        selectedAnswer = null;
+      } else {
+        console.log("no answer");
+      }
+    });
+  }
+
+
   async UrlSpecificLogic() {
     const url = window.location.href;
     const ending = url.substring(url.lastIndexOf("/"));
@@ -42,15 +65,16 @@ class Main {
   async Main() {
     const clickEvent = "click";
     this.RegisterServiceWorker();
-
+  
     await this.UrlSpecificLogic();
-
-    this.answersBtns.forEach((btn) => {
-      this.eventManager.EventListener(btn, clickEvent, () =>
-        this.gameHandeler.ButtonAnswer(btn.outerText),
-      );
-    });
+  
+    // Update DOM elements and buttons
+    this.UpdateGameElements();
+  
+    // Call the new submit handling function
+    this.HandleSubmitButton();
   }
+  
 }
 
 const main = new Main();
