@@ -121,20 +121,15 @@ button:hover {
   width: 100%;
   height: 100%;
   transform: translateX(-100px);
-  background: linear-gradient(
-    90deg,
-    transparent,
-    oklch(100% 0.0483 138.55deg / 0.2),
-    transparent
-  );
+  background: linear-gradient(90deg, transparent, oklch(100% 0.0483 138.55deg / 0.2), transparent);
   animation: loading 0.7s infinite;
 }
 
-.answer-btn[data-is-answer-correct="true"] {
+.answer-btn[data-is-answer-correct=true] {
   animation: correct-answer 1.5s;
 }
 
-.answer-btn[data-is-answer-correct="false"] {
+.answer-btn[data-is-answer-correct=false] {
   animation: wrong-answer 1.5s;
 }
 
@@ -143,14 +138,14 @@ button:hover {
     transform: none;
     animation: none;
   }
-  .answer-btn[data-is-answer-correct="true"],
-  .answer-btn[data-is-answer-correct="false"] {
+  .answer-btn[data-is-answer-correct=true],
+  .answer-btn[data-is-answer-correct=false] {
     animation: none;
   }
-  .answer-btn[data-is-answer-correct="false"] {
+  .answer-btn[data-is-answer-correct=false] {
     background-color: oklch(60% 0.1825 21.18deg);
   }
-  .answer-btn[data-is-answer-correct="true"] {
+  .answer-btn[data-is-answer-correct=true] {
     background-color: oklch(70% 0.1776 141.88deg);
   }
 }
@@ -189,6 +184,9 @@ button:hover {
   .header-h1 {
     width: auto;
   }
+  .header .loading {
+    width: 30ch;
+  }
 }
 @media (width < 560px) {
   .question-grid {
@@ -204,6 +202,9 @@ button:hover {
   .marigin-big {
     margin-top: 35svh;
   }
+  .header .loading {
+    width: 20ch;
+  }
 }
 @media (width < 320px) {
   .question-grid {
@@ -218,6 +219,9 @@ button:hover {
   }
   .marigin-big {
     margin-top: 35svh;
+  }
+  .header .loading {
+    width: 10ch;
   }
 }
 

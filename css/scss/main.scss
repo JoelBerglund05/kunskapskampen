@@ -207,6 +207,10 @@ button:hover {
   .header-h1 {
     width: auto;
   }
+
+  .header .loading {
+    width: 30ch;
+  }
 }
 
 @media (width < 560px) {
@@ -223,6 +227,9 @@ button:hover {
   .marigin-big {
     margin-top: 35svh;
   }
+  .header .loading {
+    width: 20ch;
+  }
 }
 @media (width < 320px) {
   .question-grid {
@@ -237,5 +244,8 @@ button:hover {
   }
   .marigin-big {
     margin-top: 35svh;
+  }
+  .header .loading {
+    width: 10ch;
   }
 }
