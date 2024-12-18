@@ -187,6 +187,7 @@ button:hover {
     margin-top: 35svh;
   }
   .header-h1 {
+    margin: 0 0.5em;
     width: auto;
   }
 }
