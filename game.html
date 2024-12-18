@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="./css/main.css" />
     <template id="answer-form">
       <article class="question-vh">
+      <div class="grid">
         <header class="header">
-          <h1 id="question" class="header-h1 marign-none"></h1>
+          <h1 id="question" class="header-h1 marign-none box-shadow"></h1>
         </header>
+      </div>
         <section class="marigin-big">
           <form class="question-grid">
             <button type="button" id="btn-1" class="answer-btn"></button>
@@ -22,23 +24,19 @@
       </article>
     </template>
     <template id="points">
-      <article class="question-vh">
+      <article class="question-vh grid">
         <header class="header">
-          <h1 id="points-header" class="header-h1 marign-none">
-            Ditt resultat
-          </h1>
+          <h1 id="points-header" class="header-h1 marign-none box-shadow">Ditt resultat</h1>
         </header>
-        <section class="grid-1-col marigin-medium">
-          <div class="background-primary points-card">
-            <h2 class="points-card-header center-text white-text">
-              Dina poäng är:
-            </h2>
+        <section class="center-self marigin-medium">
+          <div class="background-primary points-card box-shadow">
+            <h2 class="points-card-header center-text white-text">Dina poäng är:</h2>
             <p id="set-points" class="center-text points white-text"></p>
           </div>
         </section>
-        <footer class="marigin-small">
-          <nav aria-label="navigation" class="grid-1-col">
-            <a href="./index.html" class="answer-btn">Gå tillbaka</a>
+        <footer class="marigin-small center-self">
+          <nav aria-label="navigation">
+            <a href="./index.html" class="answer-btn box-shadow">Gå till baka</a>
           </nav>
         </footer>
       </article>
