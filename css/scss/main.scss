@@ -58,6 +58,24 @@ body {
   padding: 1em 3em 1em 3em;
   text-decoration: none;
 }
+
+.vidare {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.next {
+  background-color: $primary-color;
+  color: $white;
+  font-size: 1.5em;
+  border: 0;
+  border-radius: 5px;
+  padding: 1em 3em 1em 3em;
+  text-decoration: none;
+  margin: 5%;
+}
+
 .marigin-big {
   margin-top: 50svh;
 }
