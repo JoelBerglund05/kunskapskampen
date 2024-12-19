@@ -131,25 +131,23 @@ export default class GameHandeler {
     }
   }
 
-
   HandleSubmitLogic(answersBtns, submitBtn) {
     let selectedAnswer = null;
-  
+
     answersBtns.forEach((btn) => {
       btn.addEventListener("click", () => {
-        answersBtns.forEach((button) => button.classList.remove("selected"));  
-        btn.classList.add("selected");  
+        answersBtns.forEach((button) => button.classList.remove("selected"));
+        btn.classList.add("selected");
         selectedAnswer = btn;
       });
     });
-  
+
     submitBtn.addEventListener("click", () => {
       if (selectedAnswer) {
         this.ButtonAnswer(selectedAnswer);
-          selectedAnswer = null;
+        selectedAnswer = null;
         answersBtns.forEach((button) => button.classList.remove("selected"));
       }
     });
   }
-  
 }
