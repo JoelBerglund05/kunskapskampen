@@ -17,7 +17,8 @@ $black: oklch(10% 0.0483 138.55);
 $wrong-answer-color: oklch(60% 0.1825 21.18);
 $right-answer-color: oklch(70% 0.1776 141.88);
 
-button:focus-visible {
+button:focus-visible,
+a:focus-visible {
   outline: 3px solid $wrong-answer-color;
 }
 
@@ -60,7 +61,6 @@ body {
   border-radius: 0 0 1em 1em;
 }
 
-
 .marign-none {
   margin: 0;
 }
@@ -99,8 +99,6 @@ body {
   background-color: $cta-hover;
 }
 
-
-
 .marigin-big {
   margin-top: 45svh;
   /*ändrat från 50svh*/
@@ -121,7 +119,6 @@ body {
   margin-left: 5em;
   margin-right: 5em;
 }
-
 
 .grid-1-col {
   display: grid;
@@ -148,7 +145,6 @@ body {
 
 .points {
   font: 2em bold;
-
 }
 
 button:hover {
@@ -262,14 +258,14 @@ button:hover {
 
 @media (width < 560px) {
   .question-grid {
-    margin: 0 .5em;
+    margin: 0 0.5em;
   }
   .header-h1 {
-    margin: 0 .5em;
+    margin: 0 0.5em;
   }
   .answer-btn {
     font-size: 1em;
-    padding: .5em 1.5em .5em 1.5em;
+    padding: 0.5em 1.5em 0.5em 1.5em;
   }
   .marigin-big {
     margin-top: 35svh;
@@ -277,7 +273,7 @@ button:hover {
   .next-question {
     font-size: 1em;
   }
-    .header .loading {
+  .header .loading {
     width: 20ch;
   }
   .kunskapskampen-svg {
@@ -288,15 +284,14 @@ button:hover {
 }
 @media (width < 320px) {
   .question-grid {
-    margin: 0 .5em;
-
+    margin: 0 0.5em;
   }
   .header-h1 {
     font-size: 1.25em;
   }
   .question-grid {
     grid-template-columns: repeat(1, 1fr);
-    gap: .75em .5em;
+    gap: 0.75em 0.5em;
   }
   .marigin-big {
     margin-top: 35svh;
@@ -305,7 +300,7 @@ button:hover {
     font-size: 0.75em;
     margin: 0.5em;
   }
-    .header .loading {
+  .header .loading {
     width: 10ch;
   }
 }
