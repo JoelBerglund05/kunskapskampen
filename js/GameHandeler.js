@@ -27,15 +27,26 @@ export default class GameHandeler {
     return categori[randomQuestion];
   }
 
+  DeleteQuestionNode() {
+    const gameScreenParentNode = document.getElementById("container");
+    const gameScreenNode = gameScreenParentNode.querySelector(".question-vh");
+    const deletedChildNode = gameScreenParentNode.removeChild(gameScreenNode);
+  }
+
   async CreateGameScreen(dataBase) {
     await dataBase.GetQuestion(this.GetRandomCategory());
+
+    this.DeleteQuestionNode();
+
+    const template = document.getElementById("answer-form");
+    const questionHtml = template.content.cloneNode(true).firstElementChild;
+    this.gameContainer.appendChild(questionHtml);
+
     this.UpdateGameScreen();
   }
 
   CreatePointsScreen() {
-    const gameScreenParentNode = document.getElementById("container");
-    const gameScreenNode = gameScreenParentNode.querySelector(".question-vh");
-    const deletedChildNode = gameScreenParentNode.removeChild(gameScreenNode);
+    this.DeleteQuestionNode();
 
     const template = document.getElementById("points");
 
@@ -62,11 +73,6 @@ export default class GameHandeler {
     );
 
     let questionHtml = this.gameContainer.querySelector(".question-vh");
-    if (!questionHtml) {
-      const template = document.getElementById("answer-form");
-      questionHtml = template.content.cloneNode(true).firstElementChild;
-      this.gameContainer.appendChild(questionHtml);
-    }
 
     const question = questionHtml.querySelector("#question");
     const answersBtn = [
@@ -90,16 +96,29 @@ export default class GameHandeler {
     }
   }
 
-  ButtonAnswer(answer) {
+  async Sleep(delay) {
+    await new Promise((resolve) => setTimeout(resolve, delay));
+  }
+
+  async ButtonAnswer(answer) {
     const json = JSON.parse(sessionStorage.getItem("question"));
     this.questionsAnswerd = parseInt(
       sessionStorage.getItem("questionsAnswerd") || 0,
     );
 
-    if (json.questions[this.questionsAnswerd].answer1 == answer) {
+    if (json.questions[this.questionsAnswerd].answer1 == answer.outerText) {
       this.points = sessionStorage.getItem("points");
       this.points++;
       sessionStorage.setItem("points", this.points);
+
+      answer.dataset.isAnswerCorrect = "true";
+      await this.Sleep(1500);
+
+      answer.dataset.isAnswerCorrect = "NaN";
+    } else {
+      answer.dataset.isAnswerCorrect = "false";
+      await this.Sleep(1500);
+      answer.dataset.isAnswerCorrect = "NaN";
     }
 
     this.questionsAnswerd++;
