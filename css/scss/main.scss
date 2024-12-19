@@ -183,6 +183,12 @@ button:hover {
   animation: wrong-answer 1.5s;
 }
 
+.kunskapskampen-svg {
+  height: 20rem;
+  margin: auto;
+  display: block;
+}
+
 @media (prefers-reduced-motion) {
   .loading::after {
     transform: none;
@@ -269,6 +275,11 @@ button:hover {
   }
   .header .loading {
     width: 20ch;
+  }
+  .kunskapskampen-svg {
+    height: 15rem;
+    margin: auto;
+    display: block;
   }
 }
 @media (width < 320px) {
