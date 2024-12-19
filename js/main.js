@@ -42,15 +42,20 @@ class Main {
   async Main() {
     const clickEvent = "click";
     this.RegisterServiceWorker();
-
+  
     await this.UrlSpecificLogic();
+  
+    this.UpdateGameElements();
 
-    this.answersBtns.forEach((btn) => {
-      this.eventManager.EventListener(btn, clickEvent, () =>
-        this.gameHandeler.ButtonAnswer(btn),
-      );
-    });
+    const submitBtn = this.container.querySelector("#submit-btn");
+    
+    if (submitBtn) {
+      this.gameHandeler.HandleSubmitLogic(this.answersBtns, submitBtn);
+    } else {
+      console.error("no button found");
+    }
   }
+  
 }
 
 const main = new Main();

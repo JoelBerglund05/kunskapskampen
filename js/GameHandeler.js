@@ -130,4 +130,26 @@ export default class GameHandeler {
       this.CreatePointsScreen();
     }
   }
+
+
+  HandleSubmitLogic(answersBtns, submitBtn) {
+    let selectedAnswer = null;
+  
+    answersBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        answersBtns.forEach((button) => button.classList.remove("selected"));  
+        btn.classList.add("selected");  
+        selectedAnswer = btn.innerText;
+      });
+    });
+  
+    submitBtn.addEventListener("click", () => {
+      if (selectedAnswer) {
+        this.ButtonAnswer(selectedAnswer);
+          selectedAnswer = null;
+        answersBtns.forEach((button) => button.classList.remove("selected"));
+      }
+    });
+  }
+  
 }

@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 button:focus-visible {
   outline: 3px solid oklch(60% 0.1825 21.18deg);
 }
@@ -56,8 +58,33 @@ body {
   text-decoration: none;
 }
 
+.next {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.next-question {
+  background-color: oklch(82% 0.1455 79.31deg);
+  color: oklch(10% 0.0483 138.55deg);
+  font-size: 1.5em;
+  border: 0;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 1em;
+  width: 90%;
+  max-width: 15rem;
+  text-align: center;
+  margin-top: 2%;
+}
+
+.next-question:hover {
+  background-color: oklch(77% 0.1455 79.31deg);
+}
+
 .marigin-big {
-  margin-top: 50svh;
+  margin-top: 45svh;
+  /*ändrat från 50svh*/
 }
 
 .marigin-medium {
@@ -185,7 +212,12 @@ button:hover {
   .marigin-big {
     margin-top: 35svh;
   }
-  .header-h1 {
+
+  .next-question {
+    width: 40%;
+    height: auto;
+  }
+    .header-h1 {
     margin: 0 0.5em;
     width: auto;
   }
@@ -207,6 +239,9 @@ button:hover {
   .marigin-big {
     margin-top: 35svh;
   }
+  .next-question {
+    font-size: 1em;
+  }
   .header .loading {
     width: 20ch;
   }
@@ -225,6 +260,14 @@ button:hover {
   .marigin-big {
     margin-top: 35svh;
   }
+  .next-question {
+    font-size: 0.75em;
+    margin: 0.5em;
+  }
+}
+.selected {
+  background-color: oklch(30% 0.0483 138.55deg);
+}
   .header .loading {
     width: 10ch;
   }

@@ -10,6 +10,7 @@ $primary-shadow: oklch(10% 0.0483 138.55 / 0.5);
 
 $cta: oklch(82% 0.1455 79.31);
 $cta-hover: oklch(77% 0.1455 79.31);
+$selected: oklch(30% 0.0483 138.55);
 
 $white: oklch(100% 0.0483 138.55);
 $black: oklch(10% 0.0483 138.55);
@@ -58,6 +59,8 @@ body {
   text-align: center;
   border-radius: 0 0 1em 1em;
 }
+
+
 .marign-none {
   margin: 0;
 }
@@ -71,8 +74,36 @@ body {
   padding: 1em 3em 1em 3em;
   text-decoration: none;
 }
+
+.next {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.next-question {
+  background-color: $cta;
+  color: $black;
+  font-size: 1.5em;
+  border: 0;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 1em;
+  width: 90%;
+  max-width: 15rem;
+  text-align: center;
+  margin-top: 2%;
+}
+
+.next-question:hover {
+  background-color: $cta-hover;
+}
+
+
+
 .marigin-big {
-  margin-top: 50svh;
+  margin-top: 45svh;
+  /*ändrat från 50svh*/
 }
 .marigin-medium {
   margin-top: 25svh;
@@ -90,6 +121,7 @@ body {
   margin-left: 5em;
   margin-right: 5em;
 }
+
 
 .grid-1-col {
   display: grid;
@@ -116,6 +148,7 @@ body {
 
 .points {
   font: 2em bold;
+
 }
 
 button:hover {
@@ -207,7 +240,10 @@ button:hover {
   .marigin-big {
     margin-top: 35svh;
   }
-
+  .next-question {
+    width: 40%;
+    height: auto;
+  }
   .header-h1 {
     margin: 0 0.5em;
     width: auto;
@@ -220,37 +256,49 @@ button:hover {
 
 @media (width < 560px) {
   .question-grid {
-    margin: 0 0.5em;
+    margin: 0 .5em;
   }
   .header-h1 {
-    margin: 0 0.5em;
+    margin: 0 .5em;
   }
   .answer-btn {
     font-size: 1em;
-    padding: 0.5em 1.5em 0.5em 1.5em;
+    padding: .5em 1.5em .5em 1.5em;
   }
   .marigin-big {
     margin-top: 35svh;
   }
-  .header .loading {
+  .next-question {
+    font-size: 1em;
+  }
+    .header .loading {
     width: 20ch;
   }
 }
 @media (width < 320px) {
   .question-grid {
-    margin: 0 0.5em;
+    margin: 0 .5em;
+
   }
   .header-h1 {
     font-size: 1.25em;
   }
   .question-grid {
     grid-template-columns: repeat(1, 1fr);
-    gap: 0.75em 0.5em;
+    gap: .75em .5em;
   }
   .marigin-big {
     margin-top: 35svh;
   }
-  .header .loading {
+  .next-question {
+    font-size: 0.75em;
+    margin: 0.5em;
+  }
+    .header .loading {
     width: 10ch;
   }
+}
+
+.selected {
+  background-color: $selected;
 }
