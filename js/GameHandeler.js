@@ -139,7 +139,7 @@ export default class GameHandeler {
       btn.addEventListener("click", () => {
         answersBtns.forEach((button) => button.classList.remove("selected"));  
         btn.classList.add("selected");  
-        selectedAnswer = btn.innerText;
+        selectedAnswer = btn;
       });
     });
   
