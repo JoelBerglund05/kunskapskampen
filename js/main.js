@@ -45,11 +45,15 @@ class Main {
 
     await this.UrlSpecificLogic();
 
-    this.answersBtns.forEach((btn) => {
-      this.eventManager.EventListener(btn, clickEvent, () =>
-        this.gameHandeler.ButtonAnswer(btn),
-      );
-    });
+    this.UpdateGameElements();
+
+    const submitBtn = this.container.querySelector("#submit-btn");
+
+    if (submitBtn) {
+      this.gameHandeler.HandleSubmitLogic(this.answersBtns, submitBtn);
+    } else {
+      console.error("no button found");
+    }
   }
 }
 
