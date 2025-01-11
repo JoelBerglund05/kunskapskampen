@@ -179,6 +179,7 @@ input[type="number"]:not(:in-range) {
 }
 
 .timer-bar {
+    position: relative;
     width: 50dvw;
     max-width: 10em;
     height: .8em;
@@ -193,8 +194,23 @@ input[type="number"]:not(:in-range) {
     //animation: time-bar 20s ease;
 }
 
-progress::-moz-progress-bar {
-    background: linear-gradient(to right, oklch(0.38 0.15 29), oklch(0.63 0.26 29), oklch(0.61 0.17 46), oklch(0.82 0.15 81), oklch(0.87 0.26 143));
+.timer-bar::before {
+    content: '';
+    /*background: linear-gradient(to right, oklch(0.38 0.15 29), oklch(0.63 0.26 29), oklch(0.61 0.17 46), oklch(0.82 0.15 81), oklch(0.87 0.26 143));*/
+    /*background: oklch(0.87 0.26 143);*/
+    background: greenyellow;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-width: 2em;
+    left: 1em;
+    top: 0.5em;
+    bottom: 0.5em;
+}
+
+progress::-moz-progress-bar[value="50"] {
+    background: red;
 }
 
 .score h2 {

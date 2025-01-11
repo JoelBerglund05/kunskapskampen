@@ -145,19 +145,20 @@ input[type=number]:not(:in-range) {
   line-height: fit-content;
 }
 
-/*.answer .increase:active {
-    animation: .5s ease answer-button-in;
+.answer-1:active {
+  animation: 0.5s ease answer-button-correct;
 }
-*/
+
 .animate-in {
-  animation: answer-button-in 0.3s ease;
+  animation: answer-button-correct 0.3s ease;
 }
 
 .animate-de {
-  animation: answer-button-de 0.3s ease;
+  animation: answer-button-wrong 0.3s ease;
 }
 
 .timer-bar {
+  position: relative;
   width: 50dvw;
   max-width: 10em;
   height: 0.8em;
@@ -171,8 +172,23 @@ input[type=number]:not(:in-range) {
   background: transparent;
 }
 
-progress::-moz-progress-bar {
-  background: linear-gradient(to right, oklch(38% 0.15 29deg), oklch(63% 0.26 29deg), oklch(61% 0.17 46deg), oklch(82% 0.15 81deg), oklch(87% 0.26 143deg));
+.timer-bar::before {
+  content: "";
+  /*background: linear-gradient(to right, oklch(0.38 0.15 29), oklch(0.63 0.26 29), oklch(0.61 0.17 46), oklch(0.82 0.15 81), oklch(0.87 0.26 143));*/
+  /*background: oklch(0.87 0.26 143);*/
+  background: greenyellow;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-width: 2em;
+  left: 1em;
+  top: 0.5em;
+  bottom: 0.5em;
+}
+
+progress::-moz-progress-bar[value="50"] {
+  background: red;
 }
 
 .score h2 {
@@ -319,7 +335,7 @@ progress::-moz-progress-bar {
     transform: translateY(-20dvh) rotate(270deg);
   }
 }
-@keyframes answer-button-in {
+@keyframes answer-button-correct {
   0% {
     background: transparent;
   }
@@ -330,7 +346,7 @@ progress::-moz-progress-bar {
     background: transparent;
   }
 }
-@keyframes answer-button-de {
+@keyframes answer-button-wrong {
   0% {
     background: transparent;
   }
