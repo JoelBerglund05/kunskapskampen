@@ -191,6 +191,7 @@ input[type="number"]:not(:in-range) {
     margin: 0 auto;
     margin-top: 1em;
     background: transparent;
+    box-shadow: inset 340px 0 0 0 greenyellow;
     //animation: time-bar 20s ease;
 }
 
