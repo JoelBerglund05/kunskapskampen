@@ -94,6 +94,7 @@ h1, h2, h3, p, button, .answer input {
     flex-wrap: wrap;
     width: 25vw;
     height: 40dvh;
+    justify-content: space-evenly;
 }
 
 .choice-answer .answer-button {
@@ -191,8 +192,8 @@ input[type="number"]:not(:in-range) {
     margin: 0 auto;
     margin-top: 1em;
     background: transparent;
-    box-shadow: inset 340px 0 0 0 greenyellow;
-    //animation: time-bar 20s ease;
+    box-shadow: inset 0 0 0 0 greenyellow;
+    animation: time-bar 20s ease;
 }
 
 .timer-bar::before {
@@ -385,13 +386,10 @@ progress::-moz-progress-bar[value="50"] {
 
 @keyframes time-bar {
     0% {
-        background: lime;
-    }
-    50% {
-        background: green;
+        box-shadow: inset 340px 0 0 0 yellowgreen;
     }
     100% {
-        background: red;
+        box-shadow: inset 0 0 0 0 yellowgreen;
     }
 }
 
