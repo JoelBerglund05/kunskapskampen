@@ -10,27 +10,20 @@
     </head>
     <body>
         <div class="main-container">
-            <div>
-                <template id="score-template">
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </template>
-                <h1 class="score-title">Current Score</h1>
-                <tbody>
-                    <div class="score-flex">
-                        <div class="score">
-                            <h2>Your Score:</h2>
-                            <p id="yourScore">0</p>
-                        </div>
-                        <div class="score">
-                            <h2>Opponent Score:</h2>
-                            <p id="opponentScore">0</p>
-                        </div>
+            <h1 class="score-title">Current Score</h1>
+            <template id="score-template">
+                <div class="score-flex">
+                    <div class="score">
+                        <h2>Your Score:</h2>
+                        <p id="yourScore">{yourScore}</p>
                     </div>
-                </tbody>
-            </div>
+                    <div class="score">
+                        <h2>Opponent Score:</h2>
+                        <p id="opponentScore">{opponentScore}</p>
+                    </div>
+                </div>
+            </template>
+            <div id="content"></div>
             <div class="bg-box-container">
                 <div class="bg-box"></div>
                 <div class="bg-box"></div>

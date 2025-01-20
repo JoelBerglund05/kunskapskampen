@@ -1,15 +1,11 @@
-tpl = getElementById('score-template');
-clonedTr = tpl.content.cloneNode(true);
+const template = document.getElementById("score-template");
+const clone = document.importNode(template.content, true);
 
-scoreTemplate(); {
-    clonedTr.querySelectorAll('td').forEach((tdElem, i) => {
-        if (i === 0) {
-            tdElem.innerText = 'You';
-        }
-        else {
-            tdElem.innerText = 'Opponant';
-        }
-    });
+const yourScore = 0;
+const opponentScore = 0;
 
-    document.querySelector('table tbody').appendChild(clonedTr);
-}
+clone.querySelector('p').textContent = '${yourScore}';
+
+document.getElementById('content').appendChild(clone);
+
+console.log('TEMPLATES');
