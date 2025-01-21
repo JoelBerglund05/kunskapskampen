@@ -36,4 +36,31 @@ ul > .group {
     display: inline;
 }
 
-.ownert
+
+
+.card-container {
+    background-color: $cta;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.content-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.content-container, .group1{
+    width: 90%;
+    height: 100%;
+    justify-content: center;
+}
+
+.group1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+

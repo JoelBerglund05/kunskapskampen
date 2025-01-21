@@ -1,17 +1,45 @@
-/* Error: expected "{".
- *    ,
- * 39 | .ownert
- *    |        ^
- *    '
- *   css/scss/gamelist.scss 39:8  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: expected "{".\a    \2577 \a 39 \2502  .ownert\a    \2502         ^\a    \2575 \a   css/scss/gamelist.scss 39:8  root stylesheet';
+body {
+  background-color: oklch(100% 0.0483 138.55deg);
 }
+
+.group-1 {
+  background-color: blue;
+  border: 10px black solid;
+}
+
+ul > .group {
+  display: inline;
+  background-color: green;
+}
+
+.owner {
+  display: inline;
+}
+
+.card-container {
+  background-color: oklch(82% 0.1455 79.31deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 3px;
+}
+
+.content-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.content-container, .group1 {
+  width: 90%;
+  height: 100%;
+  justify-content: center;
+}
+
+.group1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*# sourceMappingURL=gamelist.css.map */
