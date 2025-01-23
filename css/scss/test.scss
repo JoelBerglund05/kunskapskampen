@@ -1,9 +1,24 @@
+@use 'main.scss';
+
+$color: main.$white;
+
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #1a1a2e;
-    color: #fff;
+    background-color: $color;
+    color: $color;
     margin: 0;
     padding: 0;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $color;
 }
 
 .container {
@@ -13,27 +28,28 @@ body {
 }
 
 .match {
-    background: #2c2c54;
+    background-color: main.$primary-color;
     border-radius: 8px;
     margin-bottom: 20px;
     padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 6px main.$black;
 }
 
 .match.win {
-    border-left: 8px solid #4caf50;
+    border-left: 8px solid main.$right-answer-color;
 }
 
 .match.loss {
-    border-left: 8px solid #e53935;
+    border-left: 8px solid main.$wrong-answer-color;
 }
 
 .match-details {
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 .champion {
@@ -56,8 +72,16 @@ body {
 .info p {
     margin: 0;
     font-size: 14px;
-    color: #aaa;
+    color: $color;
 }
+
+.vs{
+    display: flex;
+    text-align: right;
+    margin-left: 100px;
+}
+
+
 
 .stats {
     text-align: center;
@@ -67,7 +91,7 @@ body {
     margin: 0;
 }
 
-.stats .kda {
+.stats .points {
     font-size: 20px;
     font-weight: bold;
 }
@@ -86,5 +110,5 @@ body {
 
 .vision {
     font-size: 14px;
-    color: #aaa;
+    color: $color;
 }
