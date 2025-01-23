@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a2e;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.match {
+    background: #2c2c54;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.match.win {
+    border-left: 8px solid #4caf50;
+}
+
+.match.loss {
+    border-left: 8px solid #e53935;
+}
+
+.match-details {
+    display: flex;
+    align-items: center;
+}
+
+.champion {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #3e3e6a;
+    margin-right: 15px;
+}
+
+.info {
+    margin-right: 30px;
+}
+
+.info h4 {
+    margin: 0 0 5px;
+    font-size: 18px;
+}
+
+.info p {
+    margin: 0;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.stats {
+    text-align: center;
+}
+
+.stats p {
+    margin: 0;
+}
+
+.stats .kda {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.items {
+    display: flex;
+    gap: 5px;
+}
+
+.item {
+    width: 40px;
+    height: 40px;
+    background: #3e3e6a;
+    border-radius: 4px;
+}
+
+.vision {
+    font-size: 14px;
+    color: #aaa;
+}
