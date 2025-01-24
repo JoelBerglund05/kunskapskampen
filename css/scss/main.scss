@@ -345,6 +345,14 @@ progress::-moz-progress-bar[value="50"] {
     animation: bg-animation 5s linear infinite;
 }
 
+.score-element {
+    background: red;
+}
+
+
+
+
+
 @keyframes bg-animation {
     0% {
         opacity: 0%;
