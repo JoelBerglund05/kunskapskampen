@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="manifest" href="manifest.json" />
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="css/main.css">
+        <title>Score</title>
+    </head>
+    <body>
+        <div class="main-container">
+            <h1 class="score-title">Current Score</h1>
+            <template id="score-template">
+                <div class="score-flex">
+                    <div class="score">
+                        <h2 class="score-element">Your Score:<h2 id="yourScore"></h2></h2>
+                        <h2 class="score-element">Category 1:<h2 id="yourCategory1Score"></h2></h2>
+                        <h2 class="score-element">Category 2:<h2 id="yourCategory2Score"></h2></h2>
+                        <h2 class="score-element">Category 3:<h2 id="yourCategory3Score"></h2></h2>
+                    </div>
+                    <div class="score">
+                        <h2 class="score-element">Opponent Score:<h2 id="opponentScore"></h2></h2>
+                        <h2 class="score-element">Category 1:<h2 id="opponentCategory1Score"></h2></h2>
+                        <h2 class="score-element">Category 2:<h2 id="opponentCategory2Score"></h2></h2>
+                        <h2 class="score-element">Category 3:<h2 id="opponentCategory3Score"></h2></h2>
+                    </div>
+                </div>
+            </template>
+            <div id="content"></div>
+            <div class="bg-box-container">
+                <div class="bg-box"></div>
+                <div class="bg-box"></div>
+                <div class="bg-box"></div>
+                <div class="bg-box"></div>
+                <div class="bg-box"></div>
+                <div class="bg-box"></div>
+                <div class="bg-box"></div>
+                <div class="bg-box"></div>
+                <div class="bg-box"></div>
+                <div class="bg-box"></div>
+                <div class="bg-box"></div>
+                <div class="bg-box"></div>
+                <div class="bg-box"></div>
+                <div class="bg-box"></div>
+                <div class="bg-box"></div>
+                <div class="bg-box"></div>
+            </div>
+        </div>
+        <script type="module" src="js/main.js"></script>
+        <script type="module" src="js/NoneObjectTemplate.js"></script>
+    </body>
+</html>
