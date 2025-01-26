@@ -319,6 +319,7 @@ h6 {
 
 .match.win {
   border-left: 8px solid oklch(70% 0.1776 141.88deg);
+  /*display: inline-grid;*/
 }
 
 .match.loss {
@@ -326,7 +327,8 @@ h6 {
 }
 
 .match-details {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   align-items: center;
   width: 100%;
 }
@@ -337,6 +339,23 @@ h6 {
   border-radius: 50%;
   background: #3e3e6a;
   margin-right: 15px;
+}
+
+.other {
+  margin-right: 0;
+}
+
+.your-player, .other-player {
+  display: flex;
+  align-items: center;
+  /*    width: fit-content;
+      block-size: fit-content;*/
+}
+
+.other-player {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
 }
 
 .info {

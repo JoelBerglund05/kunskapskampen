@@ -7,23 +7,67 @@
     <link rel="stylesheet" href="manifest.json">
     <link rel="stylesheet" href="../css/test.css">
     <title>Match History</title>
+
+
+    <template class="game-result">    <div class="container">
+        <div class="match win">
+            <div class="match-details">
+                <div class="your-player">
+                  <div class="champion"></div>
+                    <div class="info">
+                        <h4>player</h4>
+                        <p>####</p>
+                  </div>
+                </div>
+                <div class="stats">
+                    <p class="points">points</p>
+                </div>
+                <div class="vs">
+                    <p class="v/s">V/S</p>
+                </div>
+                <div class="stats">
+                    <p class="points">points</p>
+                </div>
+                <div class="other-player">
+                        <div class="info">
+                          <h4>player</h4>
+                          <p>####</p>
+                        </div>
+                        <div class="champion other"></div>
+                    </div>
+
+        <!-- Add more matches here -->
+
+        </div>
+    </template>
 </head>
 <body>
     <div class="container">
         <div class="match win">
             <div class="match-details">
-                <div class="champion"></div>
-                <div class="info">
-                    <h4>player</h4>
-                    <p>####</p>
+                <div class="your-player">
+                  <div class="champion"></div>
+                    <div class="info">
+                        <h4>player</h4>
+                        <p>####</p>
+                  </div>
                 </div>
                 <div class="stats">
                     <p class="points">points</p>
-
                 </div>
                 <div class="vs">
                     <p class="v/s">V/S</p>
                 </div>
+                <div class="stats">
+                    <p class="points">points</p>
+                </div>
+                <div class="other-player">
+                        <div class="info">
+                          <h4>player</h4>
+                          <p>####</p>
+                        </div>
+                        <div class="champion other"></div>
+                    </div>
             </div>
             <p class="vision"></p>
         </div>
@@ -56,4 +100,6 @@
 
     </div>
 </body>
+<script type="module" src="./js/test.js"></script>
+<script type="module" src="./js/main.js"></script>
 </html>

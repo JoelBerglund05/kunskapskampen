@@ -36,10 +36,13 @@ h6 {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 4px 6px main.$black;
+
 }
 
 .match.win {
     border-left: 8px solid main.$right-answer-color;
+    /*display: inline-grid;*/
+
 }
 
 .match.loss {
@@ -47,7 +50,8 @@ h6 {
 }
 
 .match-details {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     align-items: center;
     width: 100%;
 }
@@ -59,6 +63,24 @@ h6 {
     background: #3e3e6a;
     margin-right: 15px;
 }
+
+.other {
+    margin-right: 0;
+}
+
+.your-player, .other-player{
+    display: flex;
+    align-items: center;
+/*    width: fit-content;
+    block-size: fit-content;*/
+}
+
+.other-player {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
 
 .info {
     margin-right: 30px;
@@ -112,3 +134,7 @@ h6 {
     font-size: 14px;
     color: $color;
 }
+
+
+
+
