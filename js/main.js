@@ -34,6 +34,9 @@ class Main {
     const ending = url.substring(url.lastIndexOf("/"));
 
     if (ending === "/game.html" || ending === "/game.html?") {
+      //ebbes kod igen
+      this.gameHandeler.InsertTemplate("Game-result");
+      //slut på ebbes kod
       await this.gameHandeler.CreateGameScreen(this.dataBase);
       this.UpdateGameElements();
     }

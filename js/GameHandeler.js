@@ -1,6 +1,7 @@
 export default class GameHandeler {
   constructor() {
     this.gameContainer = document.getElementById("container");
+    this.ListTargetNode = document.getElementById("cont");
     this.questionsAnswerd = 0;
     this.points = 0;
   }
@@ -32,6 +33,14 @@ export default class GameHandeler {
     const gameScreenNode = gameScreenParentNode.querySelector(".question-vh");
     const deletedChildNode = gameScreenParentNode.removeChild(gameScreenNode);
   }
+//Ebbes test. ej bra kod. Joel hjälp
+  InsertTemplate(result, cont) {
+    const ListParentNode = document.getElementById("result");
+    const ListContentNode = template.content.cloneNode(true).firstElementChild;
+    this.ListTargetNode.appendChild(ListContentNode);
+  }
+//slut på Ebbes kod ;)
+
 
   async CreateGameScreen(dataBase) {
     await dataBase.GetQuestion(this.GetRandomCategory());

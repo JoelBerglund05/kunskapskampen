@@ -1,83 +1,108 @@
 <!DOCTYPE html>
-<html lang="eng">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width = device-width, initial-scale=1.0" />
-        <title>Activa utmaningar</title>
-        <link rel="stylesheet" href="manifest.json">
-        <link rel="stylesheet" href="../css/main.css">
-        <link rel="stylesheet" href="../css/gamelist.css">
-        <template id="game-list"></template>
-    </head>
-    <body>
-        <main id="container">
-            <div class="group-1">
-                <ul class="list-group">
-                    <button>Fortsätt</button>
-                    <div class="owner group">
-                        <li class="list-group-item">An item</li>
-                        <li class="list-group-item">A second item</li>
-                        <li class="list-group-item">A third item</li>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width = device-width, initial-scale=1.0" />
+    <title>Activa utmaningar</title>
+    <link rel="stylesheet" href="manifest.json">
+    <link rel="stylesheet" href="../css/gamelist.css">
+    <title>Match History</title>
+
+
+    <template class="result">    
+        <div class="match win">
+            <div class="match-details">
+                <div class="your-player">
+                  <div class="champion"></div>
+                    <div class="info">
+                        <h4>player</h4>
+                        <p>####</p>
+                  </div>
+                </div>
+                <div class="stats">
+                    <p class="points">points</p>
+                </div>
+                <div class="vs">
+                    <p class="v/s">V/S</p>
+                </div>
+                <div class="stats">
+                    <p class="points">points</p>
+                </div>
+                <div class="other-player">
+                        <div class="info">
+                          <h4>player</h4>
+                          <p>####</p>
+                        </div>
+                        <div class="champion other"></div>
                     </div>
-                    <div class="enemy group">
-                        <li class="list-group-item">An item</li>
-                        <li class="list-group-item">A second item</li>
-                        <li class="list-group-item">A third item</li>
-                    </div>
-                </ul>
             </div>
-            <ul class="list-group">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-            </ul>
-            <ul class="list-group">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-            </ul>
-            <ul class="list-group">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-            </ul>
-            <ul class="list-group">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-            </ul>
-            <ul class="list-group">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-            </ul>
-
-
-<div class="card-container">
-    <div class="mini-container">
-        <div class="content-container">
-            <div class="group1">
-                
-            </div>
-            <div class="group2">
-
-            </div>
-            <div class="group3">
-
-            </div>
-            <div class="group4">
-
-            </div>
-
-            <div class="group5">
-                
-            </div>
+            <p class="vision"></p>
         </div>
+
+        <!-- Add more matches here -->
+
+
+    </template>
+</head>
+<body>
+    <div class="cont">
+        <div class="match win">
+            <div class="match-details">
+                <div class="your-player">
+                  <div class="champion"></div>
+                    <div class="info">
+                        <h4>player</h4>
+                        <p>####</p>
+                  </div>
+                </div>
+                <div class="stats">
+                    <p class="points">points</p>
+                </div>
+                <div class="vs">
+                    <p class="v/s">V/S</p>
+                </div>
+                <div class="stats">
+                    <p class="points">points</p>
+                </div>
+                <div class="other-player">
+                        <div class="info">
+                          <h4>player</h4>
+                          <p>####</p>
+                        </div>
+                        <div class="champion other"></div>
+                    </div>
+            </div>
+            <p class="vision"></p>
+        </div>
+
+        <div class="match loss">
+            <div class="match-details">
+                <div class="champion"></div>
+                <div class="info">
+                    <h4>player</h4>
+                    <p>####</p>
+                </div>
+                <div class="stats">
+                    <p class="kda">points</p>
+                </div>
+            </div>
+            <p>kategori</p>
+
+            <div class="items">
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+            </div>
+            <p class="vision"></p>
+        </div>
+
+        <!-- Add more matches here -->
+
     </div>
-
-</div>
-
-        </main>
-    </body>
+</body>
+<script type="module" src="./js/test.js"></script>
 
 </html>
