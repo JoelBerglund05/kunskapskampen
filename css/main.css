@@ -287,7 +287,8 @@ button:hover {
   width: fit-content;
   font-size: 3em;
   margin: 0 auto;
-  margin-top: 1.2em;
+  padding-inline: 2em;
+  margin-top: 0;
 }
 
 .score-flex {
