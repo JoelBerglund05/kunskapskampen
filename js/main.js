@@ -1,12 +1,14 @@
 import DataBase from "./DataBase.js";
 import GameHandeler from "./GameHandeler.js";
 import EventManager from "./EventManager.js";
+import Template from "./Template.js";
 
 class Main {
   constructor() {
     this.dataBase = new DataBase();
     this.gameHandeler = new GameHandeler();
     this.eventManager = new EventManager();
+    this.template = new Template();
 
     this.container = document.getElementById("container");
     this.answersBtns = [];
@@ -42,6 +44,8 @@ class Main {
   async Main() {
     const clickEvent = "click";
     this.RegisterServiceWorker();
+
+    this.template.templateCreator();
 
     await this.UrlSpecificLogic();
 
