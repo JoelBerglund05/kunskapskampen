@@ -18,12 +18,21 @@ body {
   font-size: 16px;
 }
 
+.primary-bg {
+  background-color: oklch(44% 0.0483 138.55deg);
+}
+
 .white-bg {
   background-color: oklch(100% 0.0483 138.55deg);
+  outline: 0.1em solid oklch(80% 0.0483 138.55deg);
 }
 
 .white-text {
   color: oklch(100% 0.0483 138.55deg);
+}
+
+.white-fill {
+  fill: oklch(10% 0.0483 138.55deg);
 }
 
 .header {
@@ -39,7 +48,6 @@ body {
   color: oklch(100% 0.0483 138.55deg);
   background-color: oklch(44% 0.0483 138.55deg);
   padding: 1em 0.3em 2em 0.3em;
-  width: 20em;
   text-align: center;
   border-radius: 0 0 1em 1em;
 }
@@ -133,10 +141,6 @@ body {
 
 button:hover {
   cursor: pointer;
-}
-
-.background-primary {
-  background-color: oklch(44% 0.0483 138.55deg);
 }
 
 .loading {
@@ -280,6 +284,11 @@ button:hover {
 }
 .selected {
   background-color: oklch(30% 0.0483 138.55deg);
+}
+
+.size-svg {
+  width: 3em;
+  height: 3em;
 }
 
 /*# sourceMappingURL=main.css.map */
