@@ -24,7 +24,6 @@ body {
 
 .white-bg {
   background-color: oklch(100% 0.0483 138.55deg);
-  outline: 0.1em solid oklch(80% 0.0483 138.55deg);
 }
 
 .white-text {
@@ -289,6 +288,19 @@ button:hover {
 .size-svg {
   width: 3em;
   height: 3em;
+}
+
+.left-0 {
+  left: 0;
+}
+
+.right-0 {
+  right: 0;
+}
+
+.navbar-sizing {
+  font-size: 2.5rem;
+  margin: 0 1em 0 1em;
 }
 
 /*# sourceMappingURL=main.css.map */

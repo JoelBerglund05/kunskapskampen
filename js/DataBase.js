@@ -1,6 +1,6 @@
 export default class DataBase {
   async GetQuestion(category) {
-    await fetch("https://eel-simple-highly.ngrok-free.app/api/question", {
+    await fetch("http://120.0.0.1/api/question", {
       method: "POST",
       headers: {
         accept: "application/json",
