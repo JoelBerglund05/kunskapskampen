@@ -310,4 +310,13 @@ button:hover {
   text-align: center;
 }
 
+.score h3 {
+  font-size: 1.3em;
+  margin: 0.4em;
+}
+
+.score-element {
+  display: inline-block;
+}
+
 /*# sourceMappingURL=main.css.map */
