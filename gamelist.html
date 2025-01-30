@@ -5,11 +5,11 @@
     <meta name="viewport" content="width = device-width, initial-scale=1.0" />
     <title>Activa utmaningar</title>
     <link rel="stylesheet" href="manifest.json">
-    <link rel="stylesheet" href="../css/gamelist.css">
+    <link rel="stylesheet" href="./css/gamelist.css">
     <title>Match History</title>
 
 
-    <template class="result">    
+    <template id="result" class="result">    
         <div class="match win">
             <div class="match-details">
                 <div class="your-player">
@@ -20,13 +20,13 @@
                   </div>
                 </div>
                 <div class="stats">
-                    <p class="points">points</p>
+                    <p id="set-points" class="points">points</p>
                 </div>
                 <div class="vs">
                     <p class="v/s">V/S</p>
                 </div>
                 <div class="stats">
-                    <p class="points">points</p>
+                    <p id="set-points" class="points">Points</p>
                 </div>
                 <div class="other-player">
                         <div class="info">
@@ -45,7 +45,8 @@
     </template>
 </head>
 <body>
-    <div class="cont">
+    <button>home</button>
+    <div id="cont" class="cont">
         <div class="match win">
             <div class="match-details">
                 <div class="your-player">

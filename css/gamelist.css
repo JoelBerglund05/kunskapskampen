@@ -376,7 +376,7 @@ h6 {
 .vs {
   display: flex;
   text-align: right;
-  margin-left: 100px;
+  margin-left: 40%;
 }
 
 .stats {
@@ -409,4 +409,4 @@ h6 {
   color: oklch(100% 0.0483 138.55deg);
 }
 
-/*# sourceMappingURL=test.css.map */
+/*# sourceMappingURL=gamelist.css.map */

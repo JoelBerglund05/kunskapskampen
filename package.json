@@ -4,7 +4,6 @@
     "scss": "sass",
     "sass": "sass --watch css/scss/main.scss:css/main.css",
     "sass-list": "sass --watch css/scss/gamelist.scss:css/gamelist.css",
-    "sass-test": "sass --watch css/scss/gamelist.scss:css/gamelist.css",
 
     "prettier": "prettier . --write"
   },

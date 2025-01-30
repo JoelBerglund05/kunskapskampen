@@ -34,10 +34,18 @@ export default class GameHandeler {
     const deletedChildNode = gameScreenParentNode.removeChild(gameScreenNode);
   }
 //Ebbes test. ej bra kod. Joel hjälp
-  InsertTemplate(result, cont) {
-    const ListParentNode = document.getElementById("result");
+  InsertTemplate() {
+    const template = document.getElementById("result");
+    //const ListParentNode = document.getElementById("result");
     const ListContentNode = template.content.cloneNode(true).firstElementChild;
     this.ListTargetNode.appendChild(ListContentNode);
+
+    const setPoints = template.querySelector("#set-points");
+    setPoints.textContent = sessionStorage.getItem("points") + "/10";
+  }
+
+  Displaypoints() {
+
   }
 //slut på Ebbes kod ;)
 
