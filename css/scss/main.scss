@@ -17,6 +17,32 @@ $black: oklch(10% 0.0483 138.55);
 $wrong-answer-color: oklch(60% 0.1825 21.18);
 $right-answer-color: oklch(70% 0.1776 141.88);
 
+/*
+:root {
+  --primary-color: red;
+  --darkmode-btn-background-color: oklch(37.56% 0.0758 291.51);
+  --CTA-color: oklch(82% 0.1455 79.31);
+  --bt-background-color-hover: oklch(77% 0.1455 79.31);
+  --white: oklch(99% 0.0483 138.55);
+}
+
+:root[data-theme="dark"] {
+  --primary-color: oklch(22.35% 0.037 138.55);
+  --darkmode-btn-background-color: oklch(37.56% 0.0758 291.51);
+  --CTA-color: oklch(82% 0.1455 79.31);
+  --bt-background-color-hover: oklch(77% 0.1455 79.31);
+}
+
+:root[data-theme="light"] {
+  --primary-color: oklch(44% 0.0483 138.55);
+  --darkmode-btn-background-color: oklch(78.97% 0.1676 68.47);
+  --CTA-color: oklch(82% 0.1455 79.31);
+  --bt-background-color-hover: oklch(77% 0.1455 79.31);
+}
+
+*/
+
+
 button:focus-visible,
 a:focus-visible {
   outline: 3px solid $wrong-answer-color;
@@ -31,6 +57,7 @@ h5,
 h6 {
   color: $black;
 }
+
 body {
   font-size: 16px;
 }
@@ -47,7 +74,7 @@ body {
   color: $white;
 }
 
-.white-fill{
+.white-fill {
   fill: $black;
 }
 
@@ -110,6 +137,7 @@ body {
   margin-top: 45svh;
   /*ändrat från 50svh*/
 }
+
 .marigin-medium {
   margin-top: 25svh;
 }
@@ -164,6 +192,7 @@ button:hover {
   position: relative;
   background: $primary-loading;
 }
+
 .loading:after {
   content: "";
   display: block;
@@ -172,18 +201,17 @@ button:hover {
   width: 100%;
   height: 100%;
   transform: translateX(-100px);
-  background: linear-gradient(
-    90deg,
-    transparent,
-    $primary-loading1,
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      $primary-loading1,
+      transparent);
   animation: loading 0.7s infinite;
 }
 
 .answer-btn[data-is-answer-correct="true"] {
   animation: correct-answer 1.5s;
 }
+
 .answer-btn[data-is-answer-correct="false"] {
   animation: wrong-answer 1.5s;
 }
@@ -199,10 +227,12 @@ button:hover {
     transform: none;
     animation: none;
   }
+
   .answer-btn[data-is-answer-correct="true"],
   .answer-btn[data-is-answer-correct="false"] {
     animation: none;
   }
+
   .answer-btn[data-is-answer-correct="false"] {
     background-color: $wrong-answer-color;
   }
@@ -216,6 +246,7 @@ button:hover {
   33% {
     background-color: $wrong-answer-color;
   }
+
   to {
     background-color: $wrong-answer-color;
   }
@@ -225,6 +256,7 @@ button:hover {
   33% {
     background-color: $right-answer-color;
   }
+
   to {
     background-color: $right-answer-color;
   }
@@ -244,13 +276,16 @@ button:hover {
   .question-grid {
     margin: 0 1em;
   }
+
   .marigin-big {
     margin-top: 35svh;
   }
+
   .next-question {
     width: 40%;
     height: auto;
   }
+
   .header-h1 {
     margin: 0 0.5em;
     width: auto;
@@ -265,55 +300,68 @@ button:hover {
   .question-grid {
     margin: 0 0.5em;
   }
+
   .header-h1 {
     margin: 0 0.5em;
   }
+
   .answer-btn {
     font-size: 1em;
     padding: 0.5em 1.5em 0.5em 1.5em;
   }
+
   .marigin-big {
     margin-top: 35svh;
   }
+
   .next-question {
     font-size: 1em;
   }
+
   .header .loading {
     width: 20ch;
   }
+
   .kunskapskampen-svg {
     height: 15rem;
     margin: auto;
     display: block;
   }
 }
+
 @media (width < 320px) {
   .question-grid {
     margin: 0 0.5em;
   }
+
   .header-h1 {
     font-size: 1.25em;
   }
+
   .question-grid {
     grid-template-columns: repeat(1, 1fr);
     gap: 0.75em 0.5em;
   }
+
   .marigin-big {
     margin-top: 35svh;
   }
+
   .next-question {
     font-size: 0.75em;
     margin: 0.5em;
   }
+
   .header .loading {
     width: 10ch;
   }
 }
+
 .selected {
   background-color: $selected;
 }
 
-.size-svg{
+.size-svg {
   width: 3em;
   height: 3em;
 }
@@ -321,6 +369,7 @@ button:hover {
 .left-0 {
   left: 0;
 }
+
 .right-0 {
   right: 0;
 }
@@ -330,6 +379,70 @@ button:hover {
   margin: 0 1em 0 1em;
 }
 
-.black-fill{
+.black-fill {
   fill: $black;
+}
+
+#tdnn {
+  margin: auto;
+  font-size: 17.5%;
+  position: relative;
+  height: 2rem;
+  width: 4rem;
+  border-radius: 16rem;
+  transition: all 500ms ease-in-out;
+  background: var(--darkmode-btn-background-color);
+  display: block;
+}
+
+#tdnn.day {
+  background: var(--darkmode-btn-background-color);
+}
+
+#moon {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  transition: all 400ms ease-in-out;
+
+  top: 0em;
+  left: 2em;
+  transform: rotate(-75deg);
+  width: 10em;
+  height: 10em;
+  background: var(--darkmode-btn-background-color);
+  box-shadow:
+    3em 2.5em 0 0em #d9fbff inset,
+    rgba(255, 255, 255, 0.1) 0em -7em 0 -4.5em,
+    rgba(255, 255, 255, 0.1) 3em 7em 0 -4.5em,
+    rgba(255, 255, 255, 0.1) 2em 13em 0 -4em,
+    rgba(255, 255, 255, 0.1) 6em 2em 0 -4.1em,
+    rgba(255, 255, 255, 0.1) 8em 8em 0 -4.5em,
+    rgba(255, 255, 255, 0.1) 6em 13em 0 -4.5em,
+    rgba(255, 255, 255, 0.1) -4em 7em 0 -4.5em,
+    rgba(255, 255, 255, 0.1) -1em 10em 0 -4.5em;
+}
+
+#moon.sun {
+  top: 1.5em;
+  left: 11em;
+  transform: rotate(0deg);
+  width: 7em;
+  height: 7em;
+  background: #fff;
+  box-shadow:
+    3em 3em 0 5em #fff inset,
+    0 -5em 0 -2.7em #fff,
+    3.5em -3.5em 0 -3em #fff,
+    5em 0 0 -2.7em #fff,
+    3.5em 3.5em 0 -3em #fff,
+    0 5em 0 -2.7em #fff,
+    -3.5em 3.5em 0 -3em #fff,
+    -5em 0 0 -2.7em #fff,
+    -3.5em -3.5em 0 -3em #fff;
+}
+
+#moon,
+.sun {
+  scale: 0.7;
 }
