@@ -23,7 +23,5 @@ export default class Template {
         this.clone.querySelector('#opponentCategory3Score').textContent = this.opponentCategory3Score;
 
         document.getElementById('content').appendChild(this.clone);
-
-        console.log("TEMPLATE");
     }
 }

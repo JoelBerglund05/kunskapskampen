@@ -5,7 +5,16 @@ export default class CurrentLeaderIndicator {
     }
     checkCurrentLeader() {
         if (this.yourScore > this.opponentScore) {
-            
+            document.querySelector('#yourTotalScore').classList.add('leader');
+            document.querySelector('#opponantTotalScore').classList.add('losing');
+        }
+        else if (this.yourScore < this.opponentScore) {
+            document.querySelector('#yourTotalScore').classList.add('losing');
+            document.querySelector('#opponantTotalScore').classList.add('leader');
+        }
+        else {
+            document.querySelector('#yourTotalScore').classList.add('losing');
+            document.querySelector('#opponantTotalScore').classList.add('losing');
         }
     }
 }
