@@ -1,3 +1,5 @@
+var dark = false;
+
 function darkmode() {
     if (dark) {
         dark = false;
