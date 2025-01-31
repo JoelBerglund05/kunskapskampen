@@ -303,4 +303,8 @@ button:hover {
   margin: 0 1em 0 1em;
 }
 
+.black-fill {
+  fill: oklch(10% 0.0483 138.55deg);
+}
+
 /*# sourceMappingURL=main.css.map */
