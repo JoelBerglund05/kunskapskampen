@@ -328,9 +328,11 @@ button:hover {
 }
 
 .score h2 {
-  font-size: 2em;
-  width: 100%;
-  text-align: center;
+  font-size: 2.2em;
+  width: calc(fit-content + 1em);
+  margin-inline: 0.2em;
+  margin-bottom: 0.7em;
+  color: $primary-color;
 }
 
 .score p {
@@ -345,6 +347,22 @@ button:hover {
   margin: 0.4em;
 }
 
+.score h2 {
+  height: fit-content;
+}
 .score-element {
   display: inline-block;
+}
+
+.score-element-container {
+  height: fit-content;
+  width: fit-content;
+}
+
+.leader {
+  text-decoration: overline 4px $right-answer-color;
+}
+
+.losing {
+  text-decoration: overline 4px $wrong-answer-color;
 }
