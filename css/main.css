@@ -1,28 +1,23 @@
 @charset "UTF-8";
-/*
 :root {
   --primary-color: red;
   --darkmode-btn-background-color: oklch(37.56% 0.0758 291.51);
   --CTA-color: oklch(82% 0.1455 79.31);
   --bt-background-color-hover: oklch(77% 0.1455 79.31);
-  --white: oklch(99% 0.0483 138.55);
-}
+  --white: oklch(99% 0.0483 138.55); }
 
 :root[data-theme="dark"] {
   --primary-color: oklch(22.35% 0.037 138.55);
   --darkmode-btn-background-color: oklch(37.56% 0.0758 291.51);
   --CTA-color: oklch(82% 0.1455 79.31);
-  --bt-background-color-hover: oklch(77% 0.1455 79.31);
-}
+  --bt-background-color-hover: oklch(77% 0.1455 79.31); }
 
 :root[data-theme="light"] {
   --primary-color: oklch(44% 0.0483 138.55);
   --darkmode-btn-background-color: oklch(78.97% 0.1676 68.47);
   --CTA-color: oklch(82% 0.1455 79.31);
-  --bt-background-color-hover: oklch(77% 0.1455 79.31);
-}
+  --bt-background-color-hover: oklch(77% 0.1455 79.31); }
 
-*/
 button:focus-visible,
 a:focus-visible {
   outline: 3px solid oklch(60% 0.1825 21.18); }
