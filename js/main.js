@@ -2,6 +2,7 @@ import DataBase from "./DataBase.js";
 import GameHandeler from "./GameHandeler.js";
 import EventManager from "./EventManager.js";
 import Template from "./Template.js";
+import CurrentLeaderIndicator from "./CurrentLeaderIndicator.js";
 
 class Main {
   constructor() {
@@ -9,6 +10,7 @@ class Main {
     this.gameHandeler = new GameHandeler();
     this.eventManager = new EventManager();
     this.template = new Template();
+    this.currentLeaderIndicator = new CurrentLeaderIndicator();
 
     this.container = document.getElementById("container");
     this.answersBtns = [];
@@ -46,6 +48,8 @@ class Main {
     this.RegisterServiceWorker();
 
     this.template.templateCreator();
+
+    this.currentLeaderIndicator.checkCurrentLeader();
 
     await this.UrlSpecificLogic();
 
