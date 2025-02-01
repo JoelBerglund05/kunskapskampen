@@ -285,7 +285,7 @@ button:hover {
 body {
   font-family: Arial, sans-serif;
   background-color: oklch(100% 0.0483 138.55deg);
-  color: oklch(100% 0.0483 138.55deg);
+  color: oklch(10% 0.0483 138.55deg);
   margin: 0;
   padding: 0;
 }
@@ -297,17 +297,16 @@ h3,
 h4,
 h5,
 h6 {
-  color: oklch(100% 0.0483 138.55deg);
+  color: oklch(10% 0.0483 138.55deg);
 }
 
-.container {
-  max-width: 75rem;
+.cont {
+  max-width: fit-content;
   margin: 1.25rem auto;
-  padding: 1.25rem;
 }
 
 .match {
-  background-color: oklch(44% 0.0483 138.55deg);
+  background-color: oklch(100% 0.0483 138.55deg);
   border-radius: 0.5rem;
   margin-bottom: 1.25rem;
   padding: 0.938rem;
@@ -319,6 +318,7 @@ h6 {
 
 .match.win {
   border-left: 0.5rem solid oklch(70% 0.1776 141.88deg);
+  border-right: 0.5rem solid oklch(70% 0.1776 141.88deg);
   /*display: inline-grid;*/
 }
 
@@ -328,7 +328,8 @@ h6 {
 
 .match-details {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-evenly;
   align-items: center;
   width: 100%;
 }
@@ -336,9 +337,14 @@ h6 {
 .champion {
   width: 3.75rem;
   height: 3.75rem;
-  border-radius: 50%;
-  background: #3e3e6a;
   margin-right: 0.938rem;
+  /*background-image: url("../../profile-circle-svgrepo-com.svg");*/
+}
+
+img {
+  width: 60px;
+  height: 60px;
+  fill: red;
 }
 
 .other {
@@ -348,18 +354,14 @@ h6 {
 .your-player, .other-player {
   display: flex;
   align-items: center;
-  /*    width: fit-content;
-      block-size: fit-content;*/
+  width: fit-content;
+  block-size: fit-content;
 }
 
 .other-player {
   display: flex;
   justify-content: flex-end;
   width: 100%;
-}
-
-.info {
-  margin-right: 1.875rem;
 }
 
 .info h4 {
@@ -370,13 +372,14 @@ h6 {
 .info p {
   margin: 0;
   font-size: 14px;
-  color: oklch(100% 0.0483 138.55deg);
+  color: oklch(10% 0.0483 138.55deg);
 }
 
 .vs {
   display: flex;
-  text-align: right;
-  margin-left: 40%;
+  align-self: center;
+  justify-content: center;
+  margin-bottom: 0;
 }
 
 .stats {
@@ -392,21 +395,4 @@ h6 {
   font-weight: bold;
 }
 
-.items {
-  display: flex;
-  gap: 0.313;
-}
-
-.item {
-  width: 2.5rem;
-  height: 2.5rem;
-  background: #3e3e6a;
-  border-radius: 4px;
-}
-
-.vision {
-  font-size: 14px;
-  color: oklch(100% 0.0483 138.55deg);
-}
-
-/*# sourceMappingURL=gamelist.css.map */
+/*# sourceMappingURL=test.css.map */
