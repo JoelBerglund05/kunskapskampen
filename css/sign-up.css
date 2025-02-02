@@ -80,21 +80,27 @@ body {
   transform: translateY(-50%);
   font-size: 1.25rem;
 }
-.big-container .input-box .input-wrapper[data-is-email-correct=false] .email {
+.big-container .input-box .input-wrapper[data-is-email-correct="false"] .email {
   text-decoration: oklch(70% 0.1776 141.88deg);
   border: 2px solid oklch(60% 0.1825 21.18deg);
 }
-.big-container .input-box .input-wrapper[data-is-email-correct=false] svg#invalid-icon {
+.big-container
+  .input-box
+  .input-wrapper[data-is-email-correct="false"]
+  svg#invalid-icon {
   display: block;
 }
-.big-container .input-box .input-wrapper[data-is-email-correct=true] .email {
+.big-container .input-box .input-wrapper[data-is-email-correct="true"] .email {
   text-decoration: oklch(70% 0.1776 141.88deg);
   border: 2px solid oklch(70% 0.1776 141.88deg);
 }
-.big-container .input-box .input-wrapper[data-is-email-correct=true] svg#valid-icon {
+.big-container
+  .input-box
+  .input-wrapper[data-is-email-correct="true"]
+  svg#valid-icon {
   display: block;
 }
-.big-container .input-box .input-wrapper[data-is-email-correct=NaN] .email {
+.big-container .input-box .input-wrapper[data-is-email-correct="NaN"] .email {
   text-decoration: none;
   border: 2px solid oklch(80% 0.0483 138.55deg);
 }

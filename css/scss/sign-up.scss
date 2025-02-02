@@ -1,4 +1,4 @@
-@use 'main.scss';
+@use "main.scss";
 
 $color: main.$white;
 
@@ -75,7 +75,7 @@ body {
       border: 2px solid main.$primary-color3;
       border-radius: 2.5rem;
       color: $color;
-      padding: 1rem 0 1rem .5rem;
+      padding: 1rem 0 1rem 0.5rem;
 
       &::placeholder {
         color: $color;
@@ -89,7 +89,7 @@ body {
       transform: translateY(-50%);
       font-size: 1.25rem;
     }
-    .input-wrapper[data-is-email-correct=false] {
+    .input-wrapper[data-is-email-correct="false"] {
       .email {
         text-decoration: oklch(0.7 0.1776 141.88);
         border: 2px solid oklch(0.6 0.1825 21.18);
@@ -98,7 +98,7 @@ body {
         display: block;
       }
     }
-    .input-wrapper[data-is-email-correct=true] {
+    .input-wrapper[data-is-email-correct="true"] {
       .email {
         text-decoration: oklch(0.7 0.1776 141.88);
         border: 2px solid oklch(0.7 0.1776 141.88);
@@ -107,7 +107,7 @@ body {
         display: block;
       }
     }
-    .input-wrapper[data-is-email-correct=NaN]{
+    .input-wrapper[data-is-email-correct="NaN"] {
       .email {
         text-decoration: none;
         border: 2px solid oklch(0.8 0.0483 138.55);
@@ -138,4 +138,3 @@ body {
 .check {
   cursor: pointer;
 }
-
