@@ -1,11 +1,11 @@
 import DataBase from "./DataBase.js";
 import EventManager from "./EventManager.js";
 import GameHandeler from "./GameHandeler.js";
-import Mail from "./mail.js";
+import Validate from "./Validate.js";
 
 class Main {
   constructor() {
-    this.mail = new Mail();
+    this.validate = new Validate();
     this.dataBase = new DataBase();
     this.eventManager = new EventManager();
     this.gameHandeler = new GameHandeler();
@@ -78,7 +78,9 @@ class Main {
       this.gameHandeler.CreateGame(this.dataBase),
     );
 
-    this.eventManager.EventListener(this.mail.emailInput, inputEvent, () => this.mail.validate());
+    this.eventManager.EventListener(this.validate.emailInput, inputEvent, () =>
+      this.validate.ValidateEmail(),
+    );
   }
 }
 
