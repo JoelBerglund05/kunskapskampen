@@ -64,7 +64,7 @@ class Main {
     );
 
     this.eventManager.EventListener(this.btnCreateAccount, clickEvent, () =>
-      this.dataBase.SignUpUser(this.email.value, [
+      this.dataBase.SignUpUser(this.validate.emailInput.value, [
         this.password[0].value,
         this.password[1].value,
       ]),
