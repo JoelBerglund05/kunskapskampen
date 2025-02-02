@@ -1,4 +1,5 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import Validate from "./Validate.js";
 
 export default class DataBase {
   constructor() {
@@ -19,8 +20,8 @@ export default class DataBase {
   }
 
   async SignUpUser(email, password) {
-    if (password[0] !== password[1]) {
-      alert("Lösenorden är inte samma");
+    const validation = new Validate();
+    if (!validation.ValidatePassword()) {
       return;
     }
 
