@@ -75,7 +75,7 @@ body {
       border: 2px solid main.$primary-color3;
       border-radius: 2.5rem;
       color: $color;
-      padding: 1rem 0 1rem 0.5rem;
+      padding: 1rem 0 1rem 1.3rem;
 
       &::placeholder {
         color: $color;
@@ -137,4 +137,29 @@ body {
 
 .check {
   cursor: pointer;
+}
+
+.error {
+  background-color: main.$wrong-answer-color;
+  padding: 0.5em;
+  border-radius: 3px;
+  display: none;
+}
+
+.error-container[data-error-type="length"] {
+  .error#password-length {
+    display: block;
+  }
+}
+
+.error-container[data-error-type="not-same"] {
+  .error#password-not-the-same {
+    display: block;
+  }
+}
+
+.error-container[data-error-type="no"] {
+  .error#no-password {
+    display: block;
+  }
 }
