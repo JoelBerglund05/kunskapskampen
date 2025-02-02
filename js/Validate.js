@@ -2,6 +2,11 @@ export default class Validate {
   constructor() {
     this.emailWrapper = document.getElementById("email-wrapper");
     this.emailInput = document.getElementById("email");
+    this.passwords = [
+      document.getElementById("password1").value,
+      document.getElementById("password2").value,
+    ];
+    this.errorMessages = document.getElementById("error-messages");
   }
   ValidateEmail() {
     if (this.emailInput.value.length === 0) {
@@ -15,18 +20,18 @@ export default class Validate {
       this.emailWrapper.dataset.isEmailCorrect = "false";
     }
   }
-  ValidatePassword(form) {
-    password1 = form.password1.value;
-    password2 = form.password2.value;
-  
-    if (password1 == "") alert("Please enter Password");
-    else if (password2 == "") alert("Please enter confirm password");
-    else if (password1 != password2) {
-      alert("\nPassword did not match: Please try again...");
+  ValidatePassword() {
+    if (this.passwords[0] == "" || this.passwords[1] == "") {
+      this.errorMessages.dataset.errorType = "no";
       return false;
-    } else {
-      window.location.href = "sign-in.html";
+    } else if (this.passwords[0] != this.passwords[1]) {
+      this.errorMessages.dataset.errorType = "not-same";
+      return false;
+    } else if (this.passwords[0].length < 6) {
+      this.errorMessages.dataset.errorType = "length";
       return false;
     }
-  }  
+
+    return true;
+  }
 }
