@@ -89,6 +89,30 @@ body {
       transform: translateY(-50%);
       font-size: 1.25rem;
     }
+    .input-wrapper[data-is-email-correct=false] {
+      .email {
+        text-decoration: oklch(0.7 0.1776 141.88);
+        border: 2px solid oklch(0.6 0.1825 21.18);
+      }
+      svg#invalid-icon {
+        display: block;
+      }
+    }
+    .input-wrapper[data-is-email-correct=true] {
+      .email {
+        text-decoration: oklch(0.7 0.1776 141.88);
+        border: 2px solid oklch(0.7 0.1776 141.88);
+      }
+      svg#valid-icon {
+        display: block;
+      }
+    }
+    .input-wrapper[data-is-email-correct=NaN]{
+      .email {
+        text-decoration: none;
+        border: 2px solid oklch(0.8 0.0483 138.55);
+      }
+    }
   }
 
   .btn {
@@ -114,3 +138,4 @@ body {
 .check {
   cursor: pointer;
 }
+
