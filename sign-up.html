@@ -16,7 +16,18 @@
   <body class="d-flex justify-content-center align-items-center min-vh-100">
     <main class="big-container">
       <h1>Skapa konto</h1>
-      <form method="POST">
+      <div
+        class="d-flex justify-content-center error-container"
+        id="error-messages"
+        data-error-type="NaN"
+      >
+        <p class="error" id="password-length">Lösenordet är för kort.</p>
+        <p class="error" id="password-not-the-same">
+          Lösenorden är inte samma.
+        </p>
+        <p class="error" id="no-password">Du måste ha ett lösen ord.</p>
+      </div>
+      <div>
         <div class="input-box">
           <label for="email" class="paragraph">E-mail:*</label>
           <div
@@ -90,8 +101,8 @@
             required
           />
         </div>
-        <button type="submit" value="submit" class="btn">Skapa konto</button>
-      </form>
+        <button id="createAccount" type="submit" value="submit" class="btn">Skapa konto</button>
+      </div>
       <nav>
         <a class="d-block link" href="sign-in.html">Logga in</a>
         <a class="d-block link" href="reset-password.html"
