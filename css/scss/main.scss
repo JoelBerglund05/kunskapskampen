@@ -1,30 +1,82 @@
 :root {
-  --primary-color: red;
+  --primary-color: oklch(44% 0.0483 138.55);
+  --primary-color1: oklch(60% 0.0483 138.55);
+  --primary-color2: oklch(65% 0.0483 138.55);
+  --primary-color3: oklch(80% 0.0483 138.55);
+  --primary-color4: oklch(95% 0.0483 138.55);
+  --primary-loading: oklch(44% 0.0483 138.55 / 0.7);
+  --primary-loading1: oklch(100% 0.0483 138.55 / 0.2);
+  --primary-shadow: oklch(10% 0.0483 138.55 / 0.5);
+  --cta: oklch(82% 0.1455 79.31);
+  --cta-hover: oklch(77% 0.1455 79.31);
+  --selected: oklch(30% 0.0483 138.55);
+  --white: oklch(100% 0.0483 138.55);
+  --black: oklch(10% 0.0483 138.55);
+  --wrong-answer-color: oklch(60% 0.1825 21.18);
+  --right-answer-color: oklch(70% 0.1776 141.88);
   --darkmode-btn-background-color: oklch(37.56% 0.0758 291.51);
-  --CTA-color: oklch(82% 0.1455 79.31);
-  --bt-background-color-hover: oklch(77% 0.1455 79.31);
-  --white: oklch(99% 0.0483 138.55);
+
+  /*
+      --bt-background-color-hover: oklch(77% 0.1455 79.31);
+      */
 }
 
 :root[data-theme="dark"] {
-  --primary-color: oklch(22.35% 0.037 138.55);
+  --primary-color: oklch(60% 0.0483 138.55);
+  --primary-color1: oklch(35% 0.037 138.55);
+  --primary-color2: oklch(40% 0.037 138.55);
+  --primary-color3: oklch(55% 0.037 138.55);
+  --primary-color4: oklch(70% 0.037 138.55);
+  --primary-loading: oklch(39% 0.0483 138.55 / 70%);
+  --primary-loading1: oklch(100% 0.0483 138.55 / 0.2);
+  --primary-shadow: oklch(10% 0.0483 138.55 / 0.5);
+  --cta: oklch(82% 0.1455 79.31);
+  --cta-hover: oklch(77% 0.1455 79.31);
+  --selected: oklch(30% 0.0483 138.55);
+  --white: oklch(44% 0.0483 138.55);
+  --black: oklch(10% 0.0483 138.55);
+  --wrong-answer-color: oklch(60% 0.1825 21.18);
+  --right-answer-color: oklch(70% 0.1776 141.88);
   --darkmode-btn-background-color: oklch(37.56% 0.0758 291.51);
-  --CTA-color: oklch(82% 0.1455 79.31);
+
+
+
+
+  /*
   --bt-background-color-hover: oklch(77% 0.1455 79.31);
+  */
+
+
 }
 
 :root[data-theme="light"] {
   --primary-color: oklch(44% 0.0483 138.55);
+  --primary-color1: oklch(60% 0.0483 138.55);
+  --primary-color2: oklch(65% 0.0483 138.55);
+  --primary-color3: oklch(80% 0.0483 138.55);
+  --primary-color4: oklch(95% 0.0483 138.55);
+  --primary-loading: oklch(44% 0.0483 138.55 / 0.7);
+  --primary-loading1: oklch(100% 0.0483 138.55 / 0.2);
+  --primary-shadow: oklch(10% 0.0483 138.55 / 0.5);
+  --cta: oklch(82% 0.1455 79.31);
+  --cta-hover: oklch(77% 0.1455 79.31);
+  --selected: oklch(30% 0.0483 138.55);
+  --white: oklch(100% 0.0483 138.55);
+  --black: oklch(10% 0.0483 138.55);
+  --wrong-answer-color: oklch(60% 0.1825 21.18);
+  --right-answer-color: oklch(70% 0.1776 141.88);
   --darkmode-btn-background-color: oklch(78.97% 0.1676 68.47);
-  --CTA-color: oklch(82% 0.1455 79.31);
+
+  /*
   --bt-background-color-hover: oklch(77% 0.1455 79.31);
+  */
 }
 
+/*
 $primary-color: oklch(44% 0.0483 138.55);
 $primary-color1: oklch(60% 0.0483 138.55);
 $primary-color2: oklch(65% 0.0483 138.55);
 $primary-color3: oklch(80% 0.0483 138.55);
-$primary-color4: oklch(95% 0.0483 138.55);
 $primary-color4: oklch(95% 0.0483 138.55);
 $primary-loading: oklch(44% 0.0483 138.55 / 0.7);
 $primary-loading1: oklch(100% 0.0483 138.55 / 0.2);
@@ -39,13 +91,13 @@ $black: oklch(10% 0.0483 138.55);
 $wrong-answer-color: oklch(60% 0.1825 21.18);
 $right-answer-color: oklch(70% 0.1776 141.88);
 
-
+*/
 
 
 
 button:focus-visible,
 a:focus-visible {
-  outline: 3px solid $wrong-answer-color;
+  outline: 3px solid var(--wrong-answer-color);
 }
 
 p,
@@ -55,7 +107,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: $black;
+  color: var(--black);
 }
 
 body {
@@ -63,23 +115,23 @@ body {
 }
 
 .primary-bg {
-  background-color: $primary-color;
+  background-color: var(--primary-color);
 }
 
 .white-bg {
-  background-color: $white;
+  background-color: var(--white);
 }
 
 .white-text {
-  color: $white;
+  color: var(--white);
 }
 
 .white-fill {
-  fill: $black;
+  fill: var(--black);
 }
 
 .header {
-  color: $black;
+  color: var(--black);
   justify-self: center;
 }
 
@@ -88,8 +140,8 @@ body {
 }
 
 .header-h1 {
-  color: $white;
-  background-color: $primary-color;
+  color: var(--white);
+  background-color: var(--primary-color);
   padding: 1em 0.3em 2em 0.3em;
   text-align: center;
   border-radius: 0 0 1em 1em;
@@ -100,8 +152,8 @@ body {
 }
 
 .answer-btn {
-  background-color: $primary-color;
-  color: $white;
+  background-color: var(--primary-color);
+  color: var(--white);
   font-size: 1.5em;
   border: 0;
   border-radius: 5px;
@@ -116,8 +168,8 @@ body {
 }
 
 .next-question {
-  background-color: $cta;
-  color: $black;
+  background-color: var(--cta);
+  color: var(--black);
   font-size: 1.5em;
   border: 0;
   border-radius: 5px;
@@ -130,7 +182,7 @@ body {
 }
 
 .next-question:hover {
-  background-color: $cta-hover;
+  background-color: var(--cta-hover);
 }
 
 .marigin-big {
@@ -190,7 +242,7 @@ button:hover {
 
 .loading {
   position: relative;
-  background: $primary-loading;
+  background: var(--primary-loading);
 }
 
 .loading:after {
@@ -203,7 +255,7 @@ button:hover {
   transform: translateX(-100px);
   background: linear-gradient(90deg,
       transparent,
-      $primary-loading1,
+      var(--primary-loading1),
       transparent);
   animation: loading 0.7s infinite;
 }
@@ -234,31 +286,31 @@ button:hover {
   }
 
   .answer-btn[data-is-answer-correct="false"] {
-    background-color: $wrong-answer-color;
+    background-color: var(--wrong-answer-color);
   }
 
   .answer-btn[data-is-answer-correct="true"] {
-    background-color: $right-answer-color;
+    background-color: var(--right-answer-color);
   }
 }
 
 @keyframes wrong-answer {
   33% {
-    background-color: $wrong-answer-color;
+    background-color: var(--wrong-answer-color);
   }
 
   to {
-    background-color: $wrong-answer-color;
+    background-color: var(--wrong-answer-color);
   }
 }
 
 @keyframes correct-answer {
   33% {
-    background-color: $right-answer-color;
+    background-color: var(--right-answer-color);
   }
 
   to {
-    background-color: $right-answer-color;
+    background-color: var(--right-answer-color);
   }
 }
 
@@ -269,7 +321,7 @@ button:hover {
 }
 
 .box-shadow {
-  box-shadow: $primary-shadow 0em 0em 0.3em;
+  box-shadow: var(--primary-shadow) 0em 0em 0.3em;
 }
 
 @media (width < 720px) {
@@ -358,7 +410,7 @@ button:hover {
 }
 
 .selected {
-  background-color: $selected;
+  background-color: var(--selected);
 }
 
 .size-svg {
@@ -380,7 +432,7 @@ button:hover {
 }
 
 .black-fill {
-  fill: $black;
+  fill: var(--black);
 }
 
 #tdnn {
