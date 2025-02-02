@@ -1,21 +1,17 @@
 import DataBase from "./DataBase.js";
 import EventManager from "./EventManager.js";
 import GameHandeler from "./GameHandeler.js";
-import Mail from "./mail-test.js";
+import Mail from "./mail.js";
 
 class Main {
   constructor() {
     this.mail = new Mail();
-0
-
-    
     this.dataBase = new DataBase();
     this.eventManager = new EventManager();
     this.gameHandeler = new GameHandeler();
     this.btnDBRequest = document.getElementById("btnDBRequest");
     this.displayData = document.getElementById("dBData");
     this.btnCreateAccount = document.getElementById("createAccount");
-    this.email = document.getElementById("email");
     this.password = [
       document.getElementById("password1"),
       document.getElementById("password2"),
@@ -60,6 +56,7 @@ class Main {
   }
   Main() {
     const clickEvent = "click";
+    const inputEvent = "input";
     this.RegisterServiceWorker();
 
     this.eventManager.EventListener(this.btnDBRequest, clickEvent, () =>
@@ -80,6 +77,8 @@ class Main {
     this.eventManager.EventListener(this.btnCreateGame, clickEvent, () =>
       this.gameHandeler.CreateGame(this.dataBase),
     );
+
+    this.eventManager.EventListener(this.mail.emailInput, inputEvent, () => this.mail.validate());
   }
 }
 
