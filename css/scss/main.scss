@@ -382,3 +382,9 @@ button:hover {
 .total-score-container {
   width: 90dvw;
 }
+
+/*View Transitions*/
+
+@view-transition {
+  navigation: auto;
+}

@@ -354,4 +354,9 @@ button:hover {
   width: 90dvw;
 }
 
+/*View Transitions*/
+@view-transition {
+  navigation: auto;
+}
+
 /*# sourceMappingURL=main.css.map */
