@@ -327,6 +327,7 @@ button:hover {
 }
 
 .score-element-container {
+  margin: 0 auto;
   height: fit-content;
   width: fit-content;
 }
@@ -337,6 +338,20 @@ button:hover {
 
 .losing {
   text-decoration: overline 4px oklch(60% 0.1825 21.18deg);
+}
+
+.score-element-flex {
+  display: flex;
+  justify-content: space-around;
+  gap: 4em;
+}
+
+.w-75 {
+  width: 75%;
+}
+
+.total-score-container {
+  width: 90dvw;
 }
 
 /*# sourceMappingURL=main.css.map */
