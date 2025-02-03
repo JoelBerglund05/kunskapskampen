@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kunskapskampen - Quiz sida</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <template id="answer-form">
+      <article class="question-vh">
+        <div class="grid">
+          <header class="header">
+            <h1 id="question" class="header-h1 marign-none box-shadow"></h1>
+          </header>
+        </div>
+        <section class="marigin-big">
+          <form class="question-grid">
+            <button
+              data-is-answer-correct="NaN"
+              type="button"
+              id="btn-1"
+              class="answer-btn box-shadow"
+            ></button>
+            <button
+              data-is-answer-correct="NaN"
+              type="button"
+              id="btn-2"
+              class="answer-btn box-shadow"
+            ></button>
+            <button
+              data-is-answer-correct="NaN"
+              type="button"
+              id="btn-3"
+              class="answer-btn box-shadow"
+            ></button>
+            <button
+              data-is-answer-correct="NaN"
+              type="button"
+              id="btn-4"
+              class="answer-btn box-shadow"
+            ></button>
+          </form>
+          <div class="next">
+            <button type="button" id="submit-btn" class="next-question">
+              Nästa fråga
+            </button>
+          </div>
+        </section>
+      </article>
+    </template>
+    <template id="points">
+      <article class="question-vh grid">
+        <header class="header">
+          <h1 id="points-header" class="header-h1 marign-none box-shadow">
+            Ditt resultat
+          </h1>
+        </header>
+        <section class="center-self marigin-medium">
+          <div class="primary-bg points-card box-shadow">
+            <h2 class="points-card-header center-text white-text">
+              Dina poäng är:
+            </h2>
+            <p id="set-points" class="center-text points white-text"></p>
+          </div>
+        </section>
+        <footer class="marigin-small center-self">
+          <nav aria-label="navigation">
+            <a href="./index.html" class="answer-btn box-shadow"
+              >Gå till baka</a
+            >
+          </nav>
+        </footer>
+      </article>
+    </template>
+  </head>
+  <body class="white-bg marign-none">
+    <main id="container">
+      <article class="question-vh">
+        <div class="grid">
+          <header class="header">
+            <h1 id="question" class="header-h1 loading marign-none"></h1>
+          </header>
+        </div>
+        <section class="marigin-big">
+          <div class="question-grid">
+            <button
+              type="button"
+              id="btn-1"
+              class="answer-btn loading"
+            ></button>
+            <button
+              type="button"
+              id="btn-2"
+              class="answer-btn loading"
+            ></button>
+            <button
+              type="button"
+              id="btn-3"
+              class="answer-btn loading"
+            ></button>
+            <button
+              type="button"
+              id="btn-4"
+              class="answer-btn loading"
+            ></button>
+          </div>
+        </section>
+      </article>
+    </main>
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

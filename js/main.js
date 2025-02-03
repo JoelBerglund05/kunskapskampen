@@ -1,14 +1,15 @@
 import DataBase from "./DataBase.js";
-import EventManager from "./EventManager.js";
 import GameHandeler from "./GameHandeler.js";
 import Validate from "./Validate.js";
+import EventManager from "./EventManager.js";
 
 class Main {
   constructor() {
     this.validate = new Validate();
     this.dataBase = new DataBase();
-    this.eventManager = new EventManager();
     this.gameHandeler = new GameHandeler();
+    this.eventManager = new EventManager();
+
     this.btnDBRequest = document.getElementById("btnDBRequest");
     this.displayData = document.getElementById("dBData");
     this.btnCreateAccount = document.getElementById("createAccount");
@@ -19,8 +20,10 @@ class Main {
     this.btnSignIn = document.getElementById("signIn");
     this.btnCreateGame = document.getElementById("createGame");
 
-    this.tmp = document.getElementById("tmp");
+    this.container = document.getElementById("container");
+    this.answersBtns = [];
   }
+  
   RegisterServiceWorker() {
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker.register("./js/ServiceWorker.js").then((reg) => {
@@ -28,40 +31,33 @@ class Main {
       });
     }
   }
-  async DisplayQuestion(id) {
-    const DBData = await this.dataBase.GetARowFrom("quizz", id);
 
-    if (DBData !== null) {
-      DBData.map((data) => {
-        this.displayData.innerHTML = data.questions;
-      });
+  UpdateGameElements() {
+    this.container = document.getElementById("container");
+    this.answersBtns = [
+      this.container.querySelector("#btn-1"),
+      this.container.querySelector("#btn-2"),
+      this.container.querySelector("#btn-3"),
+      this.container.querySelector("#btn-4"),
+    ];
+  }
+
+  async UrlSpecificLogic() {
+    const url = window.location.href;
+    const ending = url.substring(url.lastIndexOf("/"));
+
+    if (ending === "/game.html" || ending === "/game.html?") {
+      await this.gameHandeler.CreateGameScreen(this.dataBase);
+      this.UpdateGameElements();
     }
   }
-  async CreateAccount() {
-    const {
-      data: { user },
-    } = await this.dataBase.supabase.auth.getUser();
 
-    console.log(user);
-  }
-
-  async SignInUser() {
-    const {
-      data: { user },
-    } = await this.dataBase.supabase.auth.getUser();
-
-    console.log("HEJJJJJ");
-
-    console.log(user);
-  }
-  Main() {
+  async Main() {
     const clickEvent = "click";
     const inputEvent = "input";
     this.RegisterServiceWorker();
 
-    this.eventManager.EventListener(this.btnDBRequest, clickEvent, () =>
-      this.DisplayQuestion(1),
-    );
+    await this.UrlSpecificLogic();
 
     this.eventManager.EventListener(this.btnCreateAccount, clickEvent, () =>
       this.dataBase.SignUpUser(this.validate.emailInput.value, [
@@ -70,9 +66,9 @@ class Main {
       ]),
     );
 
-    this.eventManager.EventListener(this.btnSignIn, clickEvent, () =>
-      this.dataBase.SignInUser(this.email.value, this.password.value),
-    );
+    this.UpdateGameElements();
+
+    const submitBtn = this.container.querySelector("#submit-btn");
 
     this.eventManager.EventListener(this.btnCreateGame, clickEvent, () =>
       this.gameHandeler.CreateGame(this.dataBase),
@@ -81,6 +77,12 @@ class Main {
     this.eventManager.EventListener(this.validate.emailInput, inputEvent, () =>
       this.validate.ValidateEmail(),
     );
+
+    if (submitBtn) {
+      this.gameHandeler.HandleSubmitLogic(this.answersBtns, submitBtn);
+    } else {
+      console.error("no button found");
+    }
   }
 }
 

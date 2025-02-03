@@ -1,6 +1,6 @@
 {
-  "theme_color": "#26a269",
-  "background_color": "#8ff0a4",
+  "theme_color": "#45593f",
+  "background_color": "#efffe8",
   "icons": [
     {
       "purpose": "maskable",
@@ -18,8 +18,9 @@
   "orientation": "any",
   "display": "standalone",
   "dir": "auto",
-  "lang": "en-US",
-  "name": "Quizz Game",
-  "short_name": "QG",
-  "start_url": "https://joelberglund05.github.io/pwa-quizz-game/"
+  "lang": "sv",
+  "name": "Kunskapskampen",
+  "short_name": "Kunskapskampen",
+  "start_url": "https://joelberglund05.github.io/kunskapskampen/",
+  "description": "Ett quiz spel"
 }
