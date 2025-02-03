@@ -308,3 +308,25 @@ button:hover {
 .selected {
   background-color: $selected;
 }
+
+
+.remove-friend {
+  width: 2em;
+  height: 2em;
+  stroke: $black;
+  display: inline;
+  transition: opacity .3s ease;
+}
+
+.friend-card:hover {
+  .remove-friend {
+    opacity: 1;
+  }
+}
+
+
+@keyframes slide {
+  to {
+    display: inline;
+  }
+}
