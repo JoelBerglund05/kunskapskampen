@@ -15,10 +15,6 @@
   --wrong-answer-color: oklch(60% 0.1825 21.18);
   --right-answer-color: oklch(70% 0.1776 141.88);
   --darkmode-btn-background-color: oklch(37.56% 0.0758 291.51);
-
-  /*
-      --bt-background-color-hover: oklch(77% 0.1455 79.31);
-      */
 }
 
 :root[data-theme="dark"] {
@@ -38,15 +34,6 @@
   --wrong-answer-color: oklch(60% 0.1825 21.18);
   --right-answer-color: oklch(70% 0.1776 141.88);
   --darkmode-btn-background-color: oklch(37.56% 0.0758 291.51);
-
-
-
-
-  /*
-  --bt-background-color-hover: oklch(77% 0.1455 79.31);
-  */
-
-
 }
 
 :root[data-theme="light"] {
@@ -66,10 +53,6 @@
   --wrong-answer-color: oklch(60% 0.1825 21.18);
   --right-answer-color: oklch(70% 0.1776 141.88);
   --darkmode-btn-background-color: oklch(78.97% 0.1676 68.47);
-
-  /*
-  --bt-background-color-hover: oklch(77% 0.1455 79.31);
-  */
 }
 
 
