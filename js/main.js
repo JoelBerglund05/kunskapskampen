@@ -17,11 +17,15 @@ class Main {
       document.getElementById("password1"),
       document.getElementById("password2"),
     ];
+    this.username = document.getElementById("username");
     this.btnSignIn = document.getElementById("signIn");
     this.btnCreateGame = document.getElementById("createGame");
 
     this.container = document.getElementById("container");
     this.answersBtns = [];
+
+    this.submitBtn;
+
   }
   
   RegisterServiceWorker() {
@@ -47,6 +51,7 @@ class Main {
     const ending = url.substring(url.lastIndexOf("/"));
 
     if (ending === "/game.html" || ending === "/game.html?") {
+      this.submitBtn = this.container.querySelector("#submit-btn");
       await this.gameHandeler.CreateGameScreen(this.dataBase);
       this.UpdateGameElements();
     }
@@ -60,15 +65,19 @@ class Main {
     await this.UrlSpecificLogic();
 
     this.eventManager.EventListener(this.btnCreateAccount, clickEvent, () =>
-      this.dataBase.SignUpUser(this.validate.emailInput.value, [
+      this.dataBase.SignUpUser(this.validate.emailInput.value, this.username.value ,[
         this.password[0].value,
         this.password[1].value,
       ]),
     );
 
-    this.UpdateGameElements();
+    this.eventManager.EventListener(this.btnSignIn, clickEvent, () =>
+      this.dataBase.SignInUser(this.validate.emailInput.value, [
+        this.password[0].value,
+        this.password[1].value,
+      ]),
+    );
 
-    const submitBtn = this.container.querySelector("#submit-btn");
 
     this.eventManager.EventListener(this.btnCreateGame, clickEvent, () =>
       this.gameHandeler.CreateGame(this.dataBase),
@@ -78,10 +87,8 @@ class Main {
       this.validate.ValidateEmail(),
     );
 
-    if (submitBtn) {
+    if (this.submitBtn) {
       this.gameHandeler.HandleSubmitLogic(this.answersBtns, submitBtn);
-    } else {
-      console.error("no button found");
     }
   }
 }
