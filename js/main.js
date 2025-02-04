@@ -22,8 +22,9 @@ class Main {
 
     this.container = document.getElementById("container");
     this.answersBtns = [];
+    this.submitBtn;
   }
-  
+
   RegisterServiceWorker() {
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker.register("./js/ServiceWorker.js").then((reg) => {
@@ -40,6 +41,8 @@ class Main {
       this.container.querySelector("#btn-3"),
       this.container.querySelector("#btn-4"),
     ];
+    this.submitBtn = this.container.querySelector("#submit-btn");
+
   }
 
   async UrlSpecificLogic() {
@@ -66,9 +69,7 @@ class Main {
       ]),
     );
 
-    this.UpdateGameElements();
 
-    const submitBtn = this.container.querySelector("#submit-btn");
 
     this.eventManager.EventListener(this.btnCreateGame, clickEvent, () =>
       this.gameHandeler.CreateGame(this.dataBase),
@@ -78,10 +79,8 @@ class Main {
       this.validate.ValidateEmail(),
     );
 
-    if (submitBtn) {
+    if (this.submitBtn) {
       this.gameHandeler.HandleSubmitLogic(this.answersBtns, submitBtn);
-    } else {
-      console.error("no button found");
     }
   }
 }

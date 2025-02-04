@@ -118,6 +118,5 @@ export default class DataBase {
       .then((json) => {
         sessionStorage.setItem("question", JSON.stringify(json));
       });
-
   }
 }

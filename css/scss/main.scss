@@ -51,7 +51,7 @@ body {
   color: $white;
 }
 
-.white-fill{
+.white-fill {
   fill: $black;
 }
 
@@ -161,8 +161,6 @@ body {
 button:hover {
   cursor: pointer;
 }
-
-
 
 .loading {
   position: relative;
@@ -317,22 +315,17 @@ button:hover {
   background-color: $selected;
 }
 
-
-
 .remove-friend {
   width: 2em;
   height: 2em;
   stroke: $black;
   display: inline;
-  transition: opacity .3s ease;
+  transition: opacity 0.3s ease;
 }
 
-.friend-card:hover {
-  .remove-friend {
-    opacity: 1;
-  }
+.friend-card {
+  //margin: 0 2.5rem;
 }
-
 
 @keyframes slide {
   to {
@@ -340,7 +333,7 @@ button:hover {
   }
 }
 
-.size-svg{
+.size-svg {
   width: 3em;
   height: 3em;
 }
@@ -357,6 +350,30 @@ button:hover {
   margin: 0 1em 0 1em;
 }
 
-.black-fill{
+.black-fill {
   fill: $black;
+}
+
+.play-against-btn {
+  background-color: $cta;
+}
+
+.play-against-btn:hover {
+  background-color: $cta-hover;
+}
+
+.btn-none{
+  border: none;
+  background-color: $white;
+  border-radius: 100%;
+
+  svg.box-shadow {
+    box-shadow: none;
+    border-radius: 100%;
+    transition: 200ms;
+  }
+
+  svg.box-shadow:hover{
+    box-shadow: $primary-shadow 0 0 .3em;
+  }
 }

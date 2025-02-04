@@ -1,7 +1,7 @@
 @charset "UTF-8";
 button:focus-visible,
 a:focus-visible {
-  outline: 3px solid oklch(60% 0.1825 21.18deg);
+  outline: 3px solid oklch(58% 0.1825 21.18deg);
 }
 
 p,
@@ -22,7 +22,6 @@ body {
   background-color: oklch(44% 0.0483 138.55deg);
 }
 
-
 .white-bg {
   background-color: oklch(100% 0.0483 138.55deg);
 }
@@ -30,6 +29,7 @@ body {
 .white-text {
   color: oklch(100% 0.0483 138.55deg);
 }
+
 .white-fill {
   fill: oklch(10% 0.0483 138.55deg);
 }
@@ -72,7 +72,7 @@ body {
 }
 
 .next-question {
-  background-color: oklch(82% 0.1455 79.31deg);
+  background-color: oklch(83.57% 0.1455 79.31deg);
   color: oklch(10% 0.0483 138.55deg);
   font-size: 1.5em;
   border: 0;
@@ -142,11 +142,6 @@ button:hover {
   cursor: pointer;
 }
 
-
-.background-primary {
-  background-color: oklch(44% 0.0483 138.55deg);
-}
-
 .loading {
   position: relative;
   background: oklch(44% 0.0483 138.55deg / 0.7);
@@ -188,7 +183,7 @@ button:hover {
     animation: none;
   }
   .answer-btn[data-is-answer-correct=false] {
-    background-color: oklch(60% 0.1825 21.18deg);
+    background-color: oklch(58% 0.1825 21.18deg);
   }
   .answer-btn[data-is-answer-correct=true] {
     background-color: oklch(70% 0.1776 141.88deg);
@@ -196,10 +191,10 @@ button:hover {
 }
 @keyframes wrong-answer {
   33% {
-    background-color: oklch(60% 0.1825 21.18deg);
+    background-color: oklch(58% 0.1825 21.18deg);
   }
   to {
-    background-color: oklch(60% 0.1825 21.18deg);
+    background-color: oklch(58% 0.1825 21.18deg);
   }
 }
 @keyframes correct-answer {
@@ -298,16 +293,11 @@ button:hover {
   transition: opacity 0.3s ease;
 }
 
-.friend-card:hover .remove-friend {
-  opacity: 1;
-}
-
 @keyframes slide {
   to {
     display: inline;
   }
 }
-
 .size-svg {
   width: 3em;
   height: 3em;
@@ -328,6 +318,28 @@ button:hover {
 
 .black-fill {
   fill: oklch(10% 0.0483 138.55deg);
+}
+
+.play-against-btn {
+  background-color: oklch(83.57% 0.1455 79.31deg);
+}
+
+.play-against-btn:hover {
+  background-color: oklch(77% 0.1455 79.31deg);
+}
+
+.btn-none {
+  border: none;
+  background-color: oklch(100% 0.0483 138.55deg);
+  border-radius: 100%;
+}
+.btn-none svg.box-shadow {
+  box-shadow: none;
+  border-radius: 100%;
+  transition: 200ms;
+}
+.btn-none svg.box-shadow:hover {
+  box-shadow: oklch(10% 0.0483 138.55deg / 0.5) 0 0 0.3em;
 }
 
 /*# sourceMappingURL=main.css.map */
