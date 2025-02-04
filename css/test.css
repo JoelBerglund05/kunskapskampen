@@ -300,8 +300,8 @@ h6 {
   color: oklch(10% 0.0483 138.55deg);
 }
 
-.cont {
-  max-width: fit-content;
+.main {
+  width: fit-content;
   margin: 1.25rem auto;
 }
 
@@ -313,13 +313,11 @@ h6 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 6px oklch(10% 0.0483 138.55deg);
 }
 
 .match.win {
   border-left: 0.5rem solid oklch(70% 0.1776 141.88deg);
   border-right: 0.5rem solid oklch(70% 0.1776 141.88deg);
-  /*display: inline-grid;*/
 }
 
 .match.loss {
@@ -338,13 +336,7 @@ h6 {
   width: 3.75rem;
   height: 3.75rem;
   margin-right: 0.938rem;
-  /*background-image: url("../../profile-circle-svgrepo-com.svg");*/
-}
-
-img {
-  width: 60px;
-  height: 60px;
-  fill: red;
+  margin-right: 0;
 }
 
 .other {
@@ -382,6 +374,10 @@ img {
   margin-bottom: 0;
 }
 
+.pvs {
+  margin-bottom: 0;
+}
+
 .stats {
   text-align: center;
 }
@@ -393,6 +389,12 @@ img {
 .stats .points {
   font-size: 20px;
   font-weight: bold;
+}
+
+@media (width < 720px) {
+  .main {
+    max-width: fit-content;
+  }
 }
 
 /*# sourceMappingURL=test.css.map */

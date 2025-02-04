@@ -39,6 +39,8 @@ export default class GameHandeler {
     //const ListParentNode = document.getElementById("result");
     const ListContentNode = template.content.cloneNode(true).firstElementChild;
     this.ListTargetNode.appendChild(ListContentNode);
+    this.UpdateGameScreen();
+
 
     const setPoints = template.querySelector("#set-points");
     setPoints.textContent = sessionStorage.getItem("points") + "/10";
