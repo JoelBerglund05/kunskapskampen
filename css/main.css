@@ -1,7 +1,7 @@
 @charset "UTF-8";
 :root {
   --primary-color: oklch(44% 0.0483 138.55);
-  --primary-color1: oklch(60% 0.0483 138.55);
+  --primary-color1: oklch(35% 0.0483 138.55);
   --primary-color2: oklch(65% 0.0483 138.55);
   --primary-color3: oklch(80% 0.0483 138.55);
   --primary-color4: oklch(95% 0.0483 138.55);
@@ -22,7 +22,7 @@
 
 :root[data-theme="dark"] {
   --primary-color: oklch(71.42% 0.0516 138.65);
-  --primary-color1: oklch(35% 0.037 138.55);
+  --primary-color1: oklch(50% 0.037 138.55);
   --primary-color2: oklch(40% 0.037 138.55);
   --primary-color3: oklch(55% 0.037 138.55);
   --primary-color4: oklch(70% 0.037 138.55);
@@ -43,7 +43,7 @@
 
 :root[data-theme="light"] {
   --primary-color: oklch(44% 0.0483 138.55);
-  --primary-color1: oklch(60% 0.0483 138.55);
+  --primary-color1: oklch(35% 0.0483 138.55);
   --primary-color2: oklch(65% 0.0483 138.55);
   --primary-color3: oklch(80% 0.0483 138.55);
   --primary-color4: oklch(95% 0.0483 138.55);
@@ -62,26 +62,6 @@
   --bt-background-color-hover: oklch(77% 0.1455 79.31);
   */ }
 
-/*
-$primary-color: oklch(44% 0.0483 138.55);
-$primary-color1: oklch(60% 0.0483 138.55);
-$primary-color2: oklch(65% 0.0483 138.55);
-$primary-color3: oklch(80% 0.0483 138.55);
-$primary-color4: oklch(95% 0.0483 138.55);
-$primary-loading: oklch(44% 0.0483 138.55 / 0.7);
-$primary-loading1: oklch(100% 0.0483 138.55 / 0.2);
-$primary-shadow: oklch(10% 0.0483 138.55 / 0.5);
-
-$cta: oklch(82% 0.1455 79.31);
-$cta-hover: oklch(77% 0.1455 79.31);
-$selected: oklch(30% 0.0483 138.55);
-
-$white: oklch(100% 0.0483 138.55);
-$black: oklch(10% 0.0483 138.55);
-$wrong-answer-color: oklch(60% 0.1825 21.18);
-$right-answer-color: oklch(70% 0.1776 141.88);
-
-*/
 .btn {
   color: var(--black); }
 
@@ -114,15 +94,15 @@ body {
   fill: var(--black); }
 
 .header {
-  color: var(--black);
+  color: var(--primary-color1);
   justify-self: center; }
 
 .grid {
   display: grid; }
 
 .header-h1 {
-  color: var(--white);
-  background-color: var(--primary-color);
+  color: oklch(100% 0.0483 138.55);
+  background-color: var(--primary-color1);
   padding: 1em 0.3em 2em 0.3em;
   text-align: center;
   border-radius: 0 0 1em 1em; }
