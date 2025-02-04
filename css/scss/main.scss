@@ -1,3 +1,4 @@
+/*
 :root {
   --primary-color: oklch(44% 0.0483 138.55);
   --primary-color1: oklch(35% 0.0483 138.55);
@@ -12,10 +13,10 @@
   --selected: oklch(30% 0.0483 138.55);
   --white: oklch(100% 0.0483 138.55);
   --black: oklch(10% 0.0483 138.55);
-  --wrong-answer-color: oklch(60% 0.1825 21.18);
-  --right-answer-color: oklch(70% 0.1776 141.88);
   --darkmode-btn-background-color: oklch(37.56% 0.0758 291.51);
 }
+
+*/
 
 :root[data-theme="dark"] {
   --primary-color: oklch(71.42% 0.0516 138.65);
@@ -31,8 +32,6 @@
   --selected: oklch(30% 0.0483 138.55);
   --white: oklch(44% 0.0483 138.55);
   --black: oklch(100% 0.0483 138.55);
-  --wrong-answer-color: oklch(60% 0.1825 21.18);
-  --right-answer-color: oklch(70% 0.1776 141.88);
   --darkmode-btn-background-color: oklch(37.56% 0.0758 291.51);
 }
 
@@ -50,8 +49,6 @@
   --selected: oklch(30% 0.0483 138.55);
   --white: oklch(100% 0.0483 138.55);
   --black: oklch(10% 0.0483 138.55);
-  --wrong-answer-color: oklch(60% 0.1825 21.18);
-  --right-answer-color: oklch(70% 0.1776 141.88);
   --darkmode-btn-background-color: oklch(78.97% 0.1676 68.47);
 }
 
@@ -82,7 +79,7 @@ $right-answer-color: oklch(70% 0.1776 141.88);
 
 button:focus-visible,
 a:focus-visible {
-  outline: 3px solid var(--wrong-answer-color);
+  outline: 3px solid $wrong-answer-color;
 }
 
 p,
@@ -271,31 +268,31 @@ button:hover {
   }
 
   .answer-btn[data-is-answer-correct="false"] {
-    background-color: var(--wrong-answer-color);
+    background-color: $wrong-answer-color;
   }
 
   .answer-btn[data-is-answer-correct="true"] {
-    background-color: var(--right-answer-color);
+    background-color: $right-answer-color;
   }
 }
 
 @keyframes wrong-answer {
   33% {
-    background-color: var(--wrong-answer-color);
+    background-color: $wrong-answer-color;
   }
 
   to {
-    background-color: var(--wrong-answer-color);
+    background-color: $wrong-answer-color;
   }
 }
 
 @keyframes correct-answer {
   33% {
-    background-color: var(--right-answer-color);
+    background-color: $right-answer-color;
   }
 
   to {
-    background-color: var(--right-answer-color);
+    background-color: $right-answer-color;
   }
 }
 
