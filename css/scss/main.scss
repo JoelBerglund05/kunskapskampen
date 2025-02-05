@@ -24,12 +24,6 @@
   --primary-color2: oklch(40% 0.037 138.55);
   --primary-color3: oklch(55% 0.037 138.55);
   --primary-color4: oklch(70% 0.037 138.55);
-  --primary-loading: oklch(39% 0.0483 138.55 / 70%);
-  --primary-loading1: oklch(100% 0.0483 138.55 / 0.2);
-  --primary-shadow: oklch(10% 0.0483 138.55 / 0.5);
-  --cta: oklch(82% 0.1455 79.31);
-  --cta-hover: oklch(77% 0.1455 79.31);
-  --selected: oklch(30% 0.0483 138.55);
   --white: oklch(44% 0.0483 138.55);
   --black: oklch(100% 0.0483 138.55);
   --darkmode-btn-background-color: oklch(37.56% 0.0758 291.51);
@@ -41,12 +35,6 @@
   --primary-color2: oklch(65% 0.0483 138.55);
   --primary-color3: oklch(80% 0.0483 138.55);
   --primary-color4: oklch(95% 0.0483 138.55);
-  --primary-loading: oklch(44% 0.0483 138.55 / 0.7);
-  --primary-loading1: oklch(100% 0.0483 138.55 / 0.2);
-  --primary-shadow: oklch(10% 0.0483 138.55 / 0.5);
-  --cta: oklch(82% 0.1455 79.31);
-  --cta-hover: oklch(77% 0.1455 79.31);
-  --selected: oklch(30% 0.0483 138.55);
   --white: oklch(100% 0.0483 138.55);
   --black: oklch(10% 0.0483 138.55);
   --darkmode-btn-background-color: oklch(78.97% 0.1676 68.47);
@@ -150,7 +138,7 @@ body {
 }
 
 .next-question {
-  background-color: var(--cta);
+  background-color: $cta;
   color: var(--black);
   font-size: 1.5em;
   border: 0;
@@ -164,7 +152,7 @@ body {
 }
 
 .next-question:hover {
-  background-color: var(--cta-hover);
+  background-color: $cta-hover;
 }
 
 .marigin-big {
@@ -224,7 +212,7 @@ button:hover {
 
 .loading {
   position: relative;
-  background: var(--primary-loading);
+  background: $primary-loading;
 }
 
 .loading:after {
@@ -237,7 +225,7 @@ button:hover {
   transform: translateX(-100px);
   background: linear-gradient(90deg,
       transparent,
-      var(--primary-loading1),
+      $primary-loading1,
       transparent);
   animation: loading 0.7s infinite;
 }
@@ -303,7 +291,7 @@ button:hover {
 }
 
 .box-shadow {
-  box-shadow: var(--primary-shadow) 0em 0em 0.3em;
+  box-shadow: $primary-shadow 0em 0em 0.3em;
 }
 
 @media (width < 720px) {
@@ -392,7 +380,7 @@ button:hover {
 }
 
 .selected {
-  background-color: var(--selected);
+  background-color: $selected;
 }
 
 .size-svg {
