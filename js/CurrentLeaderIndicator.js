@@ -1,20 +1,26 @@
 export default class CurrentLeaderIndicator {
     constructor() {
-        this.yourScore = 3;
-        this.opponentScore = 1;
+        this.yourScore;
+        this.opponentScore;
     }
     checkCurrentLeader() {
+        this.getGames();
         if (this.yourScore > this.opponentScore) {
-            document.querySelector('#yourTotalScore').classList.add('leader');
-            document.querySelector('#opponantTotalScore').classList.add('losing');
+            document.querySelector('#yourName').classList.add('leader');
+            document.querySelector('#opponentName').classList.add('losing');
         }
         else if (this.yourScore < this.opponentScore) {
-            document.querySelector('#yourTotalScore').classList.add('losing');
-            document.querySelector('#opponantTotalScore').classList.add('leader');
+            document.querySelector('#yourName').classList.add('losing');
+            document.querySelector('#opponentName').classList.add('leader');
         }
         else {
-            document.querySelector('#yourTotalScore').classList.add('losing');
-            document.querySelector('#opponantTotalScore').classList.add('losing');
+            document.querySelector('#yourName').classList.add('losing');
+            document.querySelector('#opponentName').classList.add('losing');
         }
+    }
+    getGames() {
+        const allGames = JSON.parse(sessionStorage.getItem("matches"));
+        this.yourScore = allGames.games[1].user_points_1;
+        this.opponentScore = allGames.games[1].user_points_2;
     }
 }

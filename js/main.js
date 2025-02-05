@@ -41,15 +41,19 @@ class Main {
       await this.gameHandeler.CreateGameScreen(this.dataBase);
       this.UpdateGameElements();
     }
+    else if (ending === "/score.html") {
+      await this.dataBase.GetMatch();
+      this.template.templateCreator();
+      this.currentLeaderIndicator.checkCurrentLeader();
+    }
+      await this.dataBase.GetMatch();
+      this.template.templateCreator();
+      this.currentLeaderIndicator.checkCurrentLeader();
   }
 
   async Main() {
     const clickEvent = "click";
     this.RegisterServiceWorker();
-
-    this.template.templateCreator();
-
-    this.currentLeaderIndicator.checkCurrentLeader();
 
     await this.UrlSpecificLogic();
 
