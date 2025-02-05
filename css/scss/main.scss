@@ -362,7 +362,7 @@ button:hover {
   background-color: $cta-hover;
 }
 
-.btn-none{
+.btn-none {
   border: none;
   background-color: $white;
   border-radius: 100%;
@@ -373,7 +373,7 @@ button:hover {
     transition: 200ms;
   }
 
-  svg.box-shadow:hover{
-    box-shadow: $primary-shadow 0 0 .3em;
+  svg.box-shadow:hover {
+    box-shadow: $primary-shadow 0 0 0.3em;
   }
 }

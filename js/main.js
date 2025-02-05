@@ -46,7 +46,6 @@ class Main {
       this.container.querySelector("#btn-4"),
     ];
     this.submitBtn = this.container.querySelector("#submit-btn");
-
   }
 
   async UrlSpecificLogic() {
@@ -58,9 +57,15 @@ class Main {
       this.UpdateGameElements();
     } else if (ending === "/friends.html" || ending === "/friends.hrml?") {
       await this.renderFriendTemplate.RenderFriendList(this.dataBase);
-      this.btnPlayAgainst = [this.renderFriendTemplate.friendContainer.querySelector("#playAgainst0"), this.renderFriendTemplate.friendContainer.querySelector("#playAgainst1")];
-      console.log(this.btnPlayAgainst)
-
+      this.btnPlayAgainst = [
+        this.renderFriendTemplate.friendContainer.querySelector(
+          "#playAgainst0",
+        ),
+        this.renderFriendTemplate.friendContainer.querySelector(
+          "#playAgainst1",
+        ),
+      ];
+      console.log(this.btnPlayAgainst);
     }
   }
 
@@ -90,11 +95,14 @@ class Main {
       this.gameHandeler.HandleSubmitLogic(this.answersBtns, submitBtn);
     }
 
-    for (let i = 0; i < this.btnPlayAgainst.length; i++){
-      this.eventManager.EventListener(this.btnPlayAgainst[i], clickEvent, () => {
-        this.dataBase.CreateFriendGame(i);
-      });
-
+    for (let i = 0; i < this.btnPlayAgainst.length; i++) {
+      this.eventManager.EventListener(
+        this.btnPlayAgainst[i],
+        clickEvent,
+        () => {
+          this.dataBase.CreateFriendGame(i);
+        },
+      );
     }
   }
 }
