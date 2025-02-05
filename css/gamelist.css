@@ -365,9 +365,6 @@ h6 {
   border-radius: 0.5rem;
   margin-bottom: 1.25rem;
   padding: 0.938rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .match.win {
@@ -380,9 +377,8 @@ h6 {
 }
 
 .match-details {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-content: space-evenly;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
 }
@@ -405,12 +401,6 @@ h6 {
   block-size: fit-content;
 }
 
-.other-player {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-}
-
 .info h4 {
   margin: 0 0 0.313rem;
   font-size: 18px;
@@ -424,9 +414,7 @@ h6 {
 
 .vs {
   width: fit-content;
-  display: flex;
   align-self: center;
-  justify-content: center;
   margin-bottom: 0;
 }
 
