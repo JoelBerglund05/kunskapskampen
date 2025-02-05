@@ -2,9 +2,11 @@ import DataBase from "./DataBase.js";
 import GameHandeler from "./GameHandeler.js";
 import Validate from "./Validate.js";
 import EventManager from "./EventManager.js";
+import RenderFriendTemplate from "./RenderFriendTemplate.js";
 
 class Main {
   constructor() {
+    this.renderFriendTemplate = new RenderFriendTemplate();
     this.validate = new Validate();
     this.dataBase = new DataBase();
     this.gameHandeler = new GameHandeler();
@@ -23,6 +25,8 @@ class Main {
     this.container = document.getElementById("container");
     this.answersBtns = [];
     this.submitBtn;
+
+    this.btnPlayAgainst;
   }
 
   RegisterServiceWorker() {
@@ -52,6 +56,11 @@ class Main {
     if (ending === "/game.html" || ending === "/game.html?") {
       await this.gameHandeler.CreateGameScreen(this.dataBase);
       this.UpdateGameElements();
+    } else if (ending === "/friends.html" || ending === "/friends.hrml?") {
+      await this.renderFriendTemplate.RenderFriendList(this.dataBase);
+      this.btnPlayAgainst = [this.renderFriendTemplate.friendContainer.querySelector("#playAgainst0"), this.renderFriendTemplate.friendContainer.querySelector("#playAgainst1")];
+      console.log(this.btnPlayAgainst)
+
     }
   }
 
@@ -69,8 +78,6 @@ class Main {
       ]),
     );
 
-
-
     this.eventManager.EventListener(this.btnCreateGame, clickEvent, () =>
       this.gameHandeler.CreateGame(this.dataBase),
     );
@@ -81,6 +88,13 @@ class Main {
 
     if (this.submitBtn) {
       this.gameHandeler.HandleSubmitLogic(this.answersBtns, submitBtn);
+    }
+
+    for (let i = 0; i < this.btnPlayAgainst.length; i++){
+      this.eventManager.EventListener(this.btnPlayAgainst[i], clickEvent, () => {
+        this.dataBase.CreateFriendGame(i);
+      });
+
     }
   }
 }
