@@ -39,14 +39,38 @@ export default class GameHandeler {
     //const ListParentNode = document.getElementById("result");
     const ListContentNode = template.content.cloneNode(true).firstElementChild;
     this.ListTargetNode.appendChild(ListContentNode);
-    this.UpdateGameScreen();
 
+    const allGames = JSON.parse(sessionStorage.getItem("games"));
+    
 
     const setPoints = template.querySelector("#set-points");
-    setPoints.textContent = sessionStorage.getItem("points") + "/10";
+    setPoints.textContent = allGames.games[0].user_points_1;
   }
 
-  Displaypoints() {
+  DisplayPoints() {
+
+  }
+
+
+  ColorDisplay() {
+    const match = document.getElementById("match");
+
+
+    /*
+    if (player_1.point > player_2.point) {
+      match.style.borderBlockStart = "2px solid oklch(70% 0.1776 141.88)";
+      match.style.borderBlockEnd = "2px solid oklch(60% 0.1825 21.18)"
+    }
+    if else (player_1.point < player_2.point){
+      match.style.borderBlockStart = "2px solid oklch(60% 0.1825 21.18)";
+      match.style.borderBlockEnd = "2px solid oklch(70% 0.1776 141.88)"
+    }
+    if else (player_1.point == player_2.point) {
+      match.style.borderBlockStart = ""
+      match.style.borderBlockEnd = ""
+    }
+
+    */
 
   }
 
@@ -73,7 +97,7 @@ export default class GameHandeler {
         "player2": "bert",
         "player1_points": "insert points", //lägg till poäng som tas från variabel
         "player1_points": "insert points", //lägg till poäng som tas från variabel        
-      }
+      },
 
       "game1":{
         "player1": "lasse",

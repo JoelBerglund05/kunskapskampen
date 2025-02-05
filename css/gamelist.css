@@ -285,7 +285,7 @@ button:hover {
 body {
   font-family: Arial, sans-serif;
   background-color: oklch(100% 0.0483 138.55deg);
-  color: oklch(100% 0.0483 138.55deg);
+  color: oklch(10% 0.0483 138.55deg);
   margin: 0;
   padding: 0;
 }
@@ -297,29 +297,27 @@ h3,
 h4,
 h5,
 h6 {
-  color: oklch(100% 0.0483 138.55deg);
+  color: oklch(10% 0.0483 138.55deg);
 }
 
-.container {
-  max-width: 75rem;
+.main {
+  width: fit-content;
   margin: 1.25rem auto;
-  padding: 1.25rem;
 }
 
 .match {
-  background-color: oklch(44% 0.0483 138.55deg);
+  background-color: oklch(100% 0.0483 138.55deg);
   border-radius: 0.5rem;
   margin-bottom: 1.25rem;
   padding: 0.938rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 6px oklch(10% 0.0483 138.55deg);
 }
 
 .match.win {
   border-left: 0.5rem solid oklch(70% 0.1776 141.88deg);
-  /*display: inline-grid;*/
+  border-right: 0.5rem solid oklch(70% 0.1776 141.88deg);
 }
 
 .match.loss {
@@ -328,7 +326,8 @@ h6 {
 
 .match-details {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-evenly;
   align-items: center;
   width: 100%;
 }
@@ -336,9 +335,8 @@ h6 {
 .champion {
   width: 3.75rem;
   height: 3.75rem;
-  border-radius: 50%;
-  background: #3e3e6a;
   margin-right: 0.938rem;
+  margin-right: 0;
 }
 
 .other {
@@ -348,18 +346,14 @@ h6 {
 .your-player, .other-player {
   display: flex;
   align-items: center;
-  /*    width: fit-content;
-      block-size: fit-content;*/
+  width: fit-content;
+  block-size: fit-content;
 }
 
 .other-player {
   display: flex;
   justify-content: flex-end;
   width: 100%;
-}
-
-.info {
-  margin-right: 1.875rem;
 }
 
 .info h4 {
@@ -370,13 +364,19 @@ h6 {
 .info p {
   margin: 0;
   font-size: 14px;
-  color: oklch(100% 0.0483 138.55deg);
+  color: oklch(10% 0.0483 138.55deg);
 }
 
 .vs {
+  width: fit-content;
   display: flex;
-  text-align: right;
-  margin-left: 40%;
+  align-self: center;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.pvs {
+  margin-bottom: 0;
 }
 
 .stats {
@@ -392,21 +392,10 @@ h6 {
   font-weight: bold;
 }
 
-.items {
-  display: flex;
-  gap: 0.313;
-}
-
-.item {
-  width: 2.5rem;
-  height: 2.5rem;
-  background: #3e3e6a;
-  border-radius: 4px;
-}
-
-.vision {
-  font-size: 14px;
-  color: oklch(100% 0.0483 138.55deg);
+@media (width < 720px) {
+  .main {
+    max-width: fit-content;
+  }
 }
 
 /*# sourceMappingURL=gamelist.css.map */
