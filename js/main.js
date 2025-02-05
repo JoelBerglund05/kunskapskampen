@@ -23,7 +23,7 @@ class Main {
     this.container = document.getElementById("container");
     this.answersBtns = [];
   }
-  
+
   RegisterServiceWorker() {
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker.register("./js/ServiceWorker.js").then((reg) => {
