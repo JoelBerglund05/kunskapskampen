@@ -1,8 +1,13 @@
-export default class GameHandeler {
+import DataBase from "./DataBase.js";
+import RenderTemplate from "./RenderTemplate.js";
+
+export default class GameHandeler extends RenderTemplate {
   constructor() {
+    super({});
     this.gameContainer = document.getElementById("container");
     this.questionsAnswerd = 0;
     this.points = 0;
+    this.myAnswers = [];
   }
 
   ShuffleArray(array) {
@@ -34,43 +39,42 @@ export default class GameHandeler {
   }
 
   async CreateGameScreen(dataBase) {
-    await dataBase.GetQuestion(this.GetRandomCategory());
 
-    this.DeleteQuestionNode();
+    this.DeleteChildNode(this.gameContainer, ".question-vh");
 
     const template = document.getElementById("answer-form");
-    const questionHtml = template.content.cloneNode(true).firstElementChild;
-    this.gameContainer.appendChild(questionHtml);
+    this.Render(template, this.gameContainer);
 
     this.UpdateGameScreen();
   }
 
-  CreatePointsScreen() {
-    this.DeleteQuestionNode();
+  async CreatePointsScreen() {
 
-    const template = document.getElementById("points");
+    const dataBase = new DataBase();
 
-    const pointsHtml = template.content.cloneNode(true).firstElementChild;
+    await dataBase.AddPoints(this.myAnswers);
 
-    const heading = pointsHtml.querySelector("#points-header");
-    const pointsSetter = pointsHtml.querySelector("#set-points");
+    sessionStorage.setItem("questionsAnswerd", 0)
 
-    pointsSetter.textContent = sessionStorage.getItem("points") + "/10";
-
-    sessionStorage.setItem("questionsAnswerd", 0);
-    sessionStorage.setItem("points", 0);
-
-    this.gameContainer.appendChild(pointsHtml);
+    window.location.replace("http://127.0.0.1:5501/score.html");
   }
 
   UpdateGameScreen() {
     const shuffledAnswers = [0, 1, 2, 3];
     this.ShuffleArray(shuffledAnswers);
 
-    const json = JSON.parse(sessionStorage.getItem("question"));
+    const gameId = parseInt(sessionStorage.getItem("gameId"));
+    const allGames = JSON.parse(sessionStorage.getItem("games"));
+    let index;
     this.questionsAnswerd = parseInt(
       sessionStorage.getItem("questionsAnswerd") || 0,
     );
+
+    for (let i = 0; i < allGames.games.length; i++){
+      if (allGames.games[i].id ===gameId) {
+        index = i;
+      }
+    }
 
     let questionHtml = this.gameContainer.querySelector(".question-vh");
 
@@ -82,17 +86,21 @@ export default class GameHandeler {
       questionHtml.querySelector("#btn-4"),
     ];
 
+    console.log(allGames, " game id: ", gameId, " index: ", index, " last", this.questionsAnswerd);
+    console.log(allGames.questions[index][this.questionsAnswerd].answer1,)
+
     const answer = [
-      json.questions[this.questionsAnswerd].answer1,
-      json.questions[this.questionsAnswerd].answer2,
-      json.questions[this.questionsAnswerd].answer3,
-      json.questions[this.questionsAnswerd].answer4,
+      allGames.questions[index][this.questionsAnswerd].answer1,
+      allGames.questions[index][this.questionsAnswerd].answer2,
+      allGames.questions[index][this.questionsAnswerd].answer3,
+      allGames.questions[index][this.questionsAnswerd].answer4,
     ];
 
-    question.textContent = json.questions[this.questionsAnswerd].question;
+    question.textContent = allGames.questions[index][this.questionsAnswerd].question;
 
     for (let i = 0; i < 4; i++) {
       answersBtn[i].textContent = answer[shuffledAnswers[i]];
+      console.log(answer[shuffledAnswers[i]])
     }
   }
 
@@ -101,12 +109,23 @@ export default class GameHandeler {
   }
 
   async ButtonAnswer(answer) {
-    const json = JSON.parse(sessionStorage.getItem("question"));
+    const gameId = parseInt(sessionStorage.getItem("gameId"));
+    const allGames = JSON.parse(sessionStorage.getItem("games"));
+    let index;
     this.questionsAnswerd = parseInt(
       sessionStorage.getItem("questionsAnswerd") || 0,
     );
 
-    if (json.questions[this.questionsAnswerd].answer1 == answer.outerText) {
+    for (let i = 0; i < allGames.games.length; i++){
+      if (allGames.games[i].id ===gameId) {
+        index = i;
+      }
+    }
+
+    console.log(answer.outerText)
+    this.myAnswers.push(answer.outerText);
+
+    if (allGames.questions[index][this.questionsAnswerd].answer1 == answer.outerText) {
       this.points = sessionStorage.getItem("points");
       this.points++;
       sessionStorage.setItem("points", this.points);
@@ -124,7 +143,7 @@ export default class GameHandeler {
     this.questionsAnswerd++;
     sessionStorage.setItem("questionsAnswerd", this.questionsAnswerd);
 
-    if (this.questionsAnswerd < json.questions.length) {
+    if (this.questionsAnswerd < allGames.questions[index].length) {
       this.UpdateGameScreen();
     } else {
       this.CreatePointsScreen();

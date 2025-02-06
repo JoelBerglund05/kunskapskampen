@@ -1,0 +1,114 @@
+@use "main.scss";
+
+$color: main.$white;
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: $color;
+  color: main.$black;
+  margin: 0;
+  padding: 0;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: main.$black;
+}
+
+.main {
+  width: fit-content;
+  margin: 1.25rem auto;
+}
+
+.match {
+  background-color: $color;
+  border-radius: 0.5rem;
+  margin-bottom: 1.25rem;
+  padding: 1rem;
+  display: block;
+}
+
+.match.win {
+  border-top: 0;
+  border-bottom: 0;
+  border-left: 0.5rem solid main.$right-answer-color;
+  border-right: 0.5rem solid main.$right-answer-color;
+}
+
+.match.loss {
+  border-top: 0;
+  border-bottom: 0;
+  border-left: 0.5rem solid main.$wrong-answer-color;
+  border-right: 0.5rem solid main.$wrong-answer-color;
+}
+
+.match-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.champion {
+  width: 3.75rem;
+  height: 3.75rem;
+  margin-right: 0.938rem;
+  margin-right: 0;
+}
+
+.other {
+  margin-right: 0;
+}
+
+.your-player,
+.other-player {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  block-size: fit-content;
+}
+
+.info h4 {
+  margin: 0 0 0.313rem;
+  font-size: 18px;
+}
+
+.info p {
+  margin: 0;
+  font-size: 14px;
+  color: main.$black;
+}
+
+.vs {
+  width: fit-content;
+  align-self: center;
+  margin-bottom: 0;
+}
+
+.pvs {
+  margin-bottom: 0;
+}
+
+.stats {
+  text-align: center;
+}
+
+.stats p {
+  margin: 0;
+}
+
+.stats .points {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+@media (width < 720px) {
+  .main {
+    max-width: fit-content;
+  }
+}

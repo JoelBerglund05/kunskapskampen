@@ -3,7 +3,9 @@
   "scripts": {
     "scss": "sass",
     "sass": "sass --watch css/scss/main.scss:css/main.css",
-    "prettier": "prettier . --write"
+    "sass-list": "sass --watch css/scss/gamelist.scss:css/gamelist.css",
+    "prettier": "prettier . --write",
+    "build:scss-vars": "node extract-scss-vars.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.6",
