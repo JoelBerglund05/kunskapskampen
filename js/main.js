@@ -2,6 +2,8 @@ import DataBase from "./DataBase.js";
 import GameHandeler from "./GameHandeler.js";
 import Validate from "./Validate.js";
 import EventManager from "./EventManager.js";
+import Template from "./Template.js";
+import CurrentLeaderIndicator from "./CurrentLeaderIndicator.js";
 import RenderFriendTemplate from "./RenderFriendTemplate.js";
 import RenderGameHistory from "./RenderGameHistory.js";
 
@@ -12,6 +14,8 @@ class Main {
     this.dataBase = new DataBase();
     this.gameHandeler = new GameHandeler();
     this.eventManager = new EventManager();
+    this.template = new Template();
+    this.currentLeaderIndicator = new CurrentLeaderIndicator();
     this.gameHistory = new RenderGameHistory();
 
     this.btnDBRequest = document.getElementById("btnDBRequest");
@@ -74,6 +78,11 @@ class Main {
     } else if (ending === "/gamelist.html" || ending === "/gamelist.html?") {
       await this.dataBase.GetGames();
       this.gameHistory.RenderMatchHistory();
+    }
+    else if (ending === "/score.html") {
+      await this.dataBase.GetGames();
+      this.template.templateCreator();
+      this.currentLeaderIndicator.checkCurrentLeader();
     }
   }
 
