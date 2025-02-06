@@ -68,7 +68,8 @@ export default class GameHandeler extends RenderTemplate {
     const shuffledAnswers = [0, 1, 2, 3];
     this.ShuffleArray(shuffledAnswers);
 
-    const json = JSON.parse(sessionStorage.getItem("question"));
+    const gameId = JSON.parseInt(sessionStorage.getItem("gameId"));
+    const allGames = JSON.parse(sessionStorage.getItem("games"));
     this.questionsAnswerd = parseInt(
       sessionStorage.getItem("questionsAnswerd") || 0,
     );
@@ -90,7 +91,7 @@ export default class GameHandeler extends RenderTemplate {
       json.questions[this.questionsAnswerd].answer4,
     ];
 
-    question.textContent = json.questions[this.questionsAnswerd].question;
+    question.textContent = allGames.games[gameId].questions[this.questionsAnswerd].question;
 
     for (let i = 0; i < 4; i++) {
       answersBtn[i].textContent = answer[shuffledAnswers[i]];
