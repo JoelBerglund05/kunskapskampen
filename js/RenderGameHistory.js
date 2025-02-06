@@ -4,6 +4,8 @@ export default class RenderGameHistory extends RenderTemplate {
   constructor() {
     super({});
     this.gameHistoryContainer = document.getElementById("gameHistory");
+    this.yourScore;
+    this.opponentScore;
   }
 
   RenderMatchHistory() {
@@ -42,23 +44,21 @@ export default class RenderGameHistory extends RenderTemplate {
 
   ColorDisplay() {
     const match = document.getElementById("match");
-
-    /*
-        if (player_1.point > player_2.point) {
-          match.style.borderBlockStart = "2px solid oklch(70% 0.1776 141.88)";
-          match.style.borderBlockEnd = "2px solid oklch(60% 0.1825 21.18)"
-        }
-        if else (player_1.point < player_2.point){
-          match.style.borderBlockStart = "2px solid oklch(60% 0.1825 21.18)";
-          match.style.borderBlockEnd = "2px solid oklch(70% 0.1776 141.88)"
-        }
-        if else (player_1.point == player_2.point) {
-          match.style.borderBlockStart = ""
-          match.style.borderBlockEnd = ""
-        }
     
-        */
   }
+
+  getGames() {
+    const allGames = JSON.parse(sessionStorage.getItem("games"));
+    const gameId = parseInt(sessionStorage.getItem("gameId"));
+    let index;
+    for (let i = 0; i < allGames.games.length; i++){
+        if (allGames.games[i].id ===gameId) {
+          index = i;
+        }
+      }
+    this.yourScore = allGames.games[index].user_points_1;
+    this.opponentScore = allGames.games[index].user_points_2;
+}
 
   PlayAgainst(index) {
     const allGames = JSON.parse(sessionStorage.getItem("games"));

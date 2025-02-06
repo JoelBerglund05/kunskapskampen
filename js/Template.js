@@ -13,9 +13,9 @@ export default class RenderMatch extends RenderTemplate{
             if (allGames.games[i].id === gameId) {
                 this.Render(this.template, this.matchContainer);
                 this.matchContainer.querySelector('#yourScore').textContent = allGames.games[i].user_points_1;
-                this.matchContainer.querySelector('#yourName').textContent = allGames.games[i].user_name_1;
+                this.matchContainer.querySelector('#yourName').textContent = allGames.games[i].user_name_1 + ":";
                 this.matchContainer.querySelector('#opponentScore').textContent = allGames.games[i].user_points_2;        
-                this.matchContainer.querySelector('#opponentName').textContent = allGames.games[i].user_name_2;        
+                this.matchContainer.querySelector('#opponentName').textContent = allGames.games[i].user_name_2 + ":";        
             }            
         }
     }
