@@ -1,3 +1,4 @@
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 export default class DataBase {
   constructor() {
     this.supabase = createClient(

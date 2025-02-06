@@ -5,6 +5,7 @@ import Template from "./Template.js";
 import CurrentLeaderIndicator from "./CurrentLeaderIndicator.js";
 import RenderFriendTemplate from "./RenderFriendTemplate.js";
 import RenderGameHistory from "./RenderGameHistory.js";
+import Validate from "./Validate.js";
 
 class Main {
   constructor() {
@@ -115,6 +116,7 @@ class Main {
 
   async Main() {
     const clickEvent = "click";
+    const inputEvent = "input";
     this.RegisterServiceWorker();
 
     await this.UrlSpecificLogic();

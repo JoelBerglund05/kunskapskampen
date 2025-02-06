@@ -40,7 +40,6 @@ body {
   color: oklch(100% 0.0483 138.55deg);
   background-color: oklch(44% 0.0483 138.55deg);
   padding: 1em 0.3em 2em 0.3em;
-  width: 20em;
   text-align: center;
   border-radius: 0 0 1em 1em;
 }
@@ -66,7 +65,7 @@ body {
 }
 
 .next-question {
-  background-color: oklch(83.57% 0.1455 79.31deg);
+  background-color: oklch(82% 0.1455 79.31deg);
   color: oklch(10% 0.0483 138.55deg);
   font-size: 1.5em;
   border: 0;
@@ -171,15 +170,6 @@ button:hover {
   display: block;
 }
 
-
-.answer-btn[data-is-answer-correct="true"] {
-  animation: correct-answer 1.5s;
-}
-
-.answer-btn[data-is-answer-correct="false"] {
-  animation: wrong-answer 1.5s;
-}
-
 @media (prefers-reduced-motion) {
   .loading::after {
     transform: none;
@@ -198,10 +188,10 @@ button:hover {
 }
 @keyframes wrong-answer {
   33% {
-    background-color: oklch(58% 0.1825 21.18deg);
+    background-color: oklch(60% 0.1825 21.18deg);
   }
   to {
-    background-color: oklch(58% 0.1825 21.18deg);
+    background-color: oklch(60% 0.1825 21.18deg);
   }
 }
 @keyframes correct-answer {
@@ -288,7 +278,6 @@ button:hover {
     width: 10ch;
   }
 }
-
 .selected {
   background-color: oklch(30% 0.0483 138.55deg);
 }
@@ -364,11 +353,6 @@ button:hover {
   width: 90dvw;
 }
 
-.selected {
-  background-color: oklch(30% 0.0483 138.55deg);
-}
-
-
 .remove-friend {
   width: 2em;
   height: 2em;
@@ -377,11 +361,6 @@ button:hover {
   transition: opacity 0.3s ease;
 }
 
-@keyframes slide {
-  to {
-    display: inline;
-  }
-}
 .size-svg {
   width: 3em;
   height: 3em;
@@ -405,7 +384,7 @@ button:hover {
 }
 
 .play-against-btn {
-  background-color: oklch(83.57% 0.1455 79.31deg);
+  background-color: oklch(82% 0.1455 79.31deg);
 }
 
 .play-against-btn:hover {
@@ -425,6 +404,5 @@ button:hover {
 .btn-none svg.box-shadow:hover {
   box-shadow: oklch(10% 0.0483 138.55deg / 0.5) 0 0 0.3em;
 }
-
 
 /*# sourceMappingURL=main.css.map */
