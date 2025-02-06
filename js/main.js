@@ -80,13 +80,10 @@ class Main {
       this.gameHistory.RenderMatchHistory();
     }
     else if (ending === "/score.html") {
-      await this.dataBase.GetMatch();
+      await this.dataBase.GetGames();
       this.template.templateCreator();
       this.currentLeaderIndicator.checkCurrentLeader();
     }
-      await this.dataBase.GetMatch();
-      this.template.templateCreator();
-      this.currentLeaderIndicator.checkCurrentLeader();
   }
 
   async Main() {

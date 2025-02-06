@@ -19,7 +19,7 @@ export default class CurrentLeaderIndicator {
         }
     }
     getGames() {
-        const allGames = JSON.parse(sessionStorage.getItem("matches"));
+        const allGames = JSON.parse(sessionStorage.getItem("games"));
         this.yourScore = allGames.games[1].user_points_1;
         this.opponentScore = allGames.games[1].user_points_2;
     }
