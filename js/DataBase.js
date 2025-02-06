@@ -26,7 +26,7 @@ export default class DataBase {
     if (error) {
       console.log("kunde inte skapa konto: ", error);
     } else if (data) {
-      window.location.replace("http://127.0.0.1:5501/");
+      window.location.replace("https://joelberglund05.github.io/kunskapskampen/");
     }
   }
 
@@ -39,7 +39,7 @@ export default class DataBase {
     if (error) {
       console.log("Kunde inte logga in: ", error);
     } else if (data) {
-      window.location.replace("http://127.0.0.1:5501/");
+      window.location.replace("https://joelberglund05.github.io/kunskapskampen/");
     }
   }
 
@@ -59,7 +59,7 @@ export default class DataBase {
 
   async GetQuestion(category) {
     const authKey = JSON.parse(localStorage.getItem("sb-quchkaleqfbxkufbskck-auth-token"));
-    await fetch("http://127.0.0.1/api/question", {
+    await fetch("https://eel-simple-highly.ngrok-free.app/api/question", {
       method: "GET",
       headers: {
         accept: "application/json",
@@ -77,7 +77,7 @@ export default class DataBase {
   async GetGames() {
     const authKey = JSON.parse(localStorage.getItem("sb-quchkaleqfbxkufbskck-auth-token"));
     await fetch(
-      "http://127.0.0.1/api/my-games",
+      "https://eel-simple-highly.ngrok-free.app/api/my-games",
       {
         method: "GET",
         headers: {
@@ -99,7 +99,7 @@ export default class DataBase {
     const gameId = parseInt(sessionStorage.getItem("gameId"))
   
     await fetch(
-      "http://127.0.0.1/api/set-points",
+      "https://eel-simple-highly.ngrok-free.app/api/set-points",
       {
         method: "POST",
         headers: {
@@ -123,7 +123,7 @@ export default class DataBase {
   }
   async GetFriends() {
     const authKey = JSON.parse(localStorage.getItem("sb-quchkaleqfbxkufbskck-auth-token"));
-    await fetch("http://127.0.0.1/api/my-friends", {
+    await fetch("https://eel-simple-highly.ngrok-free.app/api/my-friends", {
       method: "GET",
       headers: {
         accept: "application/json",
@@ -141,7 +141,7 @@ export default class DataBase {
     const authKey = JSON.parse(localStorage.getItem("sb-quchkaleqfbxkufbskck-auth-token"));
     const friends = JSON.parse(sessionStorage.getItem("friends"));
     console.log("hej", friends.friends[index].email);
-    await fetch("http://127.0.0.1/api/create-game-friend", {
+    await fetch("https://eel-simple-highly.ngrok-free.app/api/create-game-friend", {
       method: "POST",
       headers: {
         accept: "application/json",
@@ -155,7 +155,7 @@ export default class DataBase {
       }),
     }).then((response) => {
       if (response.ok) {
-        window.location.replace("http://127.0.0.1:5501/");
+        window.location.replace("https://joelberglund05.github.io/kunskapskampen/");
       }
     });
 
