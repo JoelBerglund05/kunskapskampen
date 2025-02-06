@@ -8,7 +8,7 @@ export default class RenderMatch extends RenderTemplate{
     }
     templateCreator(){
         const allGames = JSON.parse(sessionStorage.getItem("games"));
-        const gameId = 7;//JSON.parse(sessionStorage.getItem("gameId"));
+        const gameId = JSON.parse(sessionStorage.getItem("gameId"));
         for (let i = 0; i < allGames.games.length; i++) {
             if (allGames.games[i].id === gameId) {
                 this.Render(this.template, this.matchContainer);

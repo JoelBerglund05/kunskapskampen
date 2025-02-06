@@ -23,7 +23,7 @@ export default class RenderGameHistory extends RenderTemplate {
       ].textContent = "Poäng: " + allGames.games[i].user_points_1;
       this.gameHistoryContainer.querySelectorAll(".opponent_points")[
         i
-      ].textContent = "Poäng: " + allGames.games[i].user_points_1;
+      ].textContent = "Poäng: " + allGames.games[i].user_points_2;
       this.gameHistoryContainer
         .querySelectorAll(".match")
         [i].setAttribute("id", "selectPlayer" + i);

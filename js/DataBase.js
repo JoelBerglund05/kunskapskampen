@@ -96,6 +96,33 @@ export default class DataBase {
         sessionStorage.setItem("games", JSON.stringify(json));
       });
   }
+  async AddPoints(answers) {
+    const authKey = JSON.parse(localStorage.getItem("sb-quchkaleqfbxkufbskck-auth-token"));
+    const gameId = parseInt(sessionStorage.getItem("gameId"))
+  
+    await fetch(
+      "http://127.0.0.1/api/set-points",
+      {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          accept: "application/json",
+          Authorization: authKey.access_token,
+          Apikey:
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF1Y2hrYWxlcWZieGt1ZmJza2NrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIzNTk5ODksImV4cCI6MjA0NzkzNTk4OX0.FvXDzAPIRmSi3kDhT3pnOIxpVCJKHCtJ-Y3ot6Jv-hU",
+          "ngrok-skip-browser-warning": "joel iz glad",
+        },
+        body: JSON.stringify({
+          answers: [answers[2], answers[1], answers[0]],
+          id: gameId
+        })
+      },
+    )
+      .then((response) => response.json())
+      .then((json) => {
+        sessionStorage.setItem("games", JSON.stringify(json));
+      });
+  }
   async GetFriends() {
     const authKey = JSON.parse(localStorage.getItem("sb-quchkaleqfbxkufbskck-auth-token"));
     await fetch("http://127.0.0.1/api/my-friends", {
