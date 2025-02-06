@@ -56,7 +56,7 @@ export default class GameHandeler extends RenderTemplate {
 
     sessionStorage.setItem("questionsAnswerd", 0)
 
-    window.location.replace("http://127.0.0.1:5501/score.html");
+    window.location.replace("https://joelberglund05.github.io/kunskapskampen/score.html");
   }
 
   UpdateGameScreen() {
