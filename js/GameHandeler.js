@@ -1,5 +1,8 @@
-export default class GameHandeler {
+import RenderTemplate from "./RenderTemplate.js";
+
+export default class GameHandeler extends RenderTemplate {
   constructor() {
+    super({});
     this.gameContainer = document.getElementById("container");
     this.questionsAnswerd = 0;
     this.points = 0;
@@ -36,11 +39,10 @@ export default class GameHandeler {
   async CreateGameScreen(dataBase) {
     await dataBase.GetQuestion(this.GetRandomCategory());
 
-    this.DeleteQuestionNode();
+    this.DeleteChildNode(this.gameContainer, ".question-vh");
 
     const template = document.getElementById("answer-form");
-    const questionHtml = template.content.cloneNode(true).firstElementChild;
-    this.gameContainer.appendChild(questionHtml);
+    this.Render(template, this.gameContainer);
 
     this.UpdateGameScreen();
   }

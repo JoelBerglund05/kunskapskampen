@@ -24,6 +24,9 @@ export default class RenderGameHistory extends RenderTemplate {
       this.gameHistoryContainer.querySelectorAll(".opponent_points")[
         i
       ].textContent = "Poäng: " + allGames.games[i].user_points_1;
+      this.gameHistoryContainer
+        .querySelectorAll(".match")
+        [i].setAttribute("id", "selectPlayer" + i);
     }
   }
 
@@ -57,39 +60,9 @@ export default class RenderGameHistory extends RenderTemplate {
         */
   }
 
-  PlayerInfo() {
-    playerInfo.winner.points = 5;
-    playerInfo.looser.points = 2;
-    // if player_points < opponent_points{
-    //   playerinfo.player.winner = false (samma men tvärtom för om man vinner)
-    //}
-    let playerInfo = {
-      player: {
-        name: player_name,
-        winner: true,
-        points: points,
-      },
-      opponent: {
-        name: opponent_name,
-        winner: false,
-        points: points,
-      },
-      //bättre
-      game1: {
-        player1: "lasse",
-        player2: "bert",
-        player1_points: "insert points", //lägg till poäng som tas från variabel
-        player1_points: "insert points", //lägg till poäng som tas från variabel
-      },
-
-      game1: {
-        player1: "lasse",
-        player2: "bert",
-        player1_points: "insert points", //lägg till poäng som tas från variabel
-        player1_points: "insert points", //lägg till poäng som tas från variabel
-        //lägg till kod som visar vem som vann baserat på poängen men gör det inte här utan gör det separat
-        //färgen ska ändras beroende på vilken sida som vann rött eller grönt
-      },
-    };
+  PlayAgainst(index) {
+    const allGames = JSON.parse(sessionStorage.getItem("games"));
+    sessionStorage.setItem("gameId", allGames.games[index].id);
+    window.location.replace("http://127.0.0.1:5501/game.html");
   }
 }
