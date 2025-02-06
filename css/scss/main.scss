@@ -218,12 +218,10 @@ button:hover {
   width: 100%;
   height: 100%;
   transform: translateX(-100px);
-  background: linear-gradient(
-    90deg,
-    transparent,
-    $primary-loading1,
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      $primary-loading1,
+      transparent);
   animation: loading 0.7s infinite;
 }
 
@@ -400,6 +398,11 @@ button:hover {
 
 .black-fill {
   fill: var(--black);
+}
+
+.dark-mode-btn,
+.audio-controls {
+  padding-bottom: 5rem;
 }
 
 #tdnn {
