@@ -62,6 +62,7 @@ class Main {
       this.UpdateGameElements();
     } else if (ending === "/friends.html" || ending === "/friends.hrml?") {
       await this.renderFriendTemplate.RenderFriendList(this.dataBase);
+
       this.btnPlayAgainst = [
         this.renderFriendTemplate.friendContainer.querySelector(
           "#playAgainst0",
@@ -71,6 +72,16 @@ class Main {
         ),
       ];
       console.log(this.btnPlayAgainst);
+
+      for (let i = 0; i < this.btnPlayAgainst.length; i++) {
+        this.eventManager.EventListener(
+          this.btnPlayAgainst[i],
+          clickEvent,
+          () => {
+            this.dataBase.CreateFriendGame(i);
+          },
+        );
+      }
     } else if (ending === "/gamelist.html" || ending === "/gamelist.html?") {
       await this.dataBase.GetGames();
       this.gameHistory.RenderMatchHistory();
@@ -102,16 +113,6 @@ class Main {
     if (this.submitBtn) {
       this.gameHandeler.HandleSubmitLogic(this.answersBtns, submitBtn);
     }
-
-    /*for (let i = 0; i < this.btnPlayAgainst.length; i++) {
-      this.eventManager.EventListener(
-        this.btnPlayAgainst[i],
-        clickEvent,
-        () => {
-          this.dataBase.CreateFriendGame(i);
-        },
-      );
-    }*/
   }
 }
 
