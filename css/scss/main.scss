@@ -26,7 +26,6 @@ a:focus-visible {
   outline: 3px solid $wrong-answer-color;
 }
 
-
 p,
 h1,
 h2,
@@ -179,10 +178,12 @@ button:hover {
   width: 100%;
   height: 100%;
   transform: translateX(-100px);
-  background: linear-gradient(90deg,
-      transparent,
-      $primary-loading1,
-      transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    $primary-loading1,
+    transparent
+  );
   animation: loading 0.7s infinite;
 }
 
@@ -411,6 +412,7 @@ button:hover {
 .total-score-container {
   width: 90dvw;
 }
+
 .remove-friend {
   width: 2em;
   height: 2em;

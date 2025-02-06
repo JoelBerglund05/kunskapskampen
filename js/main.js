@@ -33,7 +33,7 @@ class Main {
     this.answersBtns = [];
     this.submitBtn;
 
-    this.btnPlayAgainst;
+    this.btnPlayAgainst = [];
   }
 
   RegisterServiceWorker() {
@@ -56,28 +56,52 @@ class Main {
   }
 
   async UrlSpecificLogic() {
+    const clickEvent = "click"
     const url = window.location.href;
     const ending = url.substring(url.lastIndexOf("/"));
 
     if (ending === "/game.html" || ending === "/game.html?") {
       this.submitBtn = this.container.querySelector("#submit-btn");
-      this.gameHandeler.InsertTemplate("Game-result");
       await this.gameHandeler.CreateGameScreen(this.dataBase);
       this.UpdateGameElements();
     } else if (ending === "/friends.html" || ending === "/friends.hrml?") {
       await this.renderFriendTemplate.RenderFriendList(this.dataBase);
-      this.btnPlayAgainst = [
-        this.renderFriendTemplate.friendContainer.querySelector(
-          "#playAgainst0",
-        ),
-        this.renderFriendTemplate.friendContainer.querySelector(
-          "#playAgainst1",
-        ),
-      ];
+
+      const allGames = this.renderFriendTemplate.friendContainer.querySelectorAll(".play-against-btn")
       console.log(this.btnPlayAgainst);
+
+      for (let i = 0; i < allGames.length; i++){
+        this.btnPlayAgainst.push(document.getElementById(allGames[i].getAttribute("id")));
+      }
+      console.log(this.btnPlayAgainst);
+
+      for (let i = 0; i < this.btnPlayAgainst.length; i++) {
+        this.eventManager.EventListener(
+          this.btnPlayAgainst[i],
+          clickEvent,
+          () => {
+            this.dataBase.CreateFriendGame(i);
+          },
+        );
+      }
     } else if (ending === "/gamelist.html" || ending === "/gamelist.html?") {
       await this.dataBase.GetGames();
       this.gameHistory.RenderMatchHistory();
+      const allGames = this.gameHistory.gameHistoryContainer.querySelectorAll(".match")
+      let allGameBtns = [];
+
+      for (let i = 0; i < allGames.length; i++){
+        allGameBtns.push(document.getElementById(allGames[i].getAttribute("id")));
+      }
+      for (let i = 0; i < allGameBtns.length; i++) {
+        this.eventManager.EventListener(
+          allGameBtns[i],
+          clickEvent,
+          () => {
+            this.gameHistory.PlayAgainst(i);
+          },
+        );
+      }
     }
     else if (ending === "/score.html") {
       await this.dataBase.GetGames();
@@ -116,18 +140,8 @@ class Main {
     );
 
     if (this.submitBtn) {
-      this.gameHandeler.HandleSubmitLogic(this.answersBtns, submitBtn);
+      this.gameHandeler.HandleSubmitLogic(this.answersBtns, this.submitBtn);
     }
-
-    /*for (let i = 0; i < this.btnPlayAgainst.length; i++) {
-      this.eventManager.EventListener(
-        this.btnPlayAgainst[i],
-        clickEvent,
-        () => {
-          this.dataBase.CreateFriendGame(i);
-        },
-      );
-    }*/
   }
 }
 
