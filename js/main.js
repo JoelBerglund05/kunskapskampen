@@ -3,6 +3,7 @@ import GameHandeler from "./GameHandeler.js";
 import Validate from "./Validate.js";
 import EventManager from "./EventManager.js";
 import RenderFriendTemplate from "./RenderFriendTemplate.js";
+import RenderGameHistory from "./RenderGameHistory.js";
 
 class Main {
   constructor() {
@@ -11,6 +12,7 @@ class Main {
     this.dataBase = new DataBase();
     this.gameHandeler = new GameHandeler();
     this.eventManager = new EventManager();
+    this.gameHistory = new RenderGameHistory();
 
     this.btnDBRequest = document.getElementById("btnDBRequest");
     this.displayData = document.getElementById("dBData");
@@ -53,6 +55,9 @@ class Main {
     const ending = url.substring(url.lastIndexOf("/"));
 
     if (ending === "/game.html" || ending === "/game.html?") {
+      //ebbes kod igen
+      this.gameHandeler.InsertTemplate("Game-result");
+      //slut på ebbes kod
       await this.gameHandeler.CreateGameScreen(this.dataBase);
       this.UpdateGameElements();
     } else if (ending === "/friends.html" || ending === "/friends.hrml?") {
@@ -66,6 +71,9 @@ class Main {
         ),
       ];
       console.log(this.btnPlayAgainst);
+    } else if (ending === "/gamelist.html" || ending === "/gamelist.html?") {
+      await this.dataBase.GetGames();
+      this.gameHistory.RenderMatchHistory();
     }
   }
 
@@ -95,7 +103,7 @@ class Main {
       this.gameHandeler.HandleSubmitLogic(this.answersBtns, submitBtn);
     }
 
-    for (let i = 0; i < this.btnPlayAgainst.length; i++) {
+    /*for (let i = 0; i < this.btnPlayAgainst.length; i++) {
       this.eventManager.EventListener(
         this.btnPlayAgainst[i],
         clickEvent,
@@ -103,7 +111,7 @@ class Main {
           this.dataBase.CreateFriendGame(i);
         },
       );
-    }
+    }*/
   }
 }
 
