@@ -295,9 +295,8 @@ button:hover {
 .black-fill {
   fill: var(--black); }
 
-.dark-mode-btn,
-.audio-controls {
-  padding-bottom: 5rem; }
+.dark-mode-btn {
+  padding-bottom: 10rem; }
 
 #tdnn {
   margin: auto;
