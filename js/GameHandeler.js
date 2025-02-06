@@ -33,8 +33,6 @@ export default class GameHandeler {
     const deletedChildNode = gameScreenParentNode.removeChild(gameScreenNode);
   }
 
-
-
   async CreateGameScreen(dataBase) {
     await dataBase.GetQuestion(this.GetRandomCategory());
 

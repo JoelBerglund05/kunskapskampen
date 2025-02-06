@@ -119,21 +119,26 @@ export default class DataBase {
         sessionStorage.setItem("question", JSON.stringify(json));
       });
   }
-  
+
   async GetGames() {
-    await fetch("https://5b73-2001-2042-752b-8000-a331-b677-c2f4-f069.ngrok-free.app/api/my-games", {
-      method: "GET",
-      headers: {
-        accept: "application/json",
-        Authorization: "eyJhbGciOiJIUzI1NiIsImtpZCI6IkZBVEMvdm5lYW9uVVFJMXciLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3F1Y2hrYWxlcWZieGt1ZmJza2NrLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiI1YmRjN2NmMC1hOWY1LTRiYjUtYjc3ZC00YmVlMjBiYTVjNjEiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzM4NzkxMDA1LCJpYXQiOjE3Mzg3ODc0MDUsImVtYWlsIjoianVkb2pvbGxlQGdtYWlsLmNvbSIsInBob25lIjoiIiwiYXBwX21ldGFkYXRhIjp7InByb3ZpZGVyIjoiZW1haWwiLCJwcm92aWRlcnMiOlsiZW1haWwiXX0sInVzZXJfbWV0YWRhdGEiOnsiZGlzcGxheV9uYW1lIjoic29sZW4iLCJlbWFpbCI6Imp1ZG9qb2xsZUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicGhvbmVfdmVyaWZpZWQiOmZhbHNlLCJzdWIiOiI1YmRjN2NmMC1hOWY1LTRiYjUtYjc3ZC00YmVlMjBiYTVjNjEifSwicm9sZSI6ImF1dGhlbnRpY2F0ZWQiLCJhYWwiOiJhYWwxIiwiYW1yIjpbeyJtZXRob2QiOiJwYXNzd29yZCIsInRpbWVzdGFtcCI6MTczODc4NzQwNX1dLCJzZXNzaW9uX2lkIjoiMGEzNzM3YWItMWUwMS00MjRiLWJmNmMtOGY1MTJlNDFkYjIzIiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.aZ3fD8xrtwxry5f0gHR9QvYPCnaLZ1DqJIRyANGGIEc",
-        Apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF1Y2hrYWxlcWZieGt1ZmJza2NrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIzNTk5ODksImV4cCI6MjA0NzkzNTk4OX0.FvXDzAPIRmSi3kDhT3pnOIxpVCJKHCtJ-Y3ot6Jv-hU",
-        "ngrok-skip-browser-warning": "joel iz glad", 
-      }
-    })
-    .then((response) => response.json())
-    .then((json) => {
-      sessionStorage.setItem("games", JSON.stringify(json));
-    });
+    await fetch(
+      "https://5b73-2001-2042-752b-8000-a331-b677-c2f4-f069.ngrok-free.app/api/my-games",
+      {
+        method: "GET",
+        headers: {
+          accept: "application/json",
+          Authorization:
+            "eyJhbGciOiJIUzI1NiIsImtpZCI6IkZBVEMvdm5lYW9uVVFJMXciLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3F1Y2hrYWxlcWZieGt1ZmJza2NrLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiI1YmRjN2NmMC1hOWY1LTRiYjUtYjc3ZC00YmVlMjBiYTVjNjEiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzM4NzkxMDA1LCJpYXQiOjE3Mzg3ODc0MDUsImVtYWlsIjoianVkb2pvbGxlQGdtYWlsLmNvbSIsInBob25lIjoiIiwiYXBwX21ldGFkYXRhIjp7InByb3ZpZGVyIjoiZW1haWwiLCJwcm92aWRlcnMiOlsiZW1haWwiXX0sInVzZXJfbWV0YWRhdGEiOnsiZGlzcGxheV9uYW1lIjoic29sZW4iLCJlbWFpbCI6Imp1ZG9qb2xsZUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicGhvbmVfdmVyaWZpZWQiOmZhbHNlLCJzdWIiOiI1YmRjN2NmMC1hOWY1LTRiYjUtYjc3ZC00YmVlMjBiYTVjNjEifSwicm9sZSI6ImF1dGhlbnRpY2F0ZWQiLCJhYWwiOiJhYWwxIiwiYW1yIjpbeyJtZXRob2QiOiJwYXNzd29yZCIsInRpbWVzdGFtcCI6MTczODc4NzQwNX1dLCJzZXNzaW9uX2lkIjoiMGEzNzM3YWItMWUwMS00MjRiLWJmNmMtOGY1MTJlNDFkYjIzIiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.aZ3fD8xrtwxry5f0gHR9QvYPCnaLZ1DqJIRyANGGIEc",
+          Apikey:
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF1Y2hrYWxlcWZieGt1ZmJza2NrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIzNTk5ODksImV4cCI6MjA0NzkzNTk4OX0.FvXDzAPIRmSi3kDhT3pnOIxpVCJKHCtJ-Y3ot6Jv-hU",
+          "ngrok-skip-browser-warning": "joel iz glad",
+        },
+      },
+    )
+      .then((response) => response.json())
+      .then((json) => {
+        sessionStorage.setItem("games", JSON.stringify(json));
+      });
   }
   async GetFriends() {
     await fetch("http://127.0.0.1/api/my-friends", {
