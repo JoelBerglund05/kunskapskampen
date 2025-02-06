@@ -2,13 +2,21 @@ import DataBase from "./DataBase.js";
 import GameHandeler from "./GameHandeler.js";
 import Validate from "./Validate.js";
 import EventManager from "./EventManager.js";
+import Template from "./Template.js";
+import CurrentLeaderIndicator from "./CurrentLeaderIndicator.js";
+import RenderFriendTemplate from "./RenderFriendTemplate.js";
+import RenderGameHistory from "./RenderGameHistory.js";
 
 class Main {
   constructor() {
+    this.renderFriendTemplate = new RenderFriendTemplate();
     this.validate = new Validate();
     this.dataBase = new DataBase();
     this.gameHandeler = new GameHandeler();
     this.eventManager = new EventManager();
+    this.template = new Template();
+    this.currentLeaderIndicator = new CurrentLeaderIndicator();
+    this.gameHistory = new RenderGameHistory();
 
     this.btnDBRequest = document.getElementById("btnDBRequest");
     this.displayData = document.getElementById("dBData");
@@ -23,11 +31,11 @@ class Main {
 
     this.container = document.getElementById("container");
     this.answersBtns = [];
-
     this.submitBtn;
 
+    this.btnPlayAgainst;
   }
-  
+
   RegisterServiceWorker() {
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker.register("./js/ServiceWorker.js").then((reg) => {
@@ -44,6 +52,7 @@ class Main {
       this.container.querySelector("#btn-3"),
       this.container.querySelector("#btn-4"),
     ];
+    this.submitBtn = this.container.querySelector("#submit-btn");
   }
 
   async UrlSpecificLogic() {
@@ -52,8 +61,28 @@ class Main {
 
     if (ending === "/game.html" || ending === "/game.html?") {
       this.submitBtn = this.container.querySelector("#submit-btn");
+      this.gameHandeler.InsertTemplate("Game-result");
       await this.gameHandeler.CreateGameScreen(this.dataBase);
       this.UpdateGameElements();
+    } else if (ending === "/friends.html" || ending === "/friends.hrml?") {
+      await this.renderFriendTemplate.RenderFriendList(this.dataBase);
+      this.btnPlayAgainst = [
+        this.renderFriendTemplate.friendContainer.querySelector(
+          "#playAgainst0",
+        ),
+        this.renderFriendTemplate.friendContainer.querySelector(
+          "#playAgainst1",
+        ),
+      ];
+      console.log(this.btnPlayAgainst);
+    } else if (ending === "/gamelist.html" || ending === "/gamelist.html?") {
+      await this.dataBase.GetGames();
+      this.gameHistory.RenderMatchHistory();
+    }
+    else if (ending === "/score.html") {
+      await this.dataBase.GetGames();
+      this.template.templateCreator();
+      this.currentLeaderIndicator.checkCurrentLeader();
     }
   }
 
@@ -78,7 +107,6 @@ class Main {
       ]),
     );
 
-
     this.eventManager.EventListener(this.btnCreateGame, clickEvent, () =>
       this.gameHandeler.CreateGame(this.dataBase),
     );
@@ -90,6 +118,16 @@ class Main {
     if (this.submitBtn) {
       this.gameHandeler.HandleSubmitLogic(this.answersBtns, submitBtn);
     }
+
+    /*for (let i = 0; i < this.btnPlayAgainst.length; i++) {
+      this.eventManager.EventListener(
+        this.btnPlayAgainst[i],
+        clickEvent,
+        () => {
+          this.dataBase.CreateFriendGame(i);
+        },
+      );
+    }*/
   }
 }
 

@@ -7,6 +7,7 @@
     "scss4": "sass --watch css/scss/reset-password.scss css/reset-password.css",
     "scss": "sass",
     "sass": "sass --watch css/scss/main.scss:css/main.css",
+    "sass-list": "sass --watch css/scss/gamelist.scss:css/gamelist.css",
     "prettier": "prettier . --write",
     "build:scss-vars": "node extract-scss-vars.js"
   },

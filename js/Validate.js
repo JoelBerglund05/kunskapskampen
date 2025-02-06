@@ -3,8 +3,8 @@ export default class Validate {
     this.emailWrapper = document.getElementById("email-wrapper");
     this.emailInput = document.getElementById("email");
     this.passwords = [
-      document.getElementById("password1").value,
-      document.getElementById("password2").value,
+      document.getElementById("password1"),
+      document.getElementById("password2"),
     ];
     this.errorMessages = document.getElementById("error-messages");
   }
@@ -21,13 +21,13 @@ export default class Validate {
     }
   }
   ValidatePassword() {
-    if (this.passwords[0] == "" || this.passwords[1] == "") {
+    if (this.passwords[0].value == "" || this.passwords[1].value == "") {
       this.errorMessages.dataset.errorType = "no";
       return false;
-    } else if (this.passwords[0] != this.passwords[1]) {
+    } else if (this.passwords[0].value != this.passwords[1].value) {
       this.errorMessages.dataset.errorType = "not-same";
       return false;
-    } else if (this.passwords[0].length < 6) {
+    } else if (this.passwords[0].value.length < 6) {
       this.errorMessages.dataset.errorType = "length";
       return false;
     }
