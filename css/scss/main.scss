@@ -464,3 +464,8 @@ button:hover {
     box-shadow: $primary-shadow 0 0 0.3em;
   }
 }
+
+
+@view-transition {
+  navigation: auto;
+}
