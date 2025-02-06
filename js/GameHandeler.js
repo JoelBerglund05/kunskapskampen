@@ -37,7 +37,6 @@ export default class GameHandeler extends RenderTemplate {
   }
 
   async CreateGameScreen(dataBase) {
-    await dataBase.GetQuestion(this.GetRandomCategory());
 
     this.DeleteChildNode(this.gameContainer, ".question-vh");
 

@@ -33,7 +33,7 @@ class Main {
     this.answersBtns = [];
     this.submitBtn;
 
-    this.btnPlayAgainst;
+    this.btnPlayAgainst = [];
   }
 
   RegisterServiceWorker() {
@@ -67,14 +67,12 @@ class Main {
     } else if (ending === "/friends.html" || ending === "/friends.hrml?") {
       await this.renderFriendTemplate.RenderFriendList(this.dataBase);
 
-      this.btnPlayAgainst = [
-        this.renderFriendTemplate.friendContainer.querySelector(
-          "#playAgainst0",
-        ),
-        this.renderFriendTemplate.friendContainer.querySelector(
-          "#playAgainst1",
-        ),
-      ];
+      const allGames = this.renderFriendTemplate.friendContainer.querySelectorAll(".play-against-btn")
+      console.log(this.btnPlayAgainst);
+
+      for (let i = 0; i < allGames.length; i++){
+        this.btnPlayAgainst.push(document.getElementById(allGames[i].getAttribute("id")));
+      }
       console.log(this.btnPlayAgainst);
 
       for (let i = 0; i < this.btnPlayAgainst.length; i++) {
@@ -90,13 +88,11 @@ class Main {
       await this.dataBase.GetGames();
       this.gameHistory.RenderMatchHistory();
       const allGames = this.gameHistory.gameHistoryContainer.querySelectorAll(".match")
-      console.log(allGames[0].getAttribute("id"));
       let allGameBtns = [];
 
       for (let i = 0; i < allGames.length; i++){
         allGameBtns.push(document.getElementById(allGames[i].getAttribute("id")));
       }
-      console.log(allGameBtns);
       for (let i = 0; i < allGameBtns.length; i++) {
         this.eventManager.EventListener(
           allGameBtns[i],
