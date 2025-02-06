@@ -296,6 +296,11 @@ button:hover {
 .size-svg {
   width: 3em;
   height: 3em;
+  fill: oklch(10% 0.0483 138.55deg);
+}
+
+.svg-size svg path {
+  fill: oklch(10% 0.0483 138.55deg);
 }
 
 .left-0 {
@@ -304,6 +309,10 @@ button:hover {
 
 .right-0 {
   right: 0;
+}
+
+.bottom-0 {
+  bottom: 0;
 }
 
 .navbar-sizing {
@@ -343,6 +352,7 @@ body {
   color: oklch(10% 0.0483 138.55deg);
   margin: 0;
   padding: 0;
+  height: 100vh;
 }
 
 p,
@@ -360,10 +370,13 @@ h6 {
   margin: 1.25rem auto;
 }
 
+.btn {
+  margin-top: 1.25rem;
+}
+
 .match {
   background-color: oklch(100% 0.0483 138.55deg);
   border-radius: 0.5rem;
-  margin-bottom: 1.25rem;
   padding: 0.938rem;
 }
 

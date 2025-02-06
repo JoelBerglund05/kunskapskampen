@@ -9,6 +9,7 @@ body {
     color: main.$black;
     margin: 0;
     padding: 0;
+    height: 100vh;
 }
 
 p,
@@ -26,10 +27,13 @@ h6 {
     margin: 1.25rem auto;
 }
 
+.btn {
+    margin-top: 1.25rem;
+}
+
 .match {
     background-color: $color;
     border-radius: 0.5rem;
-    margin-bottom: 1.25rem;
     padding: 0.938rem;
 
 

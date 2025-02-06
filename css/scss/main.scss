@@ -350,6 +350,12 @@ button:hover {
 .size-svg {
   width: 3em;
   height: 3em;
+  fill: $black;
+}
+
+.svg-size svg path {
+  fill: $black;
+
 }
 
 .left-0 {
@@ -358,6 +364,10 @@ button:hover {
 
 .right-0 {
   right: 0;
+}
+
+.bottom-0{
+  bottom: 0;
 }
 
 .navbar-sizing {
