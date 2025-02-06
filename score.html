@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="manifest" href="manifest.json" />
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="css/main.css">
+        <title>Kunskapskampen - Poäng Skärm</title>
+        <template id="score-template">
+            <section class="score-flex">
+                <div class="score">
+                    <div class="score-element-container total-score-container score-element-flex"><div><h2 id="yourName" class="score-element total-score">Nive_05:<h2 id="yourScore" class="score-element lead-points"></h2></div><div></h2><h2 id="opponentName" class="score-element total-score">Lil Ott:<h2 id="opponentScore" class="score-element low-points"></h2></h2></div></div>
+                </div>
+            </section>
+        </template>
+    </head>
+    <body class="white-bg">
+        <div class="main-container">
+            <h1 class="score-title header-h1">Poäng</h1>
+            <div id="content"></div>
+        </div>
+        <script type="module" src="js/main.js"></script>
+    </body>
+</html>

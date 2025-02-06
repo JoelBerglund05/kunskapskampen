@@ -2,6 +2,8 @@ import DataBase from "./DataBase.js";
 import GameHandeler from "./GameHandeler.js";
 import Validate from "./Validate.js";
 import EventManager from "./EventManager.js";
+import Template from "./Template.js";
+import CurrentLeaderIndicator from "./CurrentLeaderIndicator.js";
 import RenderFriendTemplate from "./RenderFriendTemplate.js";
 import RenderGameHistory from "./RenderGameHistory.js";
 
@@ -12,6 +14,8 @@ class Main {
     this.dataBase = new DataBase();
     this.gameHandeler = new GameHandeler();
     this.eventManager = new EventManager();
+    this.template = new Template();
+    this.currentLeaderIndicator = new CurrentLeaderIndicator();
     this.gameHistory = new RenderGameHistory();
 
     this.btnDBRequest = document.getElementById("btnDBRequest");
@@ -21,6 +25,7 @@ class Main {
       document.getElementById("password1"),
       document.getElementById("password2"),
     ];
+    this.username = document.getElementById("username");
     this.btnSignIn = document.getElementById("signIn");
     this.btnCreateGame = document.getElementById("createGame");
 
@@ -55,9 +60,8 @@ class Main {
     const ending = url.substring(url.lastIndexOf("/"));
 
     if (ending === "/game.html" || ending === "/game.html?") {
-      //ebbes kod igen
+      this.submitBtn = this.container.querySelector("#submit-btn");
       this.gameHandeler.InsertTemplate("Game-result");
-      //slut på ebbes kod
       await this.gameHandeler.CreateGameScreen(this.dataBase);
       this.UpdateGameElements();
     } else if (ending === "/friends.html" || ending === "/friends.hrml?") {
@@ -86,6 +90,11 @@ class Main {
       await this.dataBase.GetGames();
       this.gameHistory.RenderMatchHistory();
     }
+    else if (ending === "/score.html") {
+      await this.dataBase.GetGames();
+      this.template.templateCreator();
+      this.currentLeaderIndicator.checkCurrentLeader();
+    }
   }
 
   async Main() {
@@ -96,7 +105,14 @@ class Main {
     await this.UrlSpecificLogic();
 
     this.eventManager.EventListener(this.btnCreateAccount, clickEvent, () =>
-      this.dataBase.SignUpUser(this.validate.emailInput.value, [
+      this.dataBase.SignUpUser(this.validate.emailInput.value, this.username.value ,[
+        this.password[0].value,
+        this.password[1].value,
+      ]),
+    );
+
+    this.eventManager.EventListener(this.btnSignIn, clickEvent, () =>
+      this.dataBase.SignInUser(this.validate.emailInput.value, [
         this.password[0].value,
         this.password[1].value,
       ]),
