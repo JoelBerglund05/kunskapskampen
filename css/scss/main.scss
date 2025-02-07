@@ -468,4 +468,21 @@ button:hover {
 
 @view-transition {
   navigation: auto;
+  transition: 5s ease;
+}
+
+a {
+  transition: 1s ease;
+}
+
+@view-transition(from) {
+  a {
+    opacity: 0;
+  }
+}
+
+@view-transition(to) {
+  a {
+    opacity: 1;
+  }
 }
