@@ -63,6 +63,6 @@ export default class RenderGameHistory extends RenderTemplate {
   PlayAgainst(index) {
     const allGames = JSON.parse(sessionStorage.getItem("games"));
     sessionStorage.setItem("gameId", allGames.games[index].id);
-    window.location.replace("http://127.0.0.1:5501/game.html");
+    window.location.replace("https://joelberglund05.github.io/kunskapskampen/game.html");
   }
 }
