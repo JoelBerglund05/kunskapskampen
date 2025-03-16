@@ -167,4 +167,56 @@ export default class DataBase {
       }
     });
   }
+
+  async CreateGame(gameHistory) {
+    const authKey = JSON.parse(
+      localStorage.getItem("sb-quchkaleqfbxkufbskck-auth-token"),
+    );
+    const friends = JSON.parse(sessionStorage.getItem("friends"));
+    await fetch("http://127.0.0.1/api/create-game", {
+      method: "POST",
+      headers: {
+        accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: authKey.access_token,
+        Apikey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF1Y2hrYWxlcWZieGt1ZmJza2NrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIzNTk5ODksImV4cCI6MjA0NzkzNTk4OX0.FvXDzAPIRmSi3kDhT3pnOIxpVCJKHCtJ-Y3ot6Jv-hU",
+        "ngrok-skip-browser-warning": "joel iz glad",
+      },
+    }).then((response) => {
+      if (response.ok) {
+        gameHistory.RenderMatchHistory();
+      }
+    });
+  }
+
+  async addFriend(friendEmail, messageElement) {
+    const authKey = JSON.parse(
+      localStorage.getItem("sb-quchkaleqfbxkufbskck-auth-token"),
+    );
+    const friends = JSON.parse(sessionStorage.getItem("friends"));
+    await fetch("http://127.0.0.1/api/add-friend", {
+      method: "POST",
+      headers: {
+        accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: authKey.access_token,
+        Apikey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF1Y2hrYWxlcWZieGt1ZmJza2NrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIzNTk5ODksImV4cCI6MjA0NzkzNTk4OX0.FvXDzAPIRmSi3kDhT3pnOIxpVCJKHCtJ-Y3ot6Jv-hU",
+        "ngrok-skip-browser-warning": "joel iz glad",
+      },
+      body: JSON.stringify({
+        friend_email: friendEmail,
+      }),
+    }).then((response) => {
+      if (response.ok) {
+        messageElement.querySelector(".succes").classList.add("visible");
+        messageElement.classList.add("visible");
+      } else {
+        console.log(messageElement.querySelector(".warning").classList);
+        messageElement.querySelector(".warning").classList.add("visible");
+        messageElement.classList.add("visible");
+      }
+    });
+  }
 }

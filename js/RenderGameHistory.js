@@ -6,7 +6,6 @@ export default class RenderGameHistory extends RenderTemplate {
     this.gameHistoryContainer = document.getElementById("gameHistory");
     this.yourScore;
     this.opponentScore;
-    
   }
 
   async RenderMatchHistory() {
@@ -22,8 +21,16 @@ export default class RenderGameHistory extends RenderTemplate {
       if (displayName == allGames.games[i].user_name_1) {
         this.gameHistoryContainer.querySelectorAll(".player")[i].textContent =
           allGames.games[i].user_name_1;
-        this.gameHistoryContainer.querySelectorAll(".opponent")[i].textContent =
-          allGames.games[i].user_name_2;
+        if (allGames.games[i].user_name_2) {
+          this.gameHistoryContainer.querySelectorAll(".opponent")[
+            i
+          ].textContent = allGames.games[i].user_name_2;
+        } else {
+          this.gameHistoryContainer.querySelectorAll(".opponent")[
+            i
+          ].classList.add("searching")
+        }
+
         this.gameHistoryContainer.querySelectorAll(".player_points")[
           i
         ].textContent = "Poäng: " + allGames.games[i].user_points_1;

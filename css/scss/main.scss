@@ -350,12 +350,6 @@ button:hover {
   margin-top: 0;
 }
 
-.score-flex {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 3em;
-}
-
 .score h2 {
   font-size: 2.2em;
   width: calc(fit-content + 1em);
@@ -408,7 +402,7 @@ button:hover {
 }
 
 .total-score-container {
-  width: 90dvw;
+  width: 100%;
 }
 
 .remove-friend {
@@ -471,4 +465,91 @@ button:hover {
 
 .console-svg {
   fill: $white;
+}
+
+.create-game {
+  background-color: $primary-color;
+  padding: 1em;
+  border-radius: 0.3em;
+  margin-bottom: 1.5em;
+  box-shadow: oklch(10% 0.0483 138.55deg / 0.5) 0em 0em 0.3em;
+  button {
+    border: none;
+    outline: 0;
+    background: $cta;
+    padding: 0.5em 1em 0.5em 1em;
+    border-radius: 0.3em;
+  }
+}
+
+.add-friend-card {
+  border-radius: 0.3em;
+  .title {
+    background: $primary-color;
+    padding: 1em;
+    border-radius: 0.3em 0.3em 0 0;
+    h2 {
+      color: $white;
+    }
+  }
+  background: $primary-color1;
+  button,
+  input {
+    margin: 1em;
+    border: none;
+    outline: 0;
+    background: $white;
+    border-radius: 0.3em;
+    padding: 0.5em 1em 0.5em 1em;
+  }
+
+  button {
+    background: $cta;
+  }
+
+  p {
+    margin: 0 1em;
+    padding: 1em;
+    border-radius: 0.3em;
+    display: none;
+  }
+
+  .message {
+    display: none;
+  }
+
+  .succes {
+    background: $right-answer-color;
+  }
+
+  .warning {
+    background: $wrong-answer-color;
+  }
+
+  .visible {
+    display: block;
+  }
+}
+
+.opponent.searching::after {
+  content: '...';
+  animation: 1s infinite alternate searching;
+}
+
+.searching{
+  width: 6ch;
+  float: left;
+  display: flex;
+}
+
+@keyframes searching {
+  from {
+    content: "...";
+  }
+  50% {
+    content: '..';
+  }
+  to {
+    content: '.';
+  }
 }

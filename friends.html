@@ -54,12 +54,28 @@
       <header class="header w-100">
         <h1 class="box-shadow header-h1 marign-none mb-5">Vänner</h1>
       </header>
+      <div class="add-friend-card">
+        <div class="title">
+          <h2>Lägg till ny vän</h2>
+        </div>
+        <input
+          id="friend-email"
+          type="text"
+          placeholder="E-mail"
+          name="kompis e-mail"
+        />
+        <button id="add-friend" type="button">Lägg till vän</button>
+        <div id="friend-message" class="py-3 message">
+          <p class="succes">Du har lagt till en ny vän!</p>
+          <p class="warning">Något gick fel!</p>
+        </div>
+      </div>
       <div id="friend-list"></div>
     </main>
-    <div class="box-shadow position-fixed bottom-0 left-0 right-0">
+    <div class="box-shadow position-fixed bottom-0 left-0 right-0 white-bg">
       <div class="container grid-1-col">
         <footer class="navbar-sizing">
-          <nav class="d-flex justify-content-between white-bg">
+          <nav class="d-flex justify-content-between">
             <div class="friends nav-btn">
               <a class="friends-btn btn" href="./friends.html">
                 <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->

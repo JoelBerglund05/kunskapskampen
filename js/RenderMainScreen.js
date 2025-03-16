@@ -8,10 +8,10 @@ export default class RenderMainScreen extends RenderTemplate {
   }
 
   async RenderScreen(dataBase) {
-    const {data, error} = await dataBase.supabase.auth.getUser();
+    const { data, error } = await dataBase.supabase.auth.getUser();
 
     if (error) {
-        this.templateNode = document.getElementById("hasNotLoggedIn");
+      this.templateNode = document.getElementById("hasNotLoggedIn");
     }
     this.Render(this.templateNode, this.friendContainer);
   }

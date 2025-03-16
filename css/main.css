@@ -295,12 +295,6 @@ button:hover {
   margin-top: 0;
 }
 
-.score-flex {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 3em;
-}
-
 .score h2 {
   font-size: 2.2em;
   width: calc(fit-content + 1em);
@@ -354,7 +348,7 @@ button:hover {
 }
 
 .total-score-container {
-  width: 90dvw;
+  width: 100%;
 }
 
 .remove-friend {
@@ -415,6 +409,87 @@ button:hover {
 
 .console-svg {
   fill: oklch(100% 0.0483 138.55deg);
+}
+
+.create-game {
+  background-color: oklch(44% 0.0483 138.55deg);
+  padding: 1em;
+  border-radius: 0.3em;
+  margin-bottom: 1.5em;
+  box-shadow: oklch(10% 0.0483 138.55deg / 0.5) 0em 0em 0.3em;
+}
+.create-game button {
+  border: none;
+  outline: 0;
+  background: oklch(83.57% 0.1455 79.31deg);
+  padding: 0.5em 1em 0.5em 1em;
+  border-radius: 0.3em;
+}
+
+.add-friend-card {
+  border-radius: 0.3em;
+  background: oklch(60% 0.0483 138.55deg);
+}
+.add-friend-card .title {
+  background: oklch(44% 0.0483 138.55deg);
+  padding: 1em;
+  border-radius: 0.3em 0.3em 0 0;
+}
+.add-friend-card .title h2 {
+  color: oklch(100% 0.0483 138.55deg);
+}
+.add-friend-card button,
+.add-friend-card input {
+  margin: 1em;
+  border: none;
+  outline: 0;
+  background: oklch(100% 0.0483 138.55deg);
+  border-radius: 0.3em;
+  padding: 0.5em 1em 0.5em 1em;
+}
+.add-friend-card button {
+  background: oklch(83.57% 0.1455 79.31deg);
+}
+.add-friend-card p {
+  margin: 0 1em;
+  padding: 1em;
+  border-radius: 0.3em;
+  display: none;
+}
+.add-friend-card .message {
+  display: none;
+}
+.add-friend-card .succes {
+  background: oklch(70% 0.1776 141.88deg);
+}
+.add-friend-card .warning {
+  background: oklch(58% 0.1825 21.18deg);
+}
+.add-friend-card .visible {
+  display: block;
+}
+
+.opponent.searching::after {
+  content: "...";
+  animation: 1s infinite alternate searching;
+}
+
+.searching {
+  width: 6ch;
+  float: left;
+  display: flex;
+}
+
+@keyframes searching {
+  from {
+    content: "...";
+  }
+  50% {
+    content: "..";
+  }
+  to {
+    content: ".";
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

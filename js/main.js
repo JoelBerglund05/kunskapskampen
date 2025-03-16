@@ -35,6 +35,12 @@ class Main {
     this.answersBtns = [];
     this.submitBtn;
 
+    this.createGamebtn = document.getElementById("create-game");
+
+    this.addFriendBtn = document.getElementById("add-friend");
+    this.friendEmail = document.getElementById("friend-email");
+    this.friendMessage = document.getElementById("friend-message");
+
     this.btnPlayAgainst = [];
   }
 
@@ -90,6 +96,10 @@ class Main {
           },
         );
       }
+
+      this.eventManager.EventListener(this.addFriendBtn, clickEvent, () =>
+        this.dataBase.addFriend(this.friendEmail.value, this.friendMessage),
+      );
     } else if (ending === "/gamelist.html" || ending === "/gamelist.html?") {
       await this.dataBase.GetGames();
       this.gameHistory.RenderMatchHistory();
@@ -107,11 +117,20 @@ class Main {
           this.gameHistory.PlayAgainst(i);
         });
       }
+
+      this.eventManager.EventListener(this.createGamebtn, clickEvent, () =>
+        this.dataBase.CreateGame(this.gameHistory),
+      );
     } else if (ending === "/score.html") {
       await this.dataBase.GetGames();
       this.template.templateCreator();
       this.currentLeaderIndicator.checkCurrentLeader();
-    } else if (ending === "/index.html" || ending === "/index.html?" || ending === "/" || ending === "/?"){
+    } else if (
+      ending === "/index.html" ||
+      ending === "/index.html?" ||
+      ending === "/" ||
+      ending === "/?"
+    ) {
       this.mainScreen.RenderScreen(this.dataBase);
     }
   }
