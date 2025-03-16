@@ -6,29 +6,69 @@ export default class RenderGameHistory extends RenderTemplate {
     this.gameHistoryContainer = document.getElementById("gameHistory");
     this.yourScore;
     this.opponentScore;
+    
   }
 
-  RenderMatchHistory() {
+  async RenderMatchHistory() {
     const allGames = JSON.parse(sessionStorage.getItem("games"));
     const template = document.getElementById("result");
+    const displayName = JSON.parse(
+      localStorage.getItem("sb-quchkaleqfbxkufbskck-auth-token"),
+    ).user.user_metadata.display_name;
 
     for (let i = 0; i < allGames.games.length; i++) {
       this.Render(template, this.gameHistoryContainer);
 
-      this.gameHistoryContainer.querySelectorAll(".player")[i].textContent =
-        allGames.games[i].user_name_1;
-      this.gameHistoryContainer.querySelectorAll(".opponent")[i].textContent =
-        allGames.games[i].user_name_2;
+      if (displayName == allGames.games[i].user_name_1) {
+        this.gameHistoryContainer.querySelectorAll(".player")[i].textContent =
+          allGames.games[i].user_name_1;
+        this.gameHistoryContainer.querySelectorAll(".opponent")[i].textContent =
+          allGames.games[i].user_name_2;
+        this.gameHistoryContainer.querySelectorAll(".player_points")[
+          i
+        ].textContent = "Poäng: " + allGames.games[i].user_points_1;
+        this.gameHistoryContainer.querySelectorAll(".opponent_points")[
+          i
+        ].textContent = "Poäng: " + allGames.games[i].user_points_2;
+      } else {
+        this.gameHistoryContainer.querySelectorAll(".opponent")[i].textContent =
+          allGames.games[i].user_name_1;
+        this.gameHistoryContainer.querySelectorAll(".player")[i].textContent =
+          allGames.games[i].user_name_2;
+        this.gameHistoryContainer.querySelectorAll(".opponent_points")[
+          i
+        ].textContent = "Poäng: " + allGames.games[i].user_points_1;
+        this.gameHistoryContainer.querySelectorAll(".player_points")[
+          i
+        ].textContent = "Poäng: " + allGames.games[i].user_points_2;
+      }
 
-      this.gameHistoryContainer.querySelectorAll(".player_points")[
-        i
-      ].textContent = "Poäng: " + allGames.games[i].user_points_1;
-      this.gameHistoryContainer.querySelectorAll(".opponent_points")[
-        i
-      ].textContent = "Poäng: " + allGames.games[i].user_points_2;
       this.gameHistoryContainer
         .querySelectorAll(".match")
         [i].setAttribute("id", "selectPlayer" + i);
+
+      if (
+        allGames.games[i].user_name_1 == allGames.games[i].user_turn &&
+        displayName == allGames.games[i].user_name_1
+      ) {
+        this.gameHistoryContainer
+          .querySelectorAll(".player")
+          [i].classList.add("bold");
+      } else if (
+        allGames.games[i].user_name_2 == allGames.games[i].user_turn &&
+        displayName == allGames.games[i].user_name_2
+      ) {
+        this.gameHistoryContainer
+          .querySelectorAll(".player")
+          [i].classList.add("bold");
+      } else {
+        this.gameHistoryContainer
+          .querySelectorAll(".opponent")
+          [i].classList.add("bold");
+        this.gameHistoryContainer
+          .querySelectorAll(".match")
+          [i].setAttribute("disabled", "");
+      }
     }
   }
 
@@ -44,21 +84,20 @@ export default class RenderGameHistory extends RenderTemplate {
 
   ColorDisplay() {
     const match = document.getElementById("match");
-    
   }
 
   getGames() {
     const allGames = JSON.parse(sessionStorage.getItem("games"));
     const gameId = parseInt(sessionStorage.getItem("gameId"));
     let index;
-    for (let i = 0; i < allGames.games.length; i++){
-        if (allGames.games[i].id ===gameId) {
-          index = i;
-        }
+    for (let i = 0; i < allGames.games.length; i++) {
+      if (allGames.games[i].id === gameId) {
+        index = i;
       }
+    }
     this.yourScore = allGames.games[index].user_points_1;
     this.opponentScore = allGames.games[index].user_points_2;
-}
+  }
 
   PlayAgainst(index) {
     const allGames = JSON.parse(sessionStorage.getItem("games"));

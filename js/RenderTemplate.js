@@ -4,8 +4,8 @@ export default class RenderTemplate {
     const deletedChildNode = parentNode.removeChild(childNode);
   }
 
-  async Render(templateNode, childNode) {
+  async Render(templateNode, parentNode) {
     const questionHtml = templateNode.content.cloneNode(true).firstElementChild;
-    childNode.appendChild(questionHtml);
+    parentNode.appendChild(questionHtml);
   }
 }

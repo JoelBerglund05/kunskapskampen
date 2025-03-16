@@ -340,7 +340,6 @@ button:hover {
   background-color: $selected;
 }
 
-
 /*Score Screen*/
 
 .score-title {
@@ -350,7 +349,6 @@ button:hover {
   padding-inline: 3em;
   margin-top: 0;
 }
-
 
 .score-flex {
   display: flex;
@@ -422,8 +420,8 @@ button:hover {
 }
 
 .size-svg {
-  width: 3em;
-  height: 3em;
+  width: 3rem;
+  height: 3rem;
 }
 
 .left-0 {
@@ -465,4 +463,12 @@ button:hover {
   svg.box-shadow:hover {
     box-shadow: $primary-shadow 0 0 0.3em;
   }
+}
+
+.marigin-bottom-30vh {
+  margin-bottom: 30vh;
+}
+
+.console-svg {
+  fill: $white;
 }

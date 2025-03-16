@@ -9,7 +9,7 @@ export default class DataBase {
     );
   }
 
-  async SignUpUser(email, username , password) {
+  async SignUpUser(email, username, password) {
     const validation = new Validate();
     if (!validation.ValidatePassword()) {
       return;
@@ -60,15 +60,18 @@ export default class DataBase {
   }
 
   async GetQuestion(category) {
-    const authKey = JSON.parse(localStorage.getItem("sb-quchkaleqfbxkufbskck-auth-token"));
+    const authKey = JSON.parse(
+      localStorage.getItem("sb-quchkaleqfbxkufbskck-auth-token"),
+    );
     await fetch("http://127.0.0.1/api/question", {
       method: "GET",
       headers: {
         accept: "application/json",
         Authorization: authKey.access_token,
-        Apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF1Y2hrYWxlcWZieGt1ZmJza2NrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIzNTk5ODksImV4cCI6MjA0NzkzNTk4OX0.FvXDzAPIRmSi3kDhT3pnOIxpVCJKHCtJ-Y3ot6Jv-hU",
-        "ngrok-skip-browser-warning": "joel iz glad", 
-      }
+        Apikey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF1Y2hrYWxlcWZieGt1ZmJza2NrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIzNTk5ODksImV4cCI6MjA0NzkzNTk4OX0.FvXDzAPIRmSi3kDhT3pnOIxpVCJKHCtJ-Y3ot6Jv-hU",
+        "ngrok-skip-browser-warning": "joel iz glad",
+      },
     })
       .then((response) => response.json())
       .then((json) => {
@@ -77,61 +80,62 @@ export default class DataBase {
   }
 
   async GetGames() {
-    const authKey = JSON.parse(localStorage.getItem("sb-quchkaleqfbxkufbskck-auth-token"));
-    await fetch(
-      "http://127.0.0.1/api/my-games",
-      {
-        method: "GET",
-        headers: {
-          accept: "application/json",
-          Authorization: authKey.access_token,
-          Apikey:
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF1Y2hrYWxlcWZieGt1ZmJza2NrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIzNTk5ODksImV4cCI6MjA0NzkzNTk4OX0.FvXDzAPIRmSi3kDhT3pnOIxpVCJKHCtJ-Y3ot6Jv-hU",
-          "ngrok-skip-browser-warning": "joel iz glad",
-        },
+    const authKey = JSON.parse(
+      localStorage.getItem("sb-quchkaleqfbxkufbskck-auth-token"),
+    );
+    await fetch("http://127.0.0.1/api/my-games", {
+      method: "GET",
+      headers: {
+        accept: "application/json",
+        Authorization: authKey.access_token,
+        Apikey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF1Y2hrYWxlcWZieGt1ZmJza2NrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIzNTk5ODksImV4cCI6MjA0NzkzNTk4OX0.FvXDzAPIRmSi3kDhT3pnOIxpVCJKHCtJ-Y3ot6Jv-hU",
+        "ngrok-skip-browser-warning": "joel iz glad",
       },
-    )
+    })
       .then((response) => response.json())
       .then((json) => {
         sessionStorage.setItem("games", JSON.stringify(json));
       });
   }
   async AddPoints(answers) {
-    const authKey = JSON.parse(localStorage.getItem("sb-quchkaleqfbxkufbskck-auth-token"));
-    const gameId = parseInt(sessionStorage.getItem("gameId"))
-  
-    await fetch(
-      "http://127.0.0.1/api/set-points",
-      {
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/json',
-          accept: "application/json",
-          Authorization: authKey.access_token,
-          Apikey:
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF1Y2hrYWxlcWZieGt1ZmJza2NrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIzNTk5ODksImV4cCI6MjA0NzkzNTk4OX0.FvXDzAPIRmSi3kDhT3pnOIxpVCJKHCtJ-Y3ot6Jv-hU",
-          "ngrok-skip-browser-warning": "joel iz glad",
-        },
-        body: JSON.stringify({
-          answers: [answers[2], answers[1], answers[0]],
-          id: gameId
-        })
+    const authKey = JSON.parse(
+      localStorage.getItem("sb-quchkaleqfbxkufbskck-auth-token"),
+    );
+    const gameId = parseInt(sessionStorage.getItem("gameId"));
+
+    await fetch("http://127.0.0.1/api/set-points", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        accept: "application/json",
+        Authorization: authKey.access_token,
+        Apikey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF1Y2hrYWxlcWZieGt1ZmJza2NrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIzNTk5ODksImV4cCI6MjA0NzkzNTk4OX0.FvXDzAPIRmSi3kDhT3pnOIxpVCJKHCtJ-Y3ot6Jv-hU",
+        "ngrok-skip-browser-warning": "joel iz glad",
       },
-    )
+      body: JSON.stringify({
+        answers: [answers[2], answers[1], answers[0]],
+        id: gameId,
+      }),
+    })
       .then((response) => response.json())
       .then((json) => {
         sessionStorage.setItem("games", JSON.stringify(json));
       });
   }
   async GetFriends() {
-    const authKey = JSON.parse(localStorage.getItem("sb-quchkaleqfbxkufbskck-auth-token"));
+    const authKey = JSON.parse(
+      localStorage.getItem("sb-quchkaleqfbxkufbskck-auth-token"),
+    );
     await fetch("http://127.0.0.1/api/my-friends", {
       method: "GET",
       headers: {
         accept: "application/json",
         Authorization: authKey.access_token,
-        Apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF1Y2hrYWxlcWZieGt1ZmJza2NrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIzNTk5ODksImV4cCI6MjA0NzkzNTk4OX0.FvXDzAPIRmSi3kDhT3pnOIxpVCJKHCtJ-Y3ot6Jv-hU",
-        "ngrok-skip-browser-warning": "joel iz glad", 
+        Apikey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF1Y2hrYWxlcWZieGt1ZmJza2NrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIzNTk5ODksImV4cCI6MjA0NzkzNTk4OX0.FvXDzAPIRmSi3kDhT3pnOIxpVCJKHCtJ-Y3ot6Jv-hU",
+        "ngrok-skip-browser-warning": "joel iz glad",
       },
     })
       .then((response) => response.json())
@@ -140,17 +144,19 @@ export default class DataBase {
       });
   }
   async CreateFriendGame(index) {
-    const authKey = JSON.parse(localStorage.getItem("sb-quchkaleqfbxkufbskck-auth-token"));
+    const authKey = JSON.parse(
+      localStorage.getItem("sb-quchkaleqfbxkufbskck-auth-token"),
+    );
     const friends = JSON.parse(sessionStorage.getItem("friends"));
-    console.log("hej", friends.friends[index].email);
     await fetch("http://127.0.0.1/api/create-game-friend", {
       method: "POST",
       headers: {
         accept: "application/json",
         "Content-Type": "application/json",
         Authorization: authKey.access_token,
-        Apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF1Y2hrYWxlcWZieGt1ZmJza2NrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIzNTk5ODksImV4cCI6MjA0NzkzNTk4OX0.FvXDzAPIRmSi3kDhT3pnOIxpVCJKHCtJ-Y3ot6Jv-hU",
-        "ngrok-skip-browser-warning": "joel iz glad", 
+        Apikey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF1Y2hrYWxlcWZieGt1ZmJza2NrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIzNTk5ODksImV4cCI6MjA0NzkzNTk4OX0.FvXDzAPIRmSi3kDhT3pnOIxpVCJKHCtJ-Y3ot6Jv-hU",
+        "ngrok-skip-browser-warning": "joel iz glad",
       },
       body: JSON.stringify({
         friend_email: friends.friends[index].email,

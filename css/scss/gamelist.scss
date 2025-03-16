@@ -112,3 +112,16 @@ h6 {
     max-width: fit-content;
   }
 }
+
+.bold {
+  font-weight: bold;
+}
+
+.match:disabled h4,
+.match:disabled p,
+.match:disabled path,
+.match:disabled {
+  cursor: not-allowed;
+  color: oklch(54.86% 0 0);
+  stroke: oklch(54.86% 0 0);
+}
