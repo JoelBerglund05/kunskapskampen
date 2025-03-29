@@ -1,7 +1,7 @@
 @charset "UTF-8";
 button:focus-visible,
 a:focus-visible {
-  outline: 3px solid oklch(60% 0.1825 21.18);
+  outline: 3px solid oklch(58% 0.1825 21.18deg);
 }
 
 p,
@@ -174,60 +174,43 @@ button:hover {
   display: block;
 }
 
-.answer-btn[data-is-answer-correct="true"] {
-  animation: correct-answer 1.5s;
-}
-
-.answer-btn[data-is-answer-correct="false"] {
-  animation: wrong-answer 1.5s;
-}
-
 @media (prefers-reduced-motion) {
   .loading::after {
     transform: none;
     animation: none;
   }
-
-  .answer-btn[data-is-answer-correct="true"],
-  .answer-btn[data-is-answer-correct="false"] {
+  .answer-btn[data-is-answer-correct=true],
+  .answer-btn[data-is-answer-correct=false] {
     animation: none;
   }
-
-  .answer-btn[data-is-answer-correct="false"] {
-    background-color: oklch(60% 0.1825 21.18);
+  .answer-btn[data-is-answer-correct=false] {
+    background-color: oklch(58% 0.1825 21.18deg);
   }
-
-  .answer-btn[data-is-answer-correct="true"] {
-    background-color: oklch(70% 0.1776 141.88);
+  .answer-btn[data-is-answer-correct=true] {
+    background-color: oklch(70% 0.1776 141.88deg);
   }
 }
-
 @keyframes wrong-answer {
   33% {
     background-color: oklch(58% 0.1825 21.18deg);
   }
-
   to {
     background-color: oklch(58% 0.1825 21.18deg);
   }
 }
-
 @keyframes correct-answer {
   33% {
     background-color: oklch(70% 0.1776 141.88deg);
   }
-
   to {
     background-color: oklch(70% 0.1776 141.88deg);
   }
 }
-
 @keyframes loading {
   to {
     transform: translateX(100%);
   }
 }
-
 .box-shadow {
   box-shadow: oklch(10% 0.0483 138.55deg / 0.5) 0em 0em 0.3em;
 }
@@ -239,12 +222,10 @@ button:hover {
   .marigin-big {
     margin-top: 35svh;
   }
-
   .next-question {
     width: 40%;
     height: auto;
   }
-
   .header-h1 {
     margin: 0 0.5em;
     width: auto;
@@ -257,28 +238,22 @@ button:hover {
   .question-grid {
     margin: 0 0.5em;
   }
-
   .header-h1 {
     margin: 0 0.5em;
   }
-
   .answer-btn {
     font-size: 1em;
     padding: 0.5em 1.5em 0.5em 1.5em;
   }
-
   .marigin-big {
     margin-top: 35svh;
   }
-
   .next-question {
     font-size: 1em;
   }
-
   .header .loading {
     width: 20ch;
   }
-
   .kunskapskampen-svg {
     height: 15rem;
     margin: auto;
@@ -289,25 +264,20 @@ button:hover {
   .question-grid {
     margin: 0 0.5em;
   }
-
   .header-h1 {
     font-size: 1.25em;
   }
-
   .question-grid {
     grid-template-columns: repeat(1, 1fr);
     gap: 0.75em 0.5em;
   }
-
   .marigin-big {
     margin-top: 35svh;
   }
-
   .next-question {
     font-size: 0.75em;
     margin: 0.5em;
   }
-
   .header .loading {
     width: 10ch;
   }
@@ -323,12 +293,6 @@ button:hover {
   margin: 0 auto;
   padding-inline: 3em;
   margin-top: 0;
-}
-
-.score-flex {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 3em;
 }
 
 .score h2 {
@@ -370,7 +334,7 @@ button:hover {
 }
 
 .losing {
-  text-decoration: overline 4px oklch(60% 0.1825 21.18deg);
+  text-decoration: overline 4px oklch(58% 0.1825 21.18deg);
 }
 
 .score-element-flex {
@@ -384,11 +348,7 @@ button:hover {
 }
 
 .total-score-container {
-  width: 90dvw;
-}
-.selected {
-  background-color: oklch(30% 0.0483 138.55deg);
-  margin: 0.5em;
+  width: 100%;
 }
 
 .remove-friend {
@@ -399,14 +359,9 @@ button:hover {
   transition: opacity 0.3s ease;
 }
 
-@keyframes slide {
-  to {
-    display: inline;
-  }
-}
 .size-svg {
-  width: 3em;
-  height: 3em;
+  width: 3rem;
+  height: 3rem;
 }
 
 .left-0 {
@@ -446,6 +401,137 @@ button:hover {
 }
 .btn-none svg.box-shadow:hover {
   box-shadow: oklch(10% 0.0483 138.55deg / 0.5) 0 0 0.3em;
+}
+
+.marigin-bottom-30vh {
+  margin-bottom: 30vh;
+}
+
+.console-svg {
+  fill: oklch(100% 0.0483 138.55deg);
+}
+
+.create-game {
+  background-color: oklch(44% 0.0483 138.55deg);
+  padding: 1em;
+  border-radius: 0.3em;
+  margin-bottom: 1.5em;
+  box-shadow: oklch(10% 0.0483 138.55deg / 0.5) 0em 0em 0.3em;
+}
+.create-game button {
+  border: none;
+  outline: 0;
+  background: oklch(83.57% 0.1455 79.31deg);
+  padding: 0.5em 1em 0.5em 1em;
+  border-radius: 0.3em;
+}
+.create-game .unimportant-btn {
+  background: oklch(65% 0.0483 138.55deg);
+}
+
+.add-friend-card {
+  border-radius: 0.3em;
+  background: oklch(60% 0.0483 138.55deg);
+}
+.add-friend-card .title {
+  background: oklch(44% 0.0483 138.55deg);
+  padding: 1em;
+  border-radius: 0.3em 0.3em 0 0;
+}
+.add-friend-card .title h2 {
+  color: oklch(100% 0.0483 138.55deg);
+}
+.add-friend-card button,
+.add-friend-card input {
+  margin: 1em;
+  border: none;
+  outline: 0;
+  background: oklch(100% 0.0483 138.55deg);
+  border-radius: 0.3em;
+  padding: 0.5em 1em 0.5em 1em;
+}
+.add-friend-card button {
+  background: oklch(83.57% 0.1455 79.31deg);
+}
+.add-friend-card p {
+  margin: 0 1em;
+  padding: 1em;
+  border-radius: 0.3em;
+  display: none;
+}
+.add-friend-card .message {
+  display: none;
+}
+.add-friend-card .succes {
+  background: oklch(70% 0.1776 141.88deg);
+}
+.add-friend-card .warning {
+  background: oklch(58% 0.1825 21.18deg);
+}
+.add-friend-card .visible {
+  display: block;
+}
+
+.opponent.searching::after {
+  content: "...";
+  animation: 1s infinite alternate searching;
+}
+
+.searching {
+  width: 6ch;
+  float: left;
+  display: flex;
+}
+
+@keyframes searching {
+  from {
+    content: "...";
+  }
+  50% {
+    content: "..";
+  }
+  to {
+    content: ".";
+  }
+}
+.size-svg-small {
+  height: 1rem;
+  width: 1rem;
+}
+
+.dropdown-wrapper {
+  display: inline;
+  position: relative;
+}
+.dropdown-wrapper .dropdown-items {
+  display: none;
+}
+.dropdown-wrapper .filter-input-wrapper {
+  background: oklch(65% 0.0483 138.55deg);
+  position: absolute;
+  top: 2.5em;
+  left: 0;
+  right: auto;
+  width: fit-content;
+  display: flex;
+  padding: 0.5em 1em 0.5em 1em;
+  border-radius: 0.3em;
+  gap: 0.5em;
+}
+.dropdown-wrapper .filter-input-wrapper button {
+  width: 100%;
+  height: 100%;
+  align-self: end;
+}
+.dropdown-wrapper .filter-input-wrapper input {
+  border-radius: 0.3em;
+  padding: 0.5rem;
+  border: none;
+  outline: 0;
+}
+
+.dropdown-wrapper:focus-within .dropdown-items {
+  display: inherit;
 }
 
 /*# sourceMappingURL=main.css.map */
