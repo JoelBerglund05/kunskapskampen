@@ -19,20 +19,12 @@ body {
   font-family: sans-serif;
 }
 
-.primary-bg {
-  background-color: oklch(44% 0.0483 138.55deg);
-}
-
 .white-bg {
   background-color: oklch(100% 0.0483 138.55deg);
 }
 
 .white-text {
   color: oklch(100% 0.0483 138.55deg);
-}
-
-.white-fill {
-  fill: oklch(10% 0.0483 138.55deg);
 }
 
 .header {
@@ -73,7 +65,7 @@ body {
 }
 
 .next-question {
-  background-color: oklch(83.57% 0.1455 79.31deg);
+  background-color: oklch(82% 0.1455 79.31deg);
   color: oklch(10% 0.0483 138.55deg);
   font-size: 1.5em;
   border: 0;
@@ -143,6 +135,10 @@ button:hover {
   cursor: pointer;
 }
 
+.background-primary {
+  background-color: oklch(44% 0.0483 138.55deg);
+}
+
 .loading {
   position: relative;
   background: oklch(44% 0.0483 138.55deg / 0.7);
@@ -192,10 +188,10 @@ button:hover {
 }
 @keyframes wrong-answer {
   33% {
-    background-color: oklch(58% 0.1825 21.18deg);
+    background-color: oklch(60% 0.1825 21.18deg);
   }
   to {
-    background-color: oklch(58% 0.1825 21.18deg);
+    background-color: oklch(60% 0.1825 21.18deg);
   }
 }
 @keyframes correct-answer {
@@ -382,7 +378,7 @@ button:hover {
 }
 
 .play-against-btn {
-  background-color: oklch(83.57% 0.1455 79.31deg);
+  background-color: oklch(82% 0.1455 79.31deg);
 }
 
 .play-against-btn:hover {

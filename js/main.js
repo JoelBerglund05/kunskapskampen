@@ -1,17 +1,20 @@
 import DataBase from "./DataBase.js";
 import GameHandeler from "./GameHandeler.js";
-import Validate from "./Validate.js";
 import EventManager from "./EventManager.js";
 import Template from "./Template.js";
 import CurrentLeaderIndicator from "./CurrentLeaderIndicator.js";
 import RenderFriendTemplate from "./RenderFriendTemplate.js";
 import RenderGameHistory from "./RenderGameHistory.js";
 import RenderMainScreen from "./RenderMainScreen.js";
+import Validate from "./Validate.js";
+
 
 class Main {
   constructor() {
+
     this.renderFriendTemplate = new RenderFriendTemplate();
     this.validate = new Validate();
+
     this.dataBase = new DataBase();
     this.gameHandeler = new GameHandeler();
     this.eventManager = new EventManager();
@@ -19,6 +22,7 @@ class Main {
     this.currentLeaderIndicator = new CurrentLeaderIndicator();
     this.gameHistory = new RenderGameHistory();
     this.mainScreen = new RenderMainScreen();
+
 
     this.btnDBRequest = document.getElementById("btnDBRequest");
     this.displayData = document.getElementById("dBData");
@@ -30,6 +34,7 @@ class Main {
     this.username = document.getElementById("username");
     this.btnSignIn = document.getElementById("signIn");
     this.btnCreateGame = document.getElementById("createGame");
+
 
     this.container = document.getElementById("container");
     this.answersBtns = [];

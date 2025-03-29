@@ -1,7 +1,7 @@
 @charset "UTF-8";
 button:focus-visible,
 a:focus-visible {
-  outline: 3px solid oklch(58% 0.1825 21.18deg);
+  outline: 3px solid oklch(60% 0.1825 21.18deg);
 }
 
 p,
@@ -19,20 +19,12 @@ body {
   font-family: sans-serif;
 }
 
-.primary-bg {
-  background-color: oklch(44% 0.0483 138.55deg);
-}
-
 .white-bg {
   background-color: oklch(100% 0.0483 138.55deg);
 }
 
 .white-text {
   color: oklch(100% 0.0483 138.55deg);
-}
-
-.white-fill {
-  fill: oklch(10% 0.0483 138.55deg);
 }
 
 .header {
@@ -73,7 +65,7 @@ body {
 }
 
 .next-question {
-  background-color: oklch(83.57% 0.1455 79.31deg);
+  background-color: oklch(82% 0.1455 79.31deg);
   color: oklch(10% 0.0483 138.55deg);
   font-size: 1.5em;
   border: 0;
@@ -143,6 +135,10 @@ button:hover {
   cursor: pointer;
 }
 
+.background-primary {
+  background-color: oklch(44% 0.0483 138.55deg);
+}
+
 .loading {
   position: relative;
   background: oklch(44% 0.0483 138.55deg / 0.7);
@@ -184,7 +180,7 @@ button:hover {
     animation: none;
   }
   .answer-btn[data-is-answer-correct=false] {
-    background-color: oklch(58% 0.1825 21.18deg);
+    background-color: oklch(60% 0.1825 21.18deg);
   }
   .answer-btn[data-is-answer-correct=true] {
     background-color: oklch(70% 0.1776 141.88deg);
@@ -192,10 +188,10 @@ button:hover {
 }
 @keyframes wrong-answer {
   33% {
-    background-color: oklch(58% 0.1825 21.18deg);
+    background-color: oklch(60% 0.1825 21.18deg);
   }
   to {
-    background-color: oklch(58% 0.1825 21.18deg);
+    background-color: oklch(60% 0.1825 21.18deg);
   }
 }
 @keyframes correct-answer {
@@ -334,7 +330,7 @@ button:hover {
 }
 
 .losing {
-  text-decoration: overline 4px oklch(58% 0.1825 21.18deg);
+  text-decoration: overline 4px oklch(60% 0.1825 21.18deg);
 }
 
 .score-element-flex {
@@ -382,7 +378,7 @@ button:hover {
 }
 
 .play-against-btn {
-  background-color: oklch(83.57% 0.1455 79.31deg);
+  background-color: oklch(82% 0.1455 79.31deg);
 }
 
 .play-against-btn:hover {
@@ -537,8 +533,8 @@ h6 {
 .match.loss {
   border-top: 0;
   border-bottom: 0;
-  border-left: 0.5rem solid oklch(58% 0.1825 21.18deg);
-  border-right: 0.5rem solid oklch(58% 0.1825 21.18deg);
+  border-left: 0.5rem solid oklch(60% 0.1825 21.18deg);
+  border-right: 0.5rem solid oklch(60% 0.1825 21.18deg);
 }
 
 .match-details {

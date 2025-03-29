@@ -1,6 +1,4 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
-import Validate from "./Validate.js";
-
 export default class DataBase {
   constructor() {
     this.supabase = createClient(
@@ -28,9 +26,11 @@ export default class DataBase {
     if (error) {
       console.log("kunde inte skapa konto: ", error);
     } else if (data) {
+
       window.location.replace(
         "https://joelberglund05.github.io/kunskapskampen/"
       );
+
     }
   }
 
@@ -46,6 +46,7 @@ export default class DataBase {
       window.location.replace(
         "https://joelberglund05.github.io/kunskapskampen/"
       );
+
     }
   }
 
@@ -115,6 +116,7 @@ export default class DataBase {
     const gameId = parseInt(sessionStorage.getItem("gameId"));
 
     await fetch(
+
       "https://pwa-quizz-game-back-end-main-v2etsa.laravel.cloud/api/set-points",
       {
         method: "POST",
@@ -245,5 +247,6 @@ export default class DataBase {
         messageElement.classList.add("visible");
       }
     });
+
   }
 }
