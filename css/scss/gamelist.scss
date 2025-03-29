@@ -53,6 +53,9 @@ h6 {
   align-items: center;
   width: 100%;
 }
+.match-details > * {
+  flex: 1;
+}
 
 .champion {
   width: 3.75rem;
@@ -71,6 +74,10 @@ h6 {
   align-items: center;
   width: fit-content;
   block-size: fit-content;
+}
+
+.other-player {
+  justify-content: flex-end;
 }
 
 .info h4 {
@@ -111,4 +118,17 @@ h6 {
   .main {
     max-width: fit-content;
   }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.match:disabled h4,
+.match:disabled p,
+.match:disabled path,
+.match:disabled {
+  cursor: not-allowed;
+  color: oklch(54.86% 0 0);
+  stroke: oklch(54.86% 0 0);
 }

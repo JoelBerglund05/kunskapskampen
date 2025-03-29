@@ -39,7 +39,6 @@ export default class GameHandeler extends RenderTemplate {
   }
 
   async CreateGameScreen(dataBase) {
-
     this.DeleteChildNode(this.gameContainer, ".question-vh");
 
     const template = document.getElementById("answer-form");
@@ -49,17 +48,18 @@ export default class GameHandeler extends RenderTemplate {
   }
 
   async CreatePointsScreen() {
-
     const dataBase = new DataBase();
 
-    await dataBase.AddPoints(this.myAnswers);
+    await dataBase.AddPoints(this.myAnswers.reverse());
 
-    sessionStorage.setItem("questionsAnswerd", 0)
+    sessionStorage.setItem("questionsAnswerd", 0);
 
-    window.location.replace("https://joelberglund05.github.io/kunskapskampen/score.html");
+    window.location.replace(
+      "https://joelberglund05.github.io/kunskapskampen/score.html"
+    );
   }
 
-  UpdateGameScreen() {
+  UpdateGameScreen(dataBase) {
     const shuffledAnswers = [0, 1, 2, 3];
     this.ShuffleArray(shuffledAnswers);
 
@@ -67,11 +67,11 @@ export default class GameHandeler extends RenderTemplate {
     const allGames = JSON.parse(sessionStorage.getItem("games"));
     let index;
     this.questionsAnswerd = parseInt(
-      sessionStorage.getItem("questionsAnswerd") || 0,
+      sessionStorage.getItem("questionsAnswerd") || 0
     );
 
-    for (let i = 0; i < allGames.games.length; i++){
-      if (allGames.games[i].id ===gameId) {
+    for (let i = 0; i < allGames.games.length; i++) {
+      if (allGames.games[i].id === gameId) {
         index = i;
       }
     }
@@ -86,21 +86,19 @@ export default class GameHandeler extends RenderTemplate {
       questionHtml.querySelector("#btn-4"),
     ];
 
-    console.log(allGames, " game id: ", gameId, " index: ", index, " last", this.questionsAnswerd);
-    console.log(allGames.questions[index][this.questionsAnswerd].answer1,)
-
     const answer = [
-      allGames.questions[index][this.questionsAnswerd].answer1,
-      allGames.questions[index][this.questionsAnswerd].answer2,
-      allGames.questions[index][this.questionsAnswerd].answer3,
-      allGames.questions[index][this.questionsAnswerd].answer4,
+      allGames.questions[index][this.questionsAnswerd][0].answer1,
+      allGames.questions[index][this.questionsAnswerd][0].answer2,
+      allGames.questions[index][this.questionsAnswerd][0].answer3,
+      allGames.questions[index][this.questionsAnswerd][0].answer4,
     ];
 
-    question.textContent = allGames.questions[index][this.questionsAnswerd].question;
+    question.textContent =
+      allGames.questions[index][this.questionsAnswerd][0].question;
 
     for (let i = 0; i < 4; i++) {
       answersBtn[i].textContent = answer[shuffledAnswers[i]];
-      console.log(answer[shuffledAnswers[i]])
+      console.log(answer[shuffledAnswers[i]]);
     }
   }
 
@@ -113,19 +111,21 @@ export default class GameHandeler extends RenderTemplate {
     const allGames = JSON.parse(sessionStorage.getItem("games"));
     let index;
     this.questionsAnswerd = parseInt(
-      sessionStorage.getItem("questionsAnswerd") || 0,
+      sessionStorage.getItem("questionsAnswerd") || 0
     );
 
-    for (let i = 0; i < allGames.games.length; i++){
-      if (allGames.games[i].id ===gameId) {
+    for (let i = 0; i < allGames.games.length; i++) {
+      if (allGames.games[i].id === gameId) {
         index = i;
       }
     }
 
-    console.log(answer.outerText)
     this.myAnswers.push(answer.outerText);
 
-    if (allGames.questions[index][this.questionsAnswerd].answer1 == answer.outerText) {
+    if (
+      allGames.questions[index][this.questionsAnswerd][0].answer1 ==
+      answer.outerText
+    ) {
       this.points = sessionStorage.getItem("points");
       this.points++;
       sessionStorage.setItem("points", this.points);
