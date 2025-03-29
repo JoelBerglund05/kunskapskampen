@@ -1,7 +1,7 @@
 @charset "UTF-8";
 button:focus-visible,
 a:focus-visible {
-  outline: 3px solid oklch(58% 0.1825 21.18deg);
+  outline: 3px solid oklch(60% 0.1825 21.18deg);
 }
 
 p,
@@ -180,7 +180,7 @@ button:hover {
     animation: none;
   }
   .answer-btn[data-is-answer-correct=false] {
-    background-color: oklch(58% 0.1825 21.18deg);
+    background-color: oklch(60% 0.1825 21.18deg);
   }
   .answer-btn[data-is-answer-correct=true] {
     background-color: oklch(70% 0.1776 141.88deg);
@@ -330,7 +330,7 @@ button:hover {
 }
 
 .losing {
-  text-decoration: overline 4px oklch(58% 0.1825 21.18deg);
+  text-decoration: overline 4px oklch(60% 0.1825 21.18deg);
 }
 
 .score-element-flex {
@@ -417,7 +417,7 @@ button:hover {
 .create-game button {
   border: none;
   outline: 0;
-  background: oklch(83.57% 0.1455 79.31deg);
+  background: oklch(82% 0.1455 79.31deg);
   padding: 0.5em 1em 0.5em 1em;
   border-radius: 0.3em;
 }
@@ -447,7 +447,7 @@ button:hover {
   padding: 0.5em 1em 0.5em 1em;
 }
 .add-friend-card button {
-  background: oklch(83.57% 0.1455 79.31deg);
+  background: oklch(82% 0.1455 79.31deg);
 }
 .add-friend-card p {
   margin: 0 1em;
@@ -462,7 +462,7 @@ button:hover {
   background: oklch(70% 0.1776 141.88deg);
 }
 .add-friend-card .warning {
-  background: oklch(58% 0.1825 21.18deg);
+  background: oklch(60% 0.1825 21.18deg);
 }
 .add-friend-card .visible {
   display: block;
@@ -510,6 +510,7 @@ button:hover {
   right: auto;
   width: fit-content;
   display: flex;
+  flex-wrap: wrap;
   padding: 0.5em 1em 0.5em 1em;
   border-radius: 0.3em;
   gap: 0.5em;
@@ -528,6 +529,26 @@ button:hover {
 
 .dropdown-wrapper:focus-within .dropdown-items {
   display: inherit;
+}
+
+@media (width <= 530px) {
+  .dropdown-wrapper .filter-input-wrapper {
+    left: -80%;
+    top: 5em;
+  }
+}
+@media (width <= 403px) {
+  .dropdown-wrapper .filter-input-wrapper {
+    left: -9.5rem;
+  }
+}
+@media (width <= 377px) {
+  .dropdown-wrapper .filter-input-wrapper {
+    top: 8em;
+  }
+  .dropdown-wrapper .filter-input-wrapper .input-container {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
