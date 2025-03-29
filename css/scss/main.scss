@@ -427,7 +427,6 @@ button:hover {
   }
 }
 
-
 .marigin-bottom-30vh {
   margin-bottom: 30vh;
 }
@@ -544,6 +543,7 @@ button:hover {
     right: auto;
     width: fit-content;
     display: flex;
+    flex-wrap: wrap;
     padding: 0.5em 1em 0.5em 1em;
     border-radius: 0.3em;
     gap: 0.5em;
@@ -567,3 +567,23 @@ button:hover {
   }
 }
 
+@media (width <= 530px) {
+  .dropdown-wrapper .filter-input-wrapper {
+    left: -80%;
+    top: 5em;
+  }
+}
+@media (width <= 403px) {
+  .dropdown-wrapper .filter-input-wrapper {
+    left: -9.5rem;
+  }
+}
+@media (width <= 377px) {
+  .dropdown-wrapper .filter-input-wrapper {
+    top: 8em;
+    // width: 10em;
+    .input-container {
+      width: 100%;
+    }
+  }
+}
