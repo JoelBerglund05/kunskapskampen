@@ -1,18 +1,19 @@
 import RenderTemplate from "./RenderTemplate.js";
+import Filtering from "./Filtering.js";
 
 export default class RenderGameHistory extends RenderTemplate {
   constructor() {
     super({});
     this.gameHistoryContainer = document.getElementById("gameHistory");
+    this.filtering = new Filtering();
     this.yourScore;
     this.opponentScore;
   }
 
-  async RenderMatchHistory() {
-    const allGames = JSON.parse(sessionStorage.getItem("games"));
+  RenderMatchHistory(allGames) {
     const template = document.getElementById("result");
     const displayName = JSON.parse(
-      localStorage.getItem("sb-quchkaleqfbxkufbskck-auth-token"),
+      localStorage.getItem("sb-quchkaleqfbxkufbskck-auth-token")
     ).user.user_metadata.display_name;
 
     for (let i = 0; i < allGames.games.length; i++) {
@@ -26,9 +27,9 @@ export default class RenderGameHistory extends RenderTemplate {
             i
           ].textContent = allGames.games[i].user_name_2;
         } else {
-          this.gameHistoryContainer.querySelectorAll(".opponent")[
-            i
-          ].classList.add("searching")
+          this.gameHistoryContainer
+            .querySelectorAll(".opponent")
+            [i].classList.add("searching");
         }
 
         this.gameHistoryContainer.querySelectorAll(".player_points")[
@@ -109,6 +110,24 @@ export default class RenderGameHistory extends RenderTemplate {
   PlayAgainst(index) {
     const allGames = JSON.parse(sessionStorage.getItem("games"));
     sessionStorage.setItem("gameId", allGames.games[index].id);
-    window.location.replace("http://127.0.0.1:5501/game.html");
+    window.location.replace(
+      "https://joelberglund05.github.io/kunskapskampen/game.html"
+    );
+  }
+
+  DeleteChildNodes() {
+    const childNodes = this.gameHistoryContainer.childNodes;
+    let deletedChildNodes = [];
+    for (let i = childNodes.length; i > 0; i--) {
+      deletedChildNodes.push(
+        this.gameHistoryContainer.removeChild(childNodes[i - 1])
+      );
+    }
+  }
+
+  RenderFilteredMatchHistory() {
+    const filteredGamse = { games: this.filtering.FilteringNames() };
+    this.DeleteChildNodes();
+    this.RenderMatchHistory(filteredGamse);
   }
 }

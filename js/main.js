@@ -42,6 +42,9 @@ class Main {
     this.friendMessage = document.getElementById("friend-message");
 
     this.btnPlayAgainst = [];
+
+    this.nameFilteringBtn = document.getElementById("filter-for-names");
+    this.resetFilterBtn = document.getElementById("reset-filters");
   }
 
   RegisterServiceWorker() {
@@ -77,13 +80,13 @@ class Main {
 
       const allGames =
         this.renderFriendTemplate.friendContainer.querySelectorAll(
-          ".play-against-btn",
+          ".play-against-btn"
         );
       console.log(this.btnPlayAgainst);
 
       for (let i = 0; i < allGames.length; i++) {
         this.btnPlayAgainst.push(
-          document.getElementById(allGames[i].getAttribute("id")),
+          document.getElementById(allGames[i].getAttribute("id"))
         );
       }
 
@@ -93,23 +96,25 @@ class Main {
           clickEvent,
           () => {
             this.dataBase.CreateFriendGame(i);
-          },
+          }
         );
       }
 
       this.eventManager.EventListener(this.addFriendBtn, clickEvent, () =>
-        this.dataBase.addFriend(this.friendEmail.value, this.friendMessage),
+        this.dataBase.addFriend(this.friendEmail.value, this.friendMessage)
       );
     } else if (ending === "/gamelist.html" || ending === "/gamelist.html?") {
       await this.dataBase.GetGames();
-      this.gameHistory.RenderMatchHistory();
+      this.gameHistory.RenderMatchHistory(
+        JSON.parse(sessionStorage.getItem("games"))
+      );
       const allGames =
         this.gameHistory.gameHistoryContainer.querySelectorAll(".match");
       let allGameBtns = [];
 
       for (let i = 0; i < allGames.length; i++) {
         allGameBtns.push(
-          document.getElementById(allGames[i].getAttribute("id")),
+          document.getElementById(allGames[i].getAttribute("id"))
         );
       }
       for (let i = 0; i < allGameBtns.length; i++) {
@@ -119,7 +124,7 @@ class Main {
       }
 
       this.eventManager.EventListener(this.createGamebtn, clickEvent, () =>
-        this.dataBase.CreateGame(this.gameHistory),
+        this.dataBase.CreateGame(this.gameHistory)
       );
     } else if (ending === "/score.html") {
       await this.dataBase.GetGames();
@@ -146,24 +151,34 @@ class Main {
       this.dataBase.SignUpUser(
         this.validate.emailInput.value,
         this.username.value,
-        [this.password[0].value, this.password[1].value],
-      ),
+        [this.password[0].value, this.password[1].value]
+      )
     );
 
     this.eventManager.EventListener(this.btnSignIn, clickEvent, () =>
       this.dataBase.SignInUser(this.validate.emailInput.value, [
         this.password[0].value,
         this.password[1].value,
-      ]),
+      ])
     );
 
     this.eventManager.EventListener(this.btnCreateGame, clickEvent, () =>
-      this.gameHandeler.CreateGame(this.dataBase),
+      this.gameHandeler.CreateGame(this.dataBase)
     );
 
     this.eventManager.EventListener(this.validate.emailInput, inputEvent, () =>
-      this.validate.ValidateEmail(),
+      this.validate.ValidateEmail()
     );
+
+    this.eventManager.EventListener(this.nameFilteringBtn, clickEvent, () =>
+      this.gameHistory.RenderFilteredMatchHistory()
+    );
+
+    this.eventManager.EventListener(this.resetFilterBtn, clickEvent, () => {
+      this.gameHistory.RenderMatchHistory(
+        JSON.parse(sessionStorage.getItem("games"))
+      );
+    });
 
     if (this.submitBtn) {
       this.gameHandeler.HandleSubmitLogic(this.answersBtns, this.submitBtn);

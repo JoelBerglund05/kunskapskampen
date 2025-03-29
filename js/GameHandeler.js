@@ -54,7 +54,9 @@ export default class GameHandeler extends RenderTemplate {
 
     sessionStorage.setItem("questionsAnswerd", 0);
 
-    window.location.replace("http://127.0.0.1:5501/score.html");
+    window.location.replace(
+      "https://joelberglund05.github.io/kunskapskampen/score.html"
+    );
   }
 
   UpdateGameScreen(dataBase) {
@@ -65,7 +67,7 @@ export default class GameHandeler extends RenderTemplate {
     const allGames = JSON.parse(sessionStorage.getItem("games"));
     let index;
     this.questionsAnswerd = parseInt(
-      sessionStorage.getItem("questionsAnswerd") || 0,
+      sessionStorage.getItem("questionsAnswerd") || 0
     );
 
     for (let i = 0; i < allGames.games.length; i++) {
@@ -109,7 +111,7 @@ export default class GameHandeler extends RenderTemplate {
     const allGames = JSON.parse(sessionStorage.getItem("games"));
     let index;
     this.questionsAnswerd = parseInt(
-      sessionStorage.getItem("questionsAnswerd") || 0,
+      sessionStorage.getItem("questionsAnswerd") || 0
     );
 
     for (let i = 0; i < allGames.games.length; i++) {

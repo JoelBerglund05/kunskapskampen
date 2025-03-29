@@ -103,16 +103,57 @@
     </template>
   </head>
   <body class="container">
-    <main id="gameHistory" class="marigin-bottom-30vh">
-      <header class="header w-100">
-        <h1 id="points-header" class="box-shadow header-h1 marign-none mb-5">
-          Dina matcher
-        </h1>
-      </header>
-      <div class="create-game">
-        <button id="create-game">Starta ny match</button>
+    <header class="header w-100">
+      <h1 id="points-header" class="box-shadow header-h1 marign-none mb-5">
+        Dina matcher
+      </h1>
+    </header>
+    <div class="create-game">
+      <button id="create-game" class="box-shadow">Starta ny match</button>
+      <div class="dropdown-wrapper">
+        <button
+          id="filter-name"
+          class="unimportant-btn box-shadow dropdown-btn"
+        >
+          Filtrera efter namn <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+          <svg
+            width="800px"
+            height="800px"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="size-svg-small"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M4.43057 8.51192C4.70014 8.19743 5.17361 8.161 5.48811 8.43057L12 14.0122L18.5119 8.43057C18.8264 8.16101 19.2999 8.19743 19.5695 8.51192C19.839 8.82642 19.8026 9.29989 19.4881 9.56946L12.4881 15.5695C12.2072 15.8102 11.7928 15.8102 11.5119 15.5695L4.51192 9.56946C4.19743 9.29989 4.161 8.82641 4.43057 8.51192Z"
+              fill="#1C274C"
+            />
+          </svg>
+        </button>
+        <div class="dropdown-items">
+          <div class="filter-input-wrapper box-shadow">
+            <div class="input-container">
+              <label for="filter">Namn</label>
+              <input
+                type="text"
+                class="box-shadow"
+                id="name-input"
+                placeholder="Anna"
+              />
+            </div>
+            <button type="button" class="box-shadow" id="filter-for-names">
+              Filtrera
+            </button>
+          </div>
+        </div>
       </div>
-    </main>
+      <button id="reset-filters" class="unimportant-btn box-shadow">
+        Ta bort filter
+      </button>
+    </div>
+    <main id="gameHistory" class="marigin-bottom-30vh"></main>
     <div class="box-shadow position-fixed bottom-0 left-0 right-0 white-bg">
       <div class="container grid-1-col">
         <footer class="navbar-sizing">
