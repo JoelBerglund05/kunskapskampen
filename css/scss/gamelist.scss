@@ -120,10 +120,6 @@ h6 {
   }
 }
 
-.bold {
-  font-weight: bold;
-}
-
 .match:disabled h4,
 .match:disabled p,
 .match:disabled path,
@@ -131,4 +127,8 @@ h6 {
   cursor: not-allowed;
   color: oklch(54.86% 0 0);
   stroke: oklch(54.86% 0 0);
+}
+.info h4.bold {
+  font-weight: bold;
+  color: main.$right-answer-color;
 }

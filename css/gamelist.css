@@ -183,7 +183,7 @@ button:hover {
     background-color: oklch(60% 0.1825 21.18deg);
   }
   .answer-btn[data-is-answer-correct=true] {
-    background-color: oklch(70% 0.1776 141.88deg);
+    background-color: oklch(50% 0.1776 141.88deg);
   }
 }
 @keyframes wrong-answer {
@@ -196,10 +196,10 @@ button:hover {
 }
 @keyframes correct-answer {
   33% {
-    background-color: oklch(70% 0.1776 141.88deg);
+    background-color: oklch(50% 0.1776 141.88deg);
   }
   to {
-    background-color: oklch(70% 0.1776 141.88deg);
+    background-color: oklch(50% 0.1776 141.88deg);
   }
 }
 @keyframes loading {
@@ -326,7 +326,7 @@ button:hover {
 }
 
 .leader {
-  text-decoration: overline 4px oklch(70% 0.1776 141.88deg);
+  text-decoration: overline 4px oklch(50% 0.1776 141.88deg);
 }
 
 .losing {
@@ -353,6 +353,10 @@ button:hover {
   stroke: oklch(10% 0.0483 138.55deg);
   display: inline;
   transition: opacity 0.3s ease;
+}
+.remove-friend svg:hover {
+  filter: drop-shadow(oklch(10% 0.0483 138.55deg / 0.5) 0em 0em 0.3em);
+  transition: 0.2s;
 }
 
 .size-svg {
@@ -417,9 +421,12 @@ button:hover {
 .create-game button {
   border: none;
   outline: 0;
-  background: oklch(83.57% 0.1455 79.31deg);
+  background: oklch(82% 0.1455 79.31deg);
   padding: 0.5em 1em 0.5em 1em;
   border-radius: 0.3em;
+}
+.create-game .unimportant-btn {
+  background: oklch(65% 0.0483 138.55deg);
 }
 
 .add-friend-card {
@@ -444,7 +451,7 @@ button:hover {
   padding: 0.5em 1em 0.5em 1em;
 }
 .add-friend-card button {
-  background: oklch(83.57% 0.1455 79.31deg);
+  background: oklch(82% 0.1455 79.31deg);
 }
 .add-friend-card p {
   margin: 0 1em;
@@ -456,10 +463,10 @@ button:hover {
   display: none;
 }
 .add-friend-card .succes {
-  background: oklch(70% 0.1776 141.88deg);
+  background: oklch(50% 0.1776 141.88deg);
 }
 .add-friend-card .warning {
-  background: oklch(58% 0.1825 21.18deg);
+  background: oklch(60% 0.1825 21.18deg);
 }
 .add-friend-card .visible {
   display: block;
@@ -492,6 +499,61 @@ button:hover {
   width: 1rem;
 }
 
+.dropdown-wrapper {
+  display: inline;
+  position: relative;
+}
+.dropdown-wrapper .dropdown-items {
+  display: none;
+}
+.dropdown-wrapper .filter-input-wrapper {
+  background: oklch(65% 0.0483 138.55deg);
+  position: absolute;
+  top: 2.5em;
+  left: 0;
+  right: auto;
+  width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.5em 1em 0.5em 1em;
+  border-radius: 0.3em;
+  gap: 0.5em;
+}
+.dropdown-wrapper .filter-input-wrapper button {
+  width: 100%;
+  height: 100%;
+  align-self: end;
+}
+.dropdown-wrapper .filter-input-wrapper input {
+  border-radius: 0.3em;
+  padding: 0.5rem;
+  border: none;
+  outline: 0;
+}
+
+.dropdown-wrapper:focus-within .dropdown-items {
+  display: inherit;
+}
+
+@media (width <= 530px) {
+  .dropdown-wrapper .filter-input-wrapper {
+    left: -80%;
+    top: 5em;
+  }
+}
+@media (width <= 403px) {
+  .dropdown-wrapper .filter-input-wrapper {
+    left: -9.5rem;
+  }
+}
+@media (width <= 377px) {
+  .dropdown-wrapper .filter-input-wrapper {
+    top: 8em;
+  }
+  .dropdown-wrapper .filter-input-wrapper .input-container {
+    width: 100%;
+  }
+}
 body {
   font-family: Arial, sans-serif;
   background-color: oklch(100% 0.0483 138.55deg);
@@ -526,8 +588,8 @@ h6 {
 .match.win {
   border-top: 0;
   border-bottom: 0;
-  border-left: 0.5rem solid oklch(70% 0.1776 141.88deg);
-  border-right: 0.5rem solid oklch(70% 0.1776 141.88deg);
+  border-left: 0.5rem solid oklch(50% 0.1776 141.88deg);
+  border-right: 0.5rem solid oklch(50% 0.1776 141.88deg);
 }
 
 .match.loss {
@@ -610,10 +672,6 @@ h6 {
     max-width: fit-content;
   }
 }
-.bold {
-  font-weight: bold;
-}
-
 .match:disabled h4,
 .match:disabled p,
 .match:disabled path,
@@ -621,6 +679,11 @@ h6 {
   cursor: not-allowed;
   color: oklch(54.86% 0 0deg);
   stroke: oklch(54.86% 0 0deg);
+}
+
+.info h4.bold {
+  font-weight: bold;
+  color: oklch(50% 0.1776 141.88deg);
 }
 
 /*# sourceMappingURL=gamelist.css.map */

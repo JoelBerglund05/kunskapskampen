@@ -183,7 +183,7 @@ button:hover {
     background-color: oklch(60% 0.1825 21.18deg);
   }
   .answer-btn[data-is-answer-correct=true] {
-    background-color: oklch(70% 0.1776 141.88deg);
+    background-color: oklch(50% 0.1776 141.88deg);
   }
 }
 @keyframes wrong-answer {
@@ -196,10 +196,10 @@ button:hover {
 }
 @keyframes correct-answer {
   33% {
-    background-color: oklch(70% 0.1776 141.88deg);
+    background-color: oklch(50% 0.1776 141.88deg);
   }
   to {
-    background-color: oklch(70% 0.1776 141.88deg);
+    background-color: oklch(50% 0.1776 141.88deg);
   }
 }
 @keyframes loading {
@@ -326,7 +326,7 @@ button:hover {
 }
 
 .leader {
-  text-decoration: overline 4px oklch(70% 0.1776 141.88deg);
+  text-decoration: overline 4px oklch(50% 0.1776 141.88deg);
 }
 
 .losing {
@@ -462,8 +462,11 @@ button:hover {
 .add-friend-card .message {
   display: none;
 }
+.add-friend-card .message p {
+  color: oklch(100% 0.0483 138.55deg);
+}
 .add-friend-card .succes {
-  background: oklch(70% 0.1776 141.88deg);
+  background: oklch(50% 0.1776 141.88deg);
 }
 .add-friend-card .warning {
   background: oklch(60% 0.1825 21.18deg);
